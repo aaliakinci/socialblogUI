@@ -1,10 +1,13 @@
 import React from 'react'
+import './blogCard.css'
+import blogPost01 from '../../assets/images/blog-post-01.jpg';
+//import blogPost02 from '../../assets/images/blog-post-02.jpg';
 
 export default function BlogCard() {
     return (
         <div className="blog-post">
             <div className="blog-thumb">
-                <img src="../src/themes/assets/images/blog-post-01.jpg" alt="" />
+                <img src={blogPost01} alt="" />
             </div>
             <div className="down-content">
                 <span>Lifestyle</span>

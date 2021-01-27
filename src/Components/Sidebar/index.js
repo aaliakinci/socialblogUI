@@ -1,8 +1,9 @@
 import React from 'react'
-import ItemSearch from './ItemSearch/ItemSearch'
-import SidebarRecentPosts from './SidebarRecentPosts/SidebarRecentPosts'
-import SidebarCategories from './SidebarCategories/SidebarCategories'
-import SidebarTags from './SidebarTags/SidebarTags'
+import ItemSearch from './ItemSearch'
+import SidebarRecentPosts from './SidebarRecentPosts'
+import SidebarCategories from './SidebarCategories'
+import SidebarTags from './SidebarTags'
+import './sidebar.css'
 
 export default function Sidebar() {
     return (

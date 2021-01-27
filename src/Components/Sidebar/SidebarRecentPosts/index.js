@@ -1,4 +1,5 @@
 import React from 'react';
+import './recentPosts.css'
 
 export default function SidebarRecentPosts() {
     return (

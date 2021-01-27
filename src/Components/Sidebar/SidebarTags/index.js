@@ -1,4 +1,5 @@
 import React from 'react';
+import './sidebarTags.css'
 
 export default function SidebarTags() {
     return (
