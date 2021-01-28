@@ -4,9 +4,7 @@
 
 .blog-posts .blog-thumb img {
 	overflow: hidden;
-	object-fit: cover;
 	width: 100%;
-	height: 300px;
 }
 
 .blog-posts .down-content {

@@ -61,6 +61,8 @@
 
 .owl-banner .owl-nav {
 	position: absolute;
+	display: flex;
+	align-items: center;
 	top: 50%;
 	width: 100%;
 }

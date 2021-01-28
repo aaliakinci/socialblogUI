@@ -9,13 +9,6 @@ import './blogPage.css'
 const BlogPage = () => {
     return (
         <>
-            {/* <div id="preloader">
-                <div className="jumper">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div> */}
             <Header />
             <PageHeading />
             <section className="blog-posts grid-system">

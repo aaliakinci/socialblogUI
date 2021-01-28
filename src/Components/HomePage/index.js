@@ -3,13 +3,13 @@ import Header from '../Header'
 import Card from '../Card'
 import Footer from '../Footer'
 import Sidebar from '../Sidebar'
-import Banner from '../Banner'
+import './homepage.css'
 
 export default function HomePage() {
     return (
         <>
             <Header />
-            <Banner />
+
             <section className="blog-posts">
                 <div className="container">
                     <div className="row">
