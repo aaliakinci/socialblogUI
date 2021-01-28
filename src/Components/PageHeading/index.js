@@ -1,4 +1,5 @@
 import React from 'react'
+import './pageHeading.css'
 
 export default function PageHeading() {
     return (
