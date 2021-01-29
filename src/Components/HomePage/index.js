@@ -1,15 +1,18 @@
 import React from 'react'
-import Header from '../Header'
+import Header from '../UserHeader'
 import Card from '../Card'
 import Footer from '../Footer'
 import Sidebar from '../Sidebar'
+import Banner from '../Banner';
+import OrangeButton from '../OrangeButton'
 import './homepage.css'
+
 
 export default function HomePage() {
     return (
         <>
             <Header />
-
+            <Banner />
             <section className="blog-posts">
                 <div className="container">
                     <div className="row">
@@ -26,9 +29,7 @@ export default function HomePage() {
                                         <Card />
                                     </div >
                                     <div className="col-lg-12" >
-                                        <div className="main-button" >
-                                            <a href="blog.html">View All Posts</a>
-                                        </div >
+                                        <OrangeButton />
                                     </div >
                                 </div >
                             </div >

@@ -1,10 +1,11 @@
 import React from 'react'
 import './header.css'
+import OrangeButton from '../OrangeButton/index'
 
 export default function Header() {
     return (
         <header>
-            <nav className="navbar navbar-expand-lg">
+            <nav className="navbar navbar-expand-xl">
                 <div className="container">
                     <a href="javascript" className="navbar-brand">
                         <h2>Stand Blog <em>.</em></h2>
@@ -27,6 +28,10 @@ export default function Header() {
                             </li>
                             <li className="nav-item">
                                 <a href="javascript" className="nav-link">Post Details</a>
+                            </li>
+                            <li className="nav-item">
+                                <OrangeButton />
+
                             </li>
                         </ul>
                     </div>
