@@ -1,6 +1,6 @@
 import React from 'react';
-import Sidebar from '../Sidebar/';
-import BlogDetail from '../BlogDetail';
+import Sidebar from '../../Components/Sidebar';
+import BlogDetail from '../../Components/BlogDetail';
 const BlogPage = () => {
 	return (
 		<>

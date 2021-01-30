@@ -1,8 +1,8 @@
 import React from 'react'
-import Header from '../Header'
-import Card from '../Card'
-import Footer from '../Footer'
-import Sidebar from '../Sidebar'
+import Header from '../../Components/Header'
+import Card from '../../Components/Card'
+import Footer from '../../Components/Footer'
+import Sidebar from '../../Components/Sidebar'
 import './homepage.css'
 
 export default function HomePage() {
