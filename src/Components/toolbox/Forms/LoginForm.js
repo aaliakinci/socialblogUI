@@ -1,9 +1,9 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import './styles.css'
 function LoginForm() {
 	const [userDataLogin, setUserDataLogin] = useState({
-		username:"",
-		password:""
+		username: "",
+		password: ""
 	})
 	return (
 		<form className="w-100 p-4 border shadow">
@@ -22,7 +22,7 @@ function LoginForm() {
 			<button type="submit" className="btn btn-block btnBg text-white my-2">
 				Giriş
 			</button>
-			<small className="text-danger lead">Error</small>
+			<p className="text-danger lead" style={{ fontSize: '12px' }}>Error</p>
 		</form>
 	)
 }

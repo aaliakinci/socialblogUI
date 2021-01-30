@@ -80,14 +80,14 @@ function RegisterForm() {
 					<option value="Man">Erkek</option>
 				</select>
 			</div>
-			<div class="form-group">
+			<div className="form-group">
 				<label htmlFor="profilPicture" className="form-control-label">Profil Fotoğrafı</label>
-				<input type="file" class="form-control-file" id="exampleFormControlFile1" />
+				<input type="file" className="form-control-file" id="exampleFormControlFile1" />
 			</div>
 			<button type="submit" className="btn btn-block btnBg text-white my-2">
 				Kayıt Ol
 			</button>
-			<small className="text-danger lead">Error</small>
+			<p className="text-danger lead" style={{ fontSize: '12px' }}>Error</p>
 		</form>
 	);
 }

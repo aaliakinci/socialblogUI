@@ -16,8 +16,8 @@ function index() {
 						<LoginForm />
 					</div>
 					<div className="col-12 my-3">
-						<p className="lead text-center">
-							Üye değilseniz hemen üye olmak için <a to="/register">tıklayınız</a>{' '}
+						<p className="lead text-center" style={{ fontSize: '12px' }}>
+							Üye değilseniz hemen üye olmak için <a href="/register">tıklayınız</a>{' '}
 						</p>
 					</div>
 				</div>

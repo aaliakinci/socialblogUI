@@ -1,13 +1,13 @@
 import React from 'react';
 import Sidebar from '../../Components/Sidebar';
-import BlogDetail from '../../Components/BlogDetail';
+import BlogDetail from '../../Components/Card';
 const BlogPage = () => {
 	return (
 		<>
 			<section className="blog-posts">
 				<div className="row">
-					<div class="col-lg-8">
-						<BlogDetail/>
+					<div className="col-lg-8">
+						<BlogDetail />
 					</div>
 					<div className="col-lg-4">
 						<Sidebar />

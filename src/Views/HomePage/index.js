@@ -3,11 +3,15 @@ import Header from '../../Components/Header'
 import Card from '../../Components/Card'
 import Footer from '../../Components/Footer'
 import Sidebar from '../../Components/Sidebar'
+import Banner from '../../Components/Banner';
+import MainButton from '../../Components/MainButton'
 import './homepage.css'
+
 
 export default function HomePage() {
     return (
         <>
+            <Banner />
             <section className="blog-posts">
                 <div className="container">
                     <div className="row">
@@ -24,9 +28,7 @@ export default function HomePage() {
                                         <Card />
                                     </div >
                                     <div className="col-lg-12" >
-                                        <div className="main-button" >
-                                            <a href="blog.html">View All Posts</a>
-                                        </div >
+                                        <MainButton />
                                     </div >
                                 </div >
                             </div >
@@ -37,7 +39,6 @@ export default function HomePage() {
                     </div >
                 </div >
             </section >
-            
         </>
     )
 }
