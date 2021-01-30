@@ -1,0 +1,30 @@
+.sidebar .recent-posts ul li {
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #eee;
+}
+
+.sidebar .recent-posts ul li:last-child {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	border-bottom: none;
+}
+
+.sidebar .recent-posts ul li h5 {
+	font-size: 19px;
+	font-weight: 900;
+	color: #20232e;
+	line-height: 30px;
+	transition: all 0.3s;
+}
+
+.sidebar .recent-posts ul li h5:hover {
+	color: #f48840;
+}
+
+.sidebar .recent-posts ul li span {
+	display: block;
+	font-size: 14px;
+	color: #aaa;
+	margin-top: 8px;
+}
