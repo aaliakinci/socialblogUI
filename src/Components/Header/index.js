@@ -1,6 +1,6 @@
 import React from 'react'
 import './header.css'
-
+import {Link} from 'react-router-dom';
 export default function Header() {
     return (
         <header>
@@ -15,19 +15,19 @@ export default function Header() {
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
-                                <a href="javascript" className="nav-link">
+                                <Link to="/" className="nav-link">
                                     Home <span className="sr-only">(current)</span>
-                                </a>
+                                </Link>
                             </li>
                            <li className="nav-item"> 
-													 <a href="javascript" className="nav-link">
+													 <Link to="/login" className="nav-link">
 													 <i class="fa fa-user"></i> Log in 
-                                </a>
+                                </Link>
 													 </li>
 													 <li className="nav-item"> 
-													 <a href="javascript" className="nav-link">
+													 <Link to="/register" className="nav-link">
                                 |  Register
-                                </a>
+                                </Link>
 													 </li>
                         </ul>
                     </div>
