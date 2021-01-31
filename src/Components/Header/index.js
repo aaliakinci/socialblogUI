@@ -21,7 +21,7 @@ export default function Header() {
                             </li>
                            <li className="nav-item"> 
 													 <Link to="/login" className="nav-link">
-													 <i class="fa fa-user"></i> Log in 
+													 			Log in 
                                 </Link>
 													 </li>
 													 <li className="nav-item"> 
