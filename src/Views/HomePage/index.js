@@ -15,7 +15,7 @@ export default function HomePage() {
             <section className="blog-posts">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-8">
+                        <div className="col-lg-8 col-12">
                             <div className="all-blog-posts">
                                 <div className="row">
                                     <div className="col-lg-12">
@@ -33,7 +33,7 @@ export default function HomePage() {
                                 </div >
                             </div >
                         </div >
-                        <div className="col-lg-4">
+                        <div className="col-lg-4 col-12">
                             <Sidebar />
                         </div>
                     </div >

@@ -1,10 +1,11 @@
 import React from 'react'
-
+import UserImage1 from '../assets/images/comment-author-01.jpg'
+import UserImage2 from '../assets/images/comment-author-02.jpg'
 export default function Comment() {
     return (
         <li>
             <div className="author-thumb">
-                <img src="../src/themes/assets/images/comment-author-01.jpg" alt="" />
+                <img src={UserImage2} alt="" />
             </div>
             <div className="right-content">
                 <h4>Charles Kate<span>May 16, 2020</span></h4>

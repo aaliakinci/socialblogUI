@@ -31,9 +31,9 @@ export default function SubmitComment() {
                                 <input type="text" name="message" id="message" placeholder="Type your comment" required="" />
                             </fieldset>
                         </div>
-                        <div className="col-md-6 col-sm-12">
+                        <div className="col-sm-12">
                             <fieldset>
-                                <button type="submit" id="form-submit" className="main-button" >Submit</button>
+                                <button type="submit" id="form-submit" className="main-button btn-block" >Submit</button>
                             </fieldset>
                         </div>
                     </div>

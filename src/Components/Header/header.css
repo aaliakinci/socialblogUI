@@ -88,9 +88,7 @@ header .navbar {
 	height: 46px;
 	outline: none;
 	border-radius: 0px;
-	position: absolute;
-	right: 30px;
-	top: 25px;
+	margin-right: 12px;
 }
 .navbar .navbar-toggler-icon:after {
 	content: "\f0c9";

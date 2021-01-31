@@ -7,7 +7,7 @@ export default function Header() {
         <header>
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
-                    <a href="javascript" className="navbar-brand">
+                    <a href="/article/:id" className="navbar-brand">
                         <img src={Logo} alt="" style={{ height: '20%', width: '20%' }} />
                     </a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" >

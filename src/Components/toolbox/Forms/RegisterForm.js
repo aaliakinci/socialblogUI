@@ -73,11 +73,11 @@ function RegisterForm() {
 					Cinsiyet <span className="text-danger">*</span>{' '}
 				</label>
 				<select className="form-control" name="gender" onBlur={handleBlur} onChange={handleChange}>
-					<option selected value="">
+					<option defaultValue="selected">
 						Cinsiyet Seçiniz
 					</option>
-					<option value="Woman">Kadın</option>
-					<option value="Man">Erkek</option>
+					<option defaultValue="Woman">Kadın</option>
+					<option defaultValue="Man">Erkek</option>
 				</select>
 			</div>
 			<div className="form-group">
