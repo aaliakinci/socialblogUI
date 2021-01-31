@@ -11,7 +11,11 @@ export default function BlogCard() {
             </div>
             <div className="down-content">
                 <span>Lifestyle</span>
+<<<<<<< HEAD
                 <a href="javascript">
+=======
+                <a href="/article/:id">
+>>>>>>> main
                     <h4>Best Templete Website for Html Css</h4>
                 </a>
                 <ul className="post-info">

@@ -1,0 +1,50 @@
+.blog-posts .comments {
+	margin-top: 30px;
+}
+
+.blog-posts .comments ul li {
+	display: inline-block;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #eee;
+}
+/*Loook!!!!!!*/
+/* .blog-posts .comments ul li.replied {
+	padding-left: 130px;
+} */
+
+.blog-posts .comments ul li:last-child {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	border-bottom: none;
+}
+
+.blog-posts .comments ul li .author-thumb {
+	display: inline;
+	float: left;
+}
+
+.blog-posts .comments ul li .author-thumb img {
+	max-width: 100px;
+	display: inline;
+	border-radius: 50%;
+}
+
+.blog-posts .comments ul li .right-content {
+	margin-left: 130px;
+}
+
+.blog-posts .comments ul li .right-content h4 {
+	color: #20232e;
+	font-size: 19px;
+	font-weight: 900;
+	letter-spacing: 0.5px;
+}
+
+.blog-posts .comments ul li .right-content h4 span {
+	font-size: 14px;
+	color: #aaa;
+	font-weight: 400;
+	letter-spacing: 0.25px;
+	margin-left: 20px;
+}
