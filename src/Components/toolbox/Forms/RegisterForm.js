@@ -1,10 +1,11 @@
-import { useState,useContext} from 'react';
+import { useState, useContext } from 'react';
 import './styles.css';
 import axios from 'axios';
-import CookieContext from '../../../Contexts/CookieContext/cookieContext'
-import {Redirect} from 'react-router-dom'
+import CookieContext from '../../../Contexts/CookieContext/cookieContext';
+import { Redirect } from 'react-router-dom';
 function RegisterForm() {
 	const [errorMessage, setErrorMessage] = useState('');
+
 	const [userDataRegister, setUserDataRegister] = useState({
 		name: '',
 		surname: '',
@@ -15,31 +16,29 @@ function RegisterForm() {
 		email: '',
 		gender: '',
 	});
-	
-	const [file, setFile] = useState();
-	const {setUserCookie,getCookie} = useContext(CookieContext)
- 
-	const result = getCookie('user');
-	if(result===1)
-	{		 
-		return <Redirect to='/' />;
-	}
 
+	const [file, setFile] = useState();
+	const { setUserCookie, getCookie } = useContext(CookieContext);
+
+	const result = getCookie('user');
+	if (result === 1) {
+		return <Redirect to="/" />;
+	}
 
 	// const url = `${process.env.REACT_APP_CLIENT_URL}/`
 	const handleSubmit = async (e) => {
-		setErrorMessage("");
+		setErrorMessage('');
 		e.preventDefault();
 		if (
-			userDataRegister.name === "" ||
-			userDataRegister.surname === "" ||
+			userDataRegister.name === '' ||
+			userDataRegister.surname === '' ||
 			userDataRegister.password === '' ||
 			userDataRegister.confirmPassword === '' ||
 			userDataRegister.phoneNumber === '' ||
-			userDataRegister.email === ''||
+			userDataRegister.email === '' ||
 			userDataRegister.gender === ''
 		) {
-			setErrorMessage('* ile  işaretli alanlar boş bırakılamaz')
+			setErrorMessage('* ile  işaretli alanlar boş bırakılamaz');
 		}
 
 		const { name, surname, username, password, phoneNumber, email, gender } = userDataRegister;
@@ -60,11 +59,10 @@ function RegisterForm() {
 		if (response.data.code === 11000)
 			setErrorMessage('Bu kullanıcı zaten mevcut,üyeyseniz lütfen giriş yapınız.');
 
-			console.log(response);
-		if(response.data.token)
-		{
-			setUserCookie('user',response.data.token)
-			window.location.href="/"
+		console.log(response);
+		if (response.data.token) {
+			setUserCookie('user', response.data.token);
+			window.location.href = '/';
 		}
 	};
 
@@ -76,7 +74,6 @@ function RegisterForm() {
 		setFile(e.target.files[0]);
 	};
 
- 
 	return (
 		<form className="w-100 p-4 border shadow" onSubmit={handleSubmit}>
 			<div className="form-group">
