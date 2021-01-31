@@ -6,10 +6,13 @@ import 'font-awesome/css/font-awesome.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { BlogProvider } from './Contexts/BlogContext'
 ReactDOM.render(
-	<BrowserRouter>
-		<App />
-	</BrowserRouter>,
+	<BlogProvider>
+		<BrowserRouter>
+			<App />
+		</BrowserRouter>
+	</BlogProvider>,
 	document.getElementById('root'),
 );
 
