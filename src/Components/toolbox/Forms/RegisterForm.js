@@ -127,12 +127,15 @@ function RegisterForm() {
 				<label htmlFor="gender" className="form-control-label">
 					Cinsiyet <span className="text-danger">*</span>{' '}
 				</label>
+
 				<select className="form-control" name="gender" defaultValue="" onChange={handleChange}>
 					<option selected value="">
+				<select className="form-control" name="gender" onBlur={handleBlur} onChange={handleChange}>
+					<option defaultValue="selected">
 						Cinsiyet Seçiniz
 					</option>
-					<option value="Woman">Kadın</option>
-					<option value="Man">Erkek</option>
+					<option defaultValue="Woman">Kadın</option>
+					<option defaultValue="Man">Erkek</option>
 				</select>
 			</div>
 			<div className="form-group">
@@ -146,11 +149,14 @@ function RegisterForm() {
 					id="profilPicture"
 					onChange={handleFile}
 				/>
+				<label htmlFor="profilPicture" className="form-control-label">Profil Fotoğrafı</label>
+				<input type="file" className="form-control-file" id="exampleFormControlFile1" />
 			</div>
 			<button type="submit" className="btn btn-block btnBg text-white my-2">
 				Kayıt Ol
 			</button>
 			{errorMessage !== '' && <small className="text-danger lead">{errorMessage}</small>}
+			<p className="text-danger lead" style={{ fontSize: '12px' }}>Error</p>
 		</form>
 	);
 }

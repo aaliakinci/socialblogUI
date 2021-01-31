@@ -1,14 +1,17 @@
+
 import {useState,useContext} from 'react'
 import { Redirect } from 'react-router-dom';
 import CookieContext from '../../../Contexts/CookieContext/cookieContext'
 import axios from 'axios'
+import { useState } from 'react'
+
 import './styles.css'
 function LoginForm() {
 	const [errorMessage, setErrorMessage] = useState("")
 
 	const [userDataLogin, setUserDataLogin] = useState({
-		username:"",
-		password:""
+		username: "",
+		password: ""
 	})
 	const {setUserCookie,getCookie} = useContext(CookieContext);
 
@@ -52,9 +55,11 @@ function LoginForm() {
 			<button type="submit" className="btn btn-block btnBg text-white my-2">
 				Giriş
 			</button>
+
 			{
 				errorMessage!=="" && <small className="text-danger lead">{errorMessage}</small>
 			}
+
 		</form>
 	)
 }

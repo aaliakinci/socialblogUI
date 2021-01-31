@@ -1,4 +1,6 @@
 import './App.css';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 import HomePage from './Views/HomePage';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -13,8 +15,8 @@ function App() {
 			<Switch>
 				<Route path="/" exact component={HomePage} />
 				<Route path="/article/:id" exact component={BlogDetail} />
-				<Route path="/login"  component={Login} />
-				<Route path="/register"   component={Register} />
+				<Route path="/login" component={Login} />
+				<Route path="/register" component={Register} />
 			</Switch>
 			<Footer />
 		</>
