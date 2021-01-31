@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 import Logo from '../../assets/images/logo.jpg'
 export default function Header() {
     return (
-        <header>
+        <header className="">
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
-                    <a href="/article/:id" className="navbar-brand">
-                        <img src={Logo} alt="" style={{ height: '20%', width: '20%' }} />
+                    <a href="/" className="navbar-brand">
+                        <img src={Logo} alt="" />
                     </a>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" >
+                    <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
-                                <Link to="/" className="nav-link">
+                                <Link to='/' className="nav-link">
                                     Home <span className="sr-only">(current)</span>
                                 </Link>
                             </li>

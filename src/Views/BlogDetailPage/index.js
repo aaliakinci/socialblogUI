@@ -1,8 +1,8 @@
 import React from 'react';
 import Sidebar from '../../Components/Sidebar';
 import BlogDetail from '../../Components/Card';
-import Comments from '../../Components/Comments'
-import SubmitComment from '../../Components/SubmitComment'
+import Comments from '../../Components/Comments/index'
+import SubmitComment from '../../Components/SubmitComment/index'
 const BlogPage = () => {
 	return (
 		<>

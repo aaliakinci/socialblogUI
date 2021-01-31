@@ -1,4 +1,5 @@
 import React from 'react';
+import './submitComment.css'
 
 export default function SubmitComment() {
     return (

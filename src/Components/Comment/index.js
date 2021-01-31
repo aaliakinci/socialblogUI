@@ -1,6 +1,6 @@
 import React from 'react'
-import UserImage1 from '../assets/images/comment-author-01.jpg'
-import UserImage2 from '../assets/images/comment-author-02.jpg'
+import UserImage1 from '../../assets/images/comment-author-01.jpg'
+import UserImage2 from '../../assets/images/comment-author-02.jpg'
 export default function Comment() {
     return (
         <li>

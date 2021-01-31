@@ -1,7 +1,5 @@
 import React from 'react'
-import Header from '../../Components/Header'
 import Card from '../../Components/Card'
-import Footer from '../../Components/Footer'
 import Sidebar from '../../Components/Sidebar'
 import Banner from '../../Components/Banner';
 import MainButton from '../../Components/MainButton'
