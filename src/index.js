@@ -1,16 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-<<<<<<< HEAD
-import 'bootstrap/dist/css/bootstrap.css';
-import 'font-awesome/css/font-awesome.min.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-=======
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import App from './App';
@@ -21,7 +11,6 @@ ReactDOM.render(
 		<App />
 	</BrowserRouter>,
 	document.getElementById('root'),
->>>>>>> main
 );
 
 // If you want to start measuring performance in your app, pass a function

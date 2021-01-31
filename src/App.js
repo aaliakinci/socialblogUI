@@ -1,18 +1,6 @@
 import './App.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-<<<<<<< HEAD
-import HomePage from './Components/HomePage/index';
-import FirstPage from './Components/FirstPage/index'
-
-
-function App() {
-  return (
-    <>
-      <FirstPage />
-    </>
-  );
-=======
 import HomePage from './Views/HomePage';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -33,7 +21,6 @@ function App() {
 			<Footer />
 		</>
 	);
->>>>>>> main
 }
 
 export default App;
