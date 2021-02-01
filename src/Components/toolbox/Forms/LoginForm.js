@@ -3,19 +3,16 @@ import {useState,useContext} from 'react'
 import { Redirect } from 'react-router-dom';
 import CookieContext from '../../../Contexts/CookieContext/cookieContext'
 import axios from 'axios'
-import { useState } from 'react'
-
 import './styles.css'
 function LoginForm() {
 	const [errorMessage, setErrorMessage] = useState("")
-
 	const [userDataLogin, setUserDataLogin] = useState({
 		username: "",
 		password: ""
 	})
-	const {setUserCookie,getCookie} = useContext(CookieContext);
+	const {setUserCookie,isCookie} = useContext(CookieContext);
 
-	const result = getCookie('user');
+	const result = isCookie('user');
 	if(result===1)return <Redirect to="/"/>
 
 

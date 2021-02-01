@@ -3,7 +3,11 @@ import './styles.css';
 import axios from 'axios';
 import CookieContext from '../../../Contexts/CookieContext/cookieContext';
 import { Redirect } from 'react-router-dom';
+
 function RegisterForm() {
+
+	const { setUserCookie, isCookie } = useContext(CookieContext);
+
 	const [errorMessage, setErrorMessage] = useState('');
 
 	const [userDataRegister, setUserDataRegister] = useState({
@@ -18,9 +22,8 @@ function RegisterForm() {
 	});
 
 	const [file, setFile] = useState();
-	const { setUserCookie, getCookie } = useContext(CookieContext);
 
-	const result = getCookie('user');
+	const result = isCookie('user');
 	if (result === 1) {
 		return <Redirect to="/" />;
 	}
@@ -70,7 +73,7 @@ function RegisterForm() {
 		setUserDataRegister({ ...userDataRegister, ...{ [e.target.name]: e.target.value } });
 	};
 	const handleFile = (e) => {
-		// setUserDataRegister({ ...userDataRegister, ...{ [e.target.name]: e.target.files[0] } });
+		setUserDataRegister({ ...userDataRegister, ...{ [e.target.name]: e.target.files[0] } });
 		setFile(e.target.files[0]);
 	};
 
@@ -127,13 +130,8 @@ function RegisterForm() {
 				<label htmlFor="gender" className="form-control-label">
 					Cinsiyet <span className="text-danger">*</span>{' '}
 				</label>
-
-				<select className="form-control" name="gender" defaultValue="" onChange={handleChange}>
-					<option selected value="">
-				<select className="form-control" name="gender" onBlur={handleBlur} onChange={handleChange}>
-					<option defaultValue="selected">
-						Cinsiyet Seçiniz
-					</option>
+				<select className="form-control" name="gender" onChange={handleChange}>
+					<option defaultValue="selected">Cinsiyet Seçiniz</option>
 					<option defaultValue="Woman">Kadın</option>
 					<option defaultValue="Man">Erkek</option>
 				</select>
@@ -149,14 +147,14 @@ function RegisterForm() {
 					id="profilPicture"
 					onChange={handleFile}
 				/>
-				<label htmlFor="profilPicture" className="form-control-label">Profil Fotoğrafı</label>
-				<input type="file" className="form-control-file" id="exampleFormControlFile1" />
 			</div>
 			<button type="submit" className="btn btn-block btnBg text-white my-2">
 				Kayıt Ol
 			</button>
 			{errorMessage !== '' && <small className="text-danger lead">{errorMessage}</small>}
-			<p className="text-danger lead" style={{ fontSize: '12px' }}>Error</p>
+			<p className="text-danger lead" style={{ fontSize: '12px' }}>
+				Error
+			</p>
 		</form>
 	);
 }

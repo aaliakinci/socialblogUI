@@ -20,10 +20,6 @@ export default function Header() {
                                     Home <span className="sr-only">(current)</span>
                                 </Link>
                             </li>
-                           <li className="nav-item"> 
-													 <Link to="/login" className="nav-link">
-													 			Log in 
-
                             <li className="nav-item">
                                 <Link to="/login" className="nav-link">
                                     <i className="fa fa-user"></i> Log in
