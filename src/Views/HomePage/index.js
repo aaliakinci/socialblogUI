@@ -9,7 +9,7 @@ import './homepage.css'
 export default function HomePage() {
     return (
         <>
-            {/* <Banner /> */}
+            <Banner />
             <section className="blog-posts">
                 <div className="container">
                     <div className="row">
