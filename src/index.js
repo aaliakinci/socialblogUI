@@ -14,7 +14,6 @@ ReactDOM.render(
 				<App />
 			</CookieProvider>
 		</React.StrictMode>
-		<App />
 	</BrowserRouter>,
 	document.getElementById('root'),
 );
