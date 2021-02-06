@@ -1,7 +1,6 @@
 import React from 'react'
 import ItemSearch from './ItemSearch'
 import SidebarRecentPosts from './SidebarRecentPosts'
-import SidebarCategories from './SidebarCategories'
 import SidebarTags from './SidebarTags'
 import './sidebar.css'
 
@@ -19,6 +18,6 @@ export default function Sidebar() {
                     <SidebarTags />
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
