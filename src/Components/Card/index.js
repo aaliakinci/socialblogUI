@@ -1,9 +1,11 @@
 import React from 'react'
 import './blogCard.css'
 import blogPost01 from '../../assets/images/blog-post-01.jpg';
+import {Link} from 'react-router-dom'
 //import blogPost02 from '../../assets/images/blog-post-02.jpg';
 
-export default function BlogCard({ title, description, content, user_id, createAt, id }) {
+ function BlogCard({ title, description, content, user,createAt, id }) {
+	  
     return (
         <div className="blog-post">
             <div className="blog-thumb">
@@ -11,11 +13,14 @@ export default function BlogCard({ title, description, content, user_id, createA
             </div>
             <div className="down-content">
                 <span>Lifestyle(Hashtag)</span>
-                <a href={`/</div>article/:${id}`}>
+                <Link to={`/article/${id}`}>
                     <h4>{title}</h4>
-                </a>
+                </Link>
                 <ul className="post-info">
-                    <li><a href="javascript"> {user_id} </a></li>
+									{/* {
+										user.map(item=>(<li>{item.username}</li>))
+									} */}
+                    {/* <li><a href="javascript"> {user_id} </a></li> */}
                     <li><a href="javascript"> {createAt} </a></li>
                     <li><a href="javascript">12 Comments</a></li>
                 </ul>
@@ -24,3 +29,4 @@ export default function BlogCard({ title, description, content, user_id, createA
         </div>
     )
 }
+export default BlogCard
