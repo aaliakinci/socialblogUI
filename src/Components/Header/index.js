@@ -15,7 +15,7 @@ function Header() {
 	useEffect(() => {
 		const result = isCookie('user');
 		setIsUser(result);
-	}, [setIsUser, isUserCookie]);
+	}, [setIsUser, isCookie]);
 
 	useEffect(() => {
 		if (isUser === 1) {
@@ -26,7 +26,6 @@ function Header() {
 			});
 		}
 	}, [isUser, isUserCookie, userFromCookie, setUser]);
-	console.log(user);
 	return (
 		<header className="">
 			<nav className="navbar navbar-expand-lg">

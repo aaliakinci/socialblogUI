@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import Card from '../../Components/Card';
 import Comments from '../../Components/Comments/index';
 import SubmitComment from '../../Components/SubmitComment/index';
-import BlogContext from '../../Contexts/BlogContext';
+import BlogContext from '../../Contexts/BlogContext/BlogContext';
 const BlogDetail = () => {
 	const { getArticleById } = useContext(BlogContext);
 	const [article, setArticle] = useState({})
@@ -17,20 +17,20 @@ const BlogDetail = () => {
 		}
 		fetchArticle();
 	}, [id, getArticleById]);
-	console.log(article);
+	// console.log(article);
 	return (
 		<>
 			<section className="blog-posts" style={{ paddingTop: '150px' }}>
 				<div className="container">
 					<div className="row">
 						<div className="col-lg-8">
+							{/* {console.log(article.user)} */}
 							<Card
 								id={article._id}
 								title={article.title}
 								description={article.description}
 								content={article.content}
 								user={article.user}
-								// username={article.user}
 								createAt={article.createAt}
 							/>
 							<Comments />

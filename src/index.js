@@ -7,13 +7,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { CookieProvider } from './Contexts/CookieContext/cookieContext';
-import { BlogProvider } from './Contexts/BlogContext'
+import { BlogProvider } from './Contexts/BlogContext/BlogContext'
 ReactDOM.render(
 	<BlogProvider>
 		<BrowserRouter>
-		<CookieProvider>
-	 	<App />
-		</CookieProvider>
+			<CookieProvider>
+				<App />
+			</CookieProvider>
 		</BrowserRouter>
 	</BlogProvider>,
 	document.getElementById('root'),

@@ -4,12 +4,12 @@ import Sidebar from '../../Components/Sidebar'
 import Banner from '../../Components/Banner';
 import MainButton from '../../Components/MainButton'
 import './homepage.css'
-import BlogContext from '../../Contexts/BlogContext';
+import BlogContext from '../../Contexts/BlogContext/BlogContext';
 
 
 
 export default function HomePage() {
-    const { articles, setArticles } = useContext(BlogContext);
+    const { articles } = useContext(BlogContext);
     return (
         <>
             <Banner />
@@ -21,6 +21,7 @@ export default function HomePage() {
                                 <div className="row">
                                     <div className="col-lg-12">
                                         {articles.length && articles.map(article => {
+                                            console.log(article)
                                             return <Card key={article._id} id={article._id} title={article.title} description={article.description} content={article.content} createAt={article.createAt} user={article.user_id} />
                                         })}
                                     </div>
