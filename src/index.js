@@ -7,16 +7,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { CookieProvider } from './Contexts/CookieContext/cookieContext';
+import { BlogProvider } from './Contexts/BlogContext'
 ReactDOM.render(
-	<BrowserRouter>
+	<BlogProvider>
+		<BrowserRouter>
 		<CookieProvider>
-			<App />
+	 	<App />
 		</CookieProvider>
-	</BrowserRouter>,
+		</BrowserRouter>
+	</BlogProvider>,
 	document.getElementById('root'),
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
