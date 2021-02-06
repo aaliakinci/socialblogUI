@@ -1,11 +1,11 @@
 import React from 'react'
 import './blogCard.css'
 import blogPost01 from '../../assets/images/blog-post-01.jpg';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 //import blogPost02 from '../../assets/images/blog-post-02.jpg';
 
- function BlogCard({ title, description, content, user,createAt, id }) {
-	  
+function BlogCard({ title, description, content, user, createAt, id }) {
+
     return (
         <div className="blog-post">
             <div className="blog-thumb">
@@ -17,10 +17,9 @@ import {Link} from 'react-router-dom'
                     <h4>{title}</h4>
                 </Link>
                 <ul className="post-info">
-									{/* {
-										user.map(item=>(<li>{item.username}</li>))
-									} */}
-                    {/* <li><a href="javascript"> {user_id} </a></li> */}
+                    {
+                        user ? <li>{user[0].username}</li> : 'error'
+                    }
                     <li><a href="javascript"> {createAt} </a></li>
                     <li><a href="javascript">12 Comments</a></li>
                 </ul>
