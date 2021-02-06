@@ -6,18 +6,15 @@ import Comments from '../../Components/Comments/index';
 import SubmitComment from '../../Components/SubmitComment/index';
 import BlogContext from '../../Contexts/BlogContext/BlogContext';
 const BlogDetail = () => {
-	const { getArticleById } = useContext(BlogContext);
-	const [article, setArticle] = useState({})
+	const { getArticleById, setArticle, article } = useContext(BlogContext);
 	const { id } = useParams();
-
 	useEffect(() => {
 		const fetchArticle = async () => {
 			const data = await getArticleById(id);
 			setArticle(data[0]);
 		}
 		fetchArticle();
-	}, [id, getArticleById]);
-	// console.log(article);
+	}, [id, getArticleById, setArticle]);
 	return (
 		<>
 			<section className="blog-posts" style={{ paddingTop: '150px' }}>
