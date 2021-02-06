@@ -6,7 +6,7 @@ import CookieContext from '../../Contexts/CookieContext/cookieContext';
 function Header() {
 	const { isUserCookie, isCookie, userFromCookie } = useContext(CookieContext);
 	const [isUser, setIsUser] = useState(0);
-	
+
 	const [user, setUser] = useState({
 		_id: '',
 		username: '',
@@ -16,7 +16,7 @@ function Header() {
 		const result = isCookie('user');
 		setIsUser(result);
 	}, [setIsUser, isUserCookie]);
- 
+
 	useEffect(() => {
 		if (isUser === 1) {
 			const { _id, username } = userFromCookie('user');
@@ -50,7 +50,7 @@ function Header() {
 							{isUser === 0 && (
 								<>
 									<li className="nav-item">
-										<Link to="/yazi-yaz" className="nav-link">
+										<Link to="/" className="nav-link">
 											Home <span className="sr-only">(current)</span>
 										</Link>
 									</li>
