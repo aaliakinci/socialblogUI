@@ -1,4 +1,4 @@
-import { useEffect, useContext, useState } from 'react';
+import { useEffect, useContext } from 'react';
 import Sidebar from '../../Components/Sidebar';
 import { useParams } from 'react-router-dom';
 import Card from '../../Components/Card';
@@ -21,7 +21,6 @@ const BlogDetail = () => {
 				<div className="container">
 					<div className="row">
 						<div className="col-lg-8">
-							{/* {console.log(article.user)} */}
 							<Card
 								id={article._id}
 								title={article.title}
