@@ -21,51 +21,25 @@ export default function Editable({ childRef, text, type, placeholder, children, 
     //     }
     // }, [isEditing, childRef]);
     return (
-        <section {...props} style={{ paddingTop: '150px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <form action="">
-                <div className="form-group">
-                    <label htmlFor="name" className="mr-2">Name</label>
-                    {isEditing ? (
-                        <div
-                            onBlur={() => setEditing(false)}
-                            onKeyDown={e => handleKeyDown(e, type)}
-                            className="d-inline"
-                        >
-                            {children}
-                        </div>
-                    ) : (
-                        <div className="d-inline"
-                            onClick={() => setEditing(true)}
-                        >
-                            <span>
-                                {text || placeholder || "Editable content"}
-                            </span>
-                        </div>
-                    )
-                    }
+        <section {...props} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            {isEditing ? (
+                <div
+                    onBlur={() => setEditing(false)}
+                    onKeyDown={e => handleKeyDown(e, type)}
+                    className="d-block" style={{ width: '100%' }}
+                >
+                    {children}
                 </div>
-                <div className="form-group">
-                    <label htmlFor="name" className="mr-2">Name</label>
-                    {isEditing ? (
-                        <div
-                            className="d-inline"
-                            onBlur={() => setEditing(false)}
-                            onKeyDown={e => handleKeyDown(e, type)}
-                        >
-                            {children}
-                        </div>
-                    ) : (
-                        <div className="d-inline"
-                            onClick={() => setEditing(true)}
-                        >
-                            <span>
-                                {text || placeholder || "Editable content"}
-                            </span>
-                        </div>
-                    )
-                    }
+            ) : (
+                <div
+                    onClick={() => setEditing(true)} style={{ width: '100%', marginLeft: 'auto' }}
+                >
+                    <span>
+                        {text || placeholder}
+                    </span>
                 </div>
-            </form>
+            )
+            }
         </section>
     )
 }
