@@ -8,12 +8,14 @@ import BlogDetail from './Views/BlogDetailPage';
 import Login from './Views/Login';
 import Register from './Views/Register';
 import UserDetail from './Views/UserDetail'
+import Profile from './Components/Profile/index'
 import { Switch, Route } from 'react-router-dom';
 function App() {
 	return (
 		<>
 			<Header />
 			<Switch>
+				<Route path="/profile" component={Profile} />
 				<Route path="/" exact component={HomePage} />
 				<Route path="/article/:id" exact component={BlogDetail} />
 				<Route path="/login" component={Login} />

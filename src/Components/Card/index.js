@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import './blogCard.css'
 import blogPost01 from '../../assets/images/blog-post-01.jpg';
+import BlogContext from '../../Contexts/BlogContext/BlogContext';
 import { Link } from 'react-router-dom'
 //import blogPost02 from '../../assets/images/blog-post-02.jpg';
 
-function BlogCard({ title, description, content, user, createAt, id }) {
-
+function BlogCard({ title, description, content, user, createAt, id, getUsername }) {
+    getUsername && console.log(async getUsername('6015bdcc9a4ddc4b16d15a52'))
     return (
         <div className="blog-post">
             <div className="blog-thumb">
