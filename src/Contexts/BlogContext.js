@@ -13,7 +13,6 @@ export const BlogProvider = ({ children }) => {
 				return res;
 			})
 			.then((data) => {
-				console.log(data.data);
 				setArticles(data.data);
 			});
 	}, [setArticles]);

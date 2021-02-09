@@ -10,8 +10,7 @@ import BlogContext from '../../Contexts/BlogContext';
 
 export default function HomePage() {
     const { articles, setArticles } = useContext(BlogContext);
- 
-    return (
+     return (
         <>
             <Banner />
             <section className="blog-posts">

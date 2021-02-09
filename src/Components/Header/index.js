@@ -26,7 +26,6 @@ function Header() {
 			});
 		}
 	}, [isUser, isUserCookie, userFromCookie, setUser]);
-	console.log(user);
 	return (
 		<header className="">
 			<nav className="navbar navbar-expand-lg">
@@ -78,7 +77,7 @@ function Header() {
 									</li>
 									<li className="nav-item">
 										<Link
-											to={`/user/${user.username}`}
+											to={`/articles/${user.username}`}
 											className="nav-link d-flex align-items-center"
 										>
 											<i className="fa fa-user fa-2x "></i>Profil

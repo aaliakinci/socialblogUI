@@ -16,11 +16,9 @@ function UserPage() {
 			const articles = await getArticlesByUserId(user[0]._id);
 			setUser(user[0]);
 			setArticles(articles);
-
 		}
 		fetchUserAndArticles();
 	}, [username, getUserbyUsername]);
-
 	return (
 		<section className="blog-posts">
 			<div className="container">

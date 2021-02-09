@@ -5,12 +5,10 @@ import {Link} from 'react-router-dom'
 //import blogPost02 from '../../assets/images/blog-post-02.jpg';
 
  function BlogCard({ title, description, content, user,createAt, id }) {
-	 
-	console.log(content);
+
 	useEffect(() => {
 		if(content!==undefined)
 	{
-		console.log('girdiiim');
 		const area = document.getElementById('contentArea');
 		area.innerHTML=content
 	}
@@ -27,7 +25,7 @@ import {Link} from 'react-router-dom'
                 </Link>
                 <ul className="post-info">
 									{
-										user && user[0].username
+										user && <Link to={`/articles/${user[0].username}`}>{user[0].username}</Link>
 									}
                     {/* <li><a href="javascript"> {user_id} </a></li> */}
                     <li><a href="javascript"> {createAt} </a></li>

@@ -9,15 +9,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { CookieProvider } from './Contexts/CookieContext/cookieContext';
-import { BlogProvider } from './Contexts/BlogContext'
+import { BlogProvider } from './Contexts/BlogContext';
+import { CommentProvider } from './Contexts/Comments/commentContext';
 ReactDOM.render(
 	<BlogProvider>
 		<BrowserRouter>
-		<CookieProvider>
-	 	<App />
-		</CookieProvider>
+			<CookieProvider>
+				<CommentProvider>
+					<App />
+				</CommentProvider>
+			</CookieProvider>
 		</BrowserRouter>
 	</BlogProvider>,
 	document.getElementById('root'),
 );
-

@@ -18,7 +18,7 @@ const BlogPage = () => {
 		const response = fetchArticle(id);
 		response.then((data) => setArticle(data[0]));
 	}, [id, getArticleById]);
-console.log(article);
+ 
 	return (
 		<>
 			<section className="blog-posts" style={{ paddingTop: '150px' }}>
@@ -26,6 +26,7 @@ console.log(article);
 					<div className="row">
 						<div className="col-lg-8">
 							{article && (
+								<>
 								<Card
 									id={article._id}
 									title={article.title}
@@ -34,9 +35,10 @@ console.log(article);
 									user={article.user}
 									createAt={article.createAt}
 								/>
+								<Comments article_id={article._id}/>
+							<SubmitComment article={article}/></>
+								
 							)}
-							<Comments />
-							<SubmitComment />
 						</div>
 						<div className="col-lg-4">
 							<Sidebar />

@@ -4,9 +4,10 @@
 
 .blog-posts .comments ul li {
 	display: inline-block;
-	margin-bottom: 20px;
-	padding-bottom: 20px;
+	margin-bottom: 40px;
+	padding-bottom: 50px;
 	border-bottom: 1px solid #eee;
+	overflow-y: auto;
 }
 /*Loook!!!!!!*/
 /* .blog-posts .comments ul li.replied {
@@ -31,7 +32,7 @@
 }
 
 .blog-posts .comments ul li .right-content {
-	margin-left: 130px;
+	margin-left: 30px;
 }
 
 .blog-posts .comments ul li .right-content h4 {
