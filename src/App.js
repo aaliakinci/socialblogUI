@@ -8,6 +8,7 @@ import BlogDetail from './Views/BlogDetailPage';
 import Login from './Views/Login';
 import Register from './Views/Register';
 import UserDetail from './Views/UserDetail'
+import TextEditor from './Components/TextEditor';
 import { Switch, Route } from 'react-router-dom';
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 				<Route path="/login" component={Login} />
 				<Route path="/register" component={Register} />
 				<Route path="/user/:username" component={UserDetail} />
+				<Route path="/write-article" component={TextEditor} />
 			</Switch>
 			<Footer />
 		</>

@@ -70,7 +70,7 @@ function Header() {
 								<>
 									<li className="nav-item">
 										<Link
-											to="/yazi-yaz"
+											to="/write-article"
 											className="nav-link d-flex align-items-center bg-info	px-4 rounded"
 										>
 											<i className="fa fa-edit fa-2x text-danger"></i>Yazı Yaz

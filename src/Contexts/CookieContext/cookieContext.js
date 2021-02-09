@@ -13,7 +13,6 @@ export const CookieProvider = ({ children }) => {
 	const setUserCookie = (name, token) => {
 		cookie.set(name, `Bearer ${token}`);
 	};
-
 	const isCookie = (name) => {
 		const mycookie = cookie.get(name);
 		if (!mycookie) return 0;
