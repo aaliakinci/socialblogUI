@@ -12,21 +12,19 @@ function Profile() {
     const [phoneNumber, setPhoneNumber] = useState("");
     const [gender, setGenter] = useState(false);
 
-    /*
-      Enclose the input element as the children to the Editable component to make it as inline editable.
-    */
     return (
         <div style={{ paddingTop: '150px' }} className="row d-flex align-items-center justify-content-center">
             <div className="col-12 col-lg-4 col-sm-6">
-                <form action="" style={{ border: '2px solid black', padding: '20px', height: '500px' }} className="card">
+                <form action="" style={{ border: '2px solid black', padding: '20px', height: '500px' }} className="card d-flex">
+                <div className="form-group">
+                    <label className="d-inline">Name</label>
                     <Editable
-                        className="form-group"
                         text={name}
                         placeholder="Enter your name"
                         type="input"
                         childRef={inputRef}
                     >
-                        <label htmlFor="name" className="form-label mr-3">Name</label>
+                        {/* <label htmlFor="name" className="form-label mr-3">Name</label> */}
                         <input
                             id="name"
                             ref={inputRef}
@@ -38,6 +36,7 @@ function Profile() {
                             onChange={e => setName(e.target.value)}
                         />
                     </Editable>
+                    </div>
                     <Editable
                         className="form-group"
                         text={surname}
@@ -143,5 +142,5 @@ function Profile() {
         </div>
     );
 }
-
 export default Profile;
+

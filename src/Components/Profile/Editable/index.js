@@ -21,18 +21,18 @@ export default function Editable({ childRef, text, type, placeholder, children, 
     //     }
     // }, [isEditing, childRef]);
     return (
-        <section {...props} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <section {...props} >
             {isEditing ? (
                 <div
                     onBlur={() => setEditing(false)}
                     onKeyDown={e => handleKeyDown(e, type)}
-                    className="d-block" style={{ width: '100%' }}
+                    style={{width:'100%'}}
                 >
                     {children}
                 </div>
             ) : (
                 <div
-                    onClick={() => setEditing(true)} style={{ width: '100%', marginLeft: 'auto' }}
+                    onClick={() => setEditing(true)} style={{textAlign:'left',width:'100%'}}
                 >
                     <span>
                         {text || placeholder}
