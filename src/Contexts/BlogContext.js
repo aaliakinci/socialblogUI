@@ -7,7 +7,7 @@ const BlogContext = createContext({});
 export const BlogProvider = ({ children }) => {
 	const [articles, setArticles] = useState([]);
 	useEffect(() => {
-		const articles = axios.get(`${API_BASE_URL}/articles`);
+		const articles = axios.get(`${API_BASE_URL}/articles/reactionPoint`);
 		articles
 			.then((res) => {
 				return res;
@@ -19,16 +19,26 @@ export const BlogProvider = ({ children }) => {
 	}, [setArticles]);
 
 	const getArticleById = async (id) => {
-		const url = `http://167.99.132.119:4000/articles/${id}`;
+		const url = `http://localhost:4000/articles/${id}`;
+		console.log(url);
 		const response = await axios(url);
 		const article = response.data;
 		return article;
 	};
-
+	const getUserbyUsername = async(username) => {
+		const response = await axios(`http://localhost:4000/users/${username}`);
+	   return response.data
+	}
+  const getArticlesByUserId = async(user_id)=> {
+		const response = await axios(`http://localhost:4000/articles/byUser/${user_id}`)
+		return response.data
+	}
 	const values = {
 		articles,
 		setArticles,
 		getArticleById,
+		getUserbyUsername,
+		getArticlesByUserId
 	};
 
 	return <BlogContext.Provider value={values}>{children}</BlogContext.Provider>;

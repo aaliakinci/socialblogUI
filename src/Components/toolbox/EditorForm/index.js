@@ -17,12 +17,10 @@ function EditorForm() {
 	});
 	const [errorEditor, setErrorEditor] = useState('');
 	const [error,setError] = useState('');
-	
 	useEffect(() => {
 		const {_id}=userFromCookie('user')
 	  setUser_id(_id)
 	}, [userFromCookie])
-
 	const handleSubmit = async(e) => {
 		e.preventDefault();
 		const data = new FormData();
@@ -38,7 +36,6 @@ function EditorForm() {
 		const response = await axios.post(url,data,config);
 		console.log(response); 
 	}
-
 	const handleChangeTextArea = (e) => {
 		setContent(e.target.value);
 	};

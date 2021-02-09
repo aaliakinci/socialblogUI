@@ -1,11 +1,20 @@
-import React from 'react'
+import {useEffect} from 'react'
 import './blogCard.css'
 import blogPost01 from '../../assets/images/blog-post-01.jpg';
 import {Link} from 'react-router-dom'
 //import blogPost02 from '../../assets/images/blog-post-02.jpg';
 
  function BlogCard({ title, description, content, user,createAt, id }) {
-	  
+	 
+	console.log(content);
+	useEffect(() => {
+		if(content!==undefined)
+	{
+		console.log('girdiiim');
+		const area = document.getElementById('contentArea');
+		area.innerHTML=content
+	}
+	}, [content])
     return (
         <div className="blog-post">
             <div className="blog-thumb">
@@ -17,14 +26,16 @@ import {Link} from 'react-router-dom'
                     <h4>{title}</h4>
                 </Link>
                 <ul className="post-info">
-									{/* {
-										user.map(item=>(<li>{item.username}</li>))
-									} */}
+									{
+										user && user[0].username
+									}
                     {/* <li><a href="javascript"> {user_id} </a></li> */}
                     <li><a href="javascript"> {createAt} </a></li>
                     <li><a href="javascript">12 Comments</a></li>
                 </ul>
-                <p>{content}- desc: {description}</p>
+                <p>{description}</p>
+								{content && <div className="card-body" id="contentArea"></div>
+									}
             </div>
         </div>
     )

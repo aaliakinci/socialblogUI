@@ -1,4 +1,4 @@
-import { useEffect, useContext,useState } from 'react';
+import { useEffect, useContext, useState } from 'react';
 import Sidebar from '../../Components/Sidebar';
 import { useParams } from 'react-router-dom';
 import Card from '../../Components/Card';
@@ -7,32 +7,34 @@ import SubmitComment from '../../Components/SubmitComment/index';
 import BlogContext from '../../Contexts/BlogContext';
 const BlogPage = () => {
 	const { getArticleById } = useContext(BlogContext);
-	const [article, setArticle] = useState({})
+	const [article, setArticle] = useState();
 	const { id } = useParams();
 
 	useEffect(() => {
-		const fetchArticle = async () => {
+		const fetchArticle = async (id) => {
 			const data = await getArticleById(id);
-			setArticle(data[0]);
-		}
-		fetchArticle();
+			return data;
+		};
+		const response = fetchArticle(id);
+		response.then((data) => setArticle(data[0]));
 	}, [id, getArticleById]);
- console.log(article);
+console.log(article);
 	return (
 		<>
 			<section className="blog-posts" style={{ paddingTop: '150px' }}>
 				<div className="container">
 					<div className="row">
 						<div className="col-lg-8">
-							<Card 
-								id={article._id}
-								title={article.title}
-								description={article.description}
-								content={article.content}
-						 		user={article.user}
-								// username={article.user}
-								createAt={article.createAt}
-							/>
+							{article && (
+								<Card
+									id={article._id}
+									title={article.title}
+									description={article.description}
+									content={article.content}
+									user={article.user}
+									createAt={article.createAt}
+								/>
+							)}
 							<Comments />
 							<SubmitComment />
 						</div>
