@@ -15,7 +15,7 @@ function Header() {
 	useEffect(() => {
 		const result = isCookie('user');
 		setIsUser(result);
-	}, [setIsUser, isUserCookie]);
+	}, [setIsUser, isCookie]);
 
 	useEffect(() => {
 		if (isUser === 1) {
