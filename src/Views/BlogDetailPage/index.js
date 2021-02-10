@@ -18,7 +18,7 @@ const BlogPage = () => {
 		const response = fetchArticle(id);
 		response.then((data) => setArticle(data[0]));
 	}, [id, getArticleById]);
- 
+
 	return (
 		<>
 			<section className="blog-posts" style={{ paddingTop: '150px' }}>

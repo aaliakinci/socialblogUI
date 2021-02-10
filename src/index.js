@@ -11,12 +11,15 @@ import { BrowserRouter } from 'react-router-dom';
 import { CookieProvider } from './Contexts/CookieContext/cookieContext';
 import { BlogProvider } from './Contexts/BlogContext';
 import { CommentProvider } from './Contexts/Comments/commentContext';
+import { LikeProvider } from './Contexts/LikeContext/likeContext';
 ReactDOM.render(
 	<BlogProvider>
 		<BrowserRouter>
 			<CookieProvider>
 				<CommentProvider>
+					<LikeProvider>
 					<App />
+					</LikeProvider>
 				</CommentProvider>
 			</CookieProvider>
 		</BrowserRouter>

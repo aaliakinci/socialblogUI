@@ -1,11 +1,20 @@
-import {useEffect} from 'react'
+import {useEffect,useContext,useState} from 'react'
+import LikeContext from '../../Contexts/LikeContext/likeContext';
 import './blogCard.css'
 import blogPost01 from '../../assets/images/blog-post-01.jpg';
 import {Link} from 'react-router-dom'
-//import blogPost02 from '../../assets/images/blog-post-02.jpg';
 
  function BlogCard({ title, description, content, user,createAt, id }) {
-
+	const {getLikesByArticleId} = useContext(LikeContext)
+	const [likes, setLikes] = useState()
+	console.log(id);
+	useEffect(() => {
+		const fetchLikes = async() => {
+			const likes = await getLikesByArticleId(id)
+			setLikes(likes)
+		}
+		fetchLikes();
+	}, [getLikesByArticleId,id])
 	useEffect(() => {
 		if(content!==undefined)
 	{
@@ -34,6 +43,7 @@ import {Link} from 'react-router-dom'
                 <p>{description}</p>
 								{content && <div className="card-body" id="contentArea"></div>
 									}
+								
             </div>
         </div>
     )
