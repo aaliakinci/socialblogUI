@@ -58,7 +58,8 @@ function RegisterForm() {
 			headers: { 'content-type': 'multipart/form-data'},
 		};
 
-		const response = await axios.post('http://localhost:4000/users/register', data, config);
+		const response = await axios.post(`${process.env.REACT_APP_DEPLOY_URL}/users/register`, data, config);
+		console.log(response);
 		if (response.data.code === 11000)
 			setErrorMessage('Bu kullanıcı zaten mevcut,üyeyseniz lütfen giriş yapınız.');
 

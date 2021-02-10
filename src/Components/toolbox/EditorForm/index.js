@@ -29,7 +29,7 @@ function EditorForm() {
 		data.append('content',content);
 		data.append('description',description);
 		data.append('user_id',user_id)
-		const url = 'http://localhost:4000/articles/create'
+		const url = `${process.env.REACT_APP_DEPLOY_URL}/articles/create`
 		const config = {
 			headers:{'content-type': 'multipart/form-data'}
 		}
