@@ -1,15 +1,20 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import Card from '../../Components/Card'
 import Sidebar from '../../Components/Sidebar'
 import Banner from '../../Components/Banner';
 import MainButton from '../../Components/MainButton'
 import './homepage.css'
+<<<<<<< HEAD
 import axios from 'axios';
 import BlogContext from '../../Contexts/BlogContext/BlogContext';
+=======
+import BlogContext from '../../Contexts/BlogContext';
+>>>>>>> main
 
 
 
 export default function HomePage() {
+<<<<<<< HEAD
     const { articles } = useContext(BlogContext);
     const [userName, setUsername] = useState([]);
     useEffect(() => {
@@ -23,6 +28,10 @@ export default function HomePage() {
     });
 
     return (
+=======
+    const { articles, setArticles } = useContext(BlogContext);
+     return (
+>>>>>>> main
         <>
             <Banner />
             <section className="blog-posts">
@@ -33,7 +42,11 @@ export default function HomePage() {
                                 <div className="row">
                                     <div className="col-lg-12">
                                         {articles.length && articles.map(article => {
+<<<<<<< HEAD
                                             return <Card key={article._id} id={article._id} title={article.title} description={article.description} content={article.content} createAt={article.createAt} user={article.user_id} />
+=======
+                                            return <Card key={article._id} id={article._id} title={article.title} description={article.description} content={article.content} createAt={article.createAt} user={article.user} />
+>>>>>>> main
                                         })}
                                     </div>
                                     <div className="col-lg-12" >
