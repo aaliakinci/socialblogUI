@@ -8,11 +8,8 @@ import BlogDetail from './Views/BlogDetailPage';
 import Login from './Views/Login';
 import Register from './Views/Register';
 import UserDetail from './Views/UserDetail'
-<<<<<<< HEAD
 import Profile from './Components/Profile/index'
-=======
 import TextEditor from './Components/TextEditor';
->>>>>>> main
 import { Switch, Route } from 'react-router-dom';
 import UserPage from './Views/UserPage';
 function App() {

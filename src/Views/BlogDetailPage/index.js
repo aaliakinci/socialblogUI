@@ -25,33 +25,19 @@ const BlogPage = () => {
 				<div className="container">
 					<div className="row">
 						<div className="col-lg-8">
-<<<<<<< HEAD
-							<Card
-								id={article._id}
-								title={article.title}
-								description={article.description}
-								content={article.content}
-								user={article.user}
-								createAt={article.createAt}
-							/>
-							<Comments />
-							<SubmitComment />
-=======
 							{article && (
 								<>
-								<Card
-									id={article._id}
-									title={article.title}
-									description={article.description}
-									content={article.content}
-									user={article.user}
-									createAt={article.createAt}
-								/>
-								<Comments article_id={article._id}/>
-							<SubmitComment article={article}/></>
-								
+									<Card
+										id={article._id}
+										title={article.title}
+										description={article.description}
+										content={article.content}
+										user={article.user}
+										createAt={article.createAt}
+									/>
+									<Comments article_id={article._id} />
+									<SubmitComment article={article} /></>
 							)}
->>>>>>> main
 						</div>
 						<div className="col-lg-4">
 							<Sidebar />
