@@ -53,3 +53,7 @@
 .blog-posts .submit-comment button:hover {
 	background-color: #fb9857;
 }
+.textArea{
+	resize: none;
+	overflow-y: auto;
+}

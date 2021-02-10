@@ -13,7 +13,6 @@ export const CookieProvider = ({ children }) => {
 	const setUserCookie = (name, token) => {
 		cookie.set(name, `Bearer ${token}`);
 	};
-
 	const isCookie = (name) => {
 		const mycookie = cookie.get(name);
 		if (!mycookie) return 0;
@@ -25,10 +24,15 @@ export const CookieProvider = ({ children }) => {
 		const user = jwt_decode(token)
 		return user
 	}
+	const userAuth = (name) => {
+		const bearerToken = cookie.getJSON(name);
+		return bearerToken;
+	}
 	const values = {
 		setUserCookie,
 		isCookie,
-		userFromCookie
+		userFromCookie,
+		userAuth
 	};
 	
 

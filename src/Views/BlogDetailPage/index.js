@@ -4,12 +4,14 @@ import { useParams } from 'react-router-dom';
 import Card from '../../Components/Card';
 import Comments from '../../Components/Comments/index';
 import SubmitComment from '../../Components/SubmitComment/index';
+
 import BlogContext from '../../Contexts/BlogContext/BlogContext';
 const BlogDetail = () => {
 	const { getArticleById, setArticle, article } = useContext(BlogContext);
+ 
 	const { id } = useParams();
 	useEffect(() => {
-		const fetchArticle = async () => {
+		const fetchArticle = async (id) => {
 			const data = await getArticleById(id);
 			setArticle(data[0]);
 		}

@@ -69,7 +69,7 @@ function Header() {
 								<>
 									<li className="nav-item">
 										<Link
-											to="/"
+											to="/write-article"
 											className="nav-link d-flex align-items-center bg-info	px-4 rounded"
 										>
 											<i className="fa fa-edit fa-2x text-danger"></i>Yazı Yaz
@@ -77,7 +77,7 @@ function Header() {
 									</li>
 									<li className="nav-item">
 										<Link
-											to={`/user/${user.username}`}
+											to={`/articles/${user.username}`}
 											className="nav-link d-flex align-items-center"
 										>
 											<i className="fa fa-user fa-2x "></i>Profil
