@@ -9,7 +9,7 @@ export const CommentProvider = ({children}) => {
 
 	const getCommentsByArticleId = async(article_id) =>
 	{
-		const url = `http://localhost:4000/comments/${article_id}`;
+		const url = `${process.env.REACT_APP_DEPLOY_URL}/comments/${article_id}`;
 		const comments = await axios(url);
 		return comments
 	}

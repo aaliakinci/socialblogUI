@@ -17,7 +17,7 @@ function SubmitComment({article}) {
  
 	 const handleSubmit = async(e) => {
 		e.preventDefault();
-		const url = 'http://localhost:4000/comments/create'
+		const url = `${process.env.REACT_APP_DEPLOY_URL}/comments/create`
 		 const config = {
 			 header:{'Authorization':auth}
 		 }
