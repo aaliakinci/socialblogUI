@@ -6,13 +6,21 @@ function SubmitComment({article}) {
 	const [user_id, setUser_id] = useState();
 	const [description, setDescription] = useState("")
 	const [auth,setAuth] = useState("");
-	const {userFromCookie,userAuth} = useContext(CookieContext);
+	const {userFromCookie,userAuth,isCookie} = useContext(CookieContext);
 	const [error, setError] = useState("")
+	const [isUser, setIsUser] = useState()
+	 
 	useEffect(() => {
-		const {_id} = userFromCookie('user');
-		const token = userAuth('user');
-		setAuth(token);
-		setUser_id(_id);
+		const myCookie = isCookie('user');
+		if(myCookie===1)
+		{
+			const {_id} = userFromCookie('user');
+			const token = userAuth('user');
+			setAuth(token);
+			setUser_id(_id);
+			setIsUser(true)
+			return 0
+		}
 	}, [userFromCookie])
  
 	 const handleSubmit = async(e) => {
@@ -39,26 +47,29 @@ function SubmitComment({article}) {
                     Yorum
                 </h2>
             </div>
-            <div className="content">
-                <form onSubmit={handleSubmit}>
-                    <div className="row">
-                        <div className="col-12">
-                          <textarea  name="description" id="message" placeholder="Type your comment" value={description} className="form-control textArea" onChange={(e)=>setDescription(e.target.value)}></textarea>
-                        </div>
-												<div className="col-12">
-												{
-									error && <span className="text-danger">{error}</span>
-								}
-												</div>
-                        <div className="col-sm-12">
-                            <fieldset>
-                                <button type="submit" id="form-submit" className="main-button btn-block " >Submit</button>
-                            </fieldset>
-                        </div>
-                    </div>
-                </form>
-								
-            </div>
+						{
+							isUser ===true?<div className="content">
+							<form onSubmit={handleSubmit}>
+									<div className="row">
+											<div className="col-12">
+												<textarea  name="description" id="message" placeholder="Type your comment" value={description} className="form-control textArea" onChange={(e)=>setDescription(e.target.value)}></textarea>
+											</div>
+											<div className="col-12">
+											{
+								error && <span className="text-danger">{error}</span>
+							}
+											</div>
+											<div className="col-sm-12">
+													<fieldset>
+															<button type="submit" id="form-submit" className="main-button btn-block " >Submit</button>
+													</fieldset>
+											</div>
+									</div>
+							</form>
+							
+					</div>:""
+						}
+            
         </div>
     )
 }
