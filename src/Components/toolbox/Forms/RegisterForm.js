@@ -62,7 +62,7 @@ function RegisterForm() {
 		if (response.data.code === 11000)
 			setErrorMessage('Bu kullanıcı zaten mevcut,üyeyseniz lütfen giriş yapınız.');
 
-		// console.log(response);
+		console.log(response);
 		if (response.data.token) {
 			setUserCookie('user', response.data.token);
 			window.location.href = '/';
