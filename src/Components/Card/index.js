@@ -33,10 +33,9 @@ function BlogCard({ title, description, content, user, createAt, id }) {
 				</Link>
 				<ul className="post-info">
 					{
-						user && <Link to={`/articles/${user[0].username}`}>{user[0].username}</Link>
+						user && <Link to={`/articles/${user[0].username}`} className="link">{user[0].username}</Link>
 					}
-					{/* <li><a href="javascript"> {user_id} </a></li> */}
-					<li><a href="javascript"> {createAt} </a></li>
+					<li><a href="javascript">{createAt} </a></li>
 					<li><a href="javascript">12 Comments</a></li>
 				</ul>
 				<p>{description}</p>

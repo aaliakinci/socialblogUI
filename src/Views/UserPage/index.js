@@ -18,7 +18,7 @@ function UserPage() {
 			setArticles(articles);
 		}
 		fetchUserAndArticles();
-	}, [username, getUserbyUsername]);
+	}, [username, getUserbyUsername, getArticlesByUserId]);
 	return (
 		<section className="blog-posts">
 			<div className="container">
