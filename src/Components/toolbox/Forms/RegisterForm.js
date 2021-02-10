@@ -42,8 +42,8 @@ function RegisterForm() {
 			userDataRegister.gender === ''
 		) {
 			setErrorMessage('* ile  işaretli alanlar boş bırakılamaz');
+			return 0
 		}
-
 		const { name, surname, username, password, phoneNumber, email, gender } = userDataRegister;
 		const data = new FormData();
 		data.append('name', name);
@@ -55,14 +55,15 @@ function RegisterForm() {
 		data.append('gender', gender);
 		data.append('profilPicture', file);
 		const config = {
-			headers: { 'content-type': 'multipart/form-data' },
+			headers: { 'content-type': 'multipart/form-data'},
 		};
 
-		const response = await axios.post('http://localhost:4000/users/register', data, config);
+		const response = await axios.post(`${process.env.REACT_APP_DEPLOY_URL}/users/register`, data, config);
+		console.log(response);
 		if (response.data.code === 11000)
 			setErrorMessage('Bu kullanıcı zaten mevcut,üyeyseniz lütfen giriş yapınız.');
 
-		// console.log(response);
+		console.log(response);
 		if (response.data.token) {
 			setUserCookie('user', response.data.token);
 			window.location.href = '/';
