@@ -9,7 +9,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { CookieProvider } from './Contexts/CookieContext/cookieContext';
-import { BlogProvider } from './Contexts/BlogContext';
+import { BlogProvider } from './Contexts/BlogContext/BlogContext';
 import { CommentProvider } from './Contexts/Comments/commentContext';
 import { LikeProvider } from './Contexts/LikeContext/likeContext';
 ReactDOM.render(
@@ -18,7 +18,7 @@ ReactDOM.render(
 			<CookieProvider>
 				<CommentProvider>
 					<LikeProvider>
-					<App />
+						<App />
 					</LikeProvider>
 				</CommentProvider>
 			</CookieProvider>

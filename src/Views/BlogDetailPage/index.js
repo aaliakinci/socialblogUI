@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import Card from '../../Components/Card';
 import Comments from '../../Components/Comments/index';
 import SubmitComment from '../../Components/SubmitComment/index';
-import BlogContext from '../../Contexts/BlogContext';
+import BlogContext from '../../Contexts/BlogContext/BlogContext';
 const BlogPage = () => {
 	const { getArticleById } = useContext(BlogContext);
 	const [article, setArticle] = useState();

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Sidebar from '../../Components/Sidebar';
-import BlogContext from '../../Contexts/BlogContext';
+import BlogContext from '../../Contexts/BlogContext/BlogContext';
 import UserProfileBanner from '../../Components/UserProfileBanner';
 import Card from '../../Components/Card';
 function UserPage() {
