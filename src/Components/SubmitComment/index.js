@@ -24,7 +24,7 @@ function SubmitComment({article}) {
 		 if(user_id!==undefined && description.trim()!=="" && article!==undefined )
 		 {
 			const response = await axios.post(url,{user_id,description,article_id:article._id},config)
-			if(response._id!==undefined)
+			if(response.data._id!==undefined)
 			window.location.reload();
 			setError('Bir hata oluştu !')
 		 }
