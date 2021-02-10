@@ -1,15 +1,14 @@
 import { createContext } from 'react';
 import cookie from 'js-cookie';
-import jwt_decode from "jwt-decode";
+import jwt_decode from 'jwt-decode';
 
 const CookieContext = createContext({
-	userFromCookie:()=>{},
-  isCookie: ()=>{},
-  setUserCookie: () => {},
+	userFromCookie: () => {},
+	isCookie: () => {},
+	setUserCookie: () => {},
 });
 
 export const CookieProvider = ({ children }) => {
-
 	const setUserCookie = (name, token) => {
 		cookie.set(name, `Bearer ${token}`);
 	};
@@ -19,22 +18,22 @@ export const CookieProvider = ({ children }) => {
 		return 1;
 	};
 	const userFromCookie = (name) => {
-		const bearerToken = cookie.getJSON(name)
-		const token = bearerToken.replace('Bearer ', '')
-		const user = jwt_decode(token)
-		return user
-	}
+		const bearerToken = cookie.getJSON(name);
+			const token = bearerToken.replace('Bearer ', '');
+			const user = jwt_decode(token);
+			return user;
+ 
+	};
 	const userAuth = (name) => {
 		const bearerToken = cookie.getJSON(name);
 		return bearerToken;
-	}
+	};
 	const values = {
 		setUserCookie,
 		isCookie,
 		userFromCookie,
-		userAuth
+		userAuth,
 	};
-	
 
 	return <CookieContext.Provider value={values}>{children}</CookieContext.Provider>;
 };
