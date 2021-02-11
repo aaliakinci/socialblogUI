@@ -1,11 +1,22 @@
-import { useContext, useRef } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import Editable from "./Editable";
+import axios from 'axios'
 import UserInfoContext from '../../Contexts/UserInfoContext/UserInfoContext'
 
 
 function Profile() {
+    const [data, setData] = useState([]);
     const { name, surname, username, setUsername, setSurname, setName, email, setEmail, setPhoneNumber, phoneNumber, setPassword, password, gender, setGender } = useContext(UserInfoContext)
     // State for the input
+    useEffect(() => {
+        const getUser = async () => {
+            const data = await axios(`${process.env.REACT_APP_DEPLOY_URL}/users/aliiakinci`)
+            const user = data.data[0];
+            setData(user);
+        }
+        getUser();
+    }, [setData])
+    console.log(data)
     const inputRef = useRef();
     return (
         <div style={{ paddingTop: '150px' }} className="row d-flex align-items-center justify-content-center">
@@ -14,7 +25,7 @@ function Profile() {
                     <div className="form-group">
                         <label className="d-inline">Name</label>
                         <Editable
-                            text={name}
+                            text={data.name}
                             placeholder="Enter your name"
                             type="input"
                             childRef={inputRef}
@@ -34,7 +45,7 @@ function Profile() {
                     </div>
                     <Editable
                         className="form-group"
-                        text={surname}
+                        text={data.surname}
                         placeholder="Enter your surname"
                         type="input"
                         childRef={inputRef}
@@ -54,7 +65,7 @@ function Profile() {
                     </Editable>
                     <Editable
                         className="form-group"
-                        text={email}
+                        text={data.email}
                         placeholder="Enter your email"
                         type="input"
                         childRef={inputRef}
@@ -74,7 +85,7 @@ function Profile() {
                     </Editable>
                     <Editable
                         className="form-group"
-                        text={username}
+                        text={data.username}
                         placeholder="Enter your username"
                         type="input"
                         childRef={inputRef}
@@ -94,7 +105,7 @@ function Profile() {
                     </Editable>
                     <Editable
                         className="form-group"
-                        text={password}
+                        text={data.password}
                         placeholder="Enter your password"
                         type="input"
                         childRef={inputRef}
@@ -114,7 +125,7 @@ function Profile() {
                     </Editable>
                     <Editable
                         className="form-group"
-                        text={phoneNumber}
+                        text={data.phoneNumber}
                         placeholder="Enter your Phone"
                         type="input"
                         childRef={inputRef}

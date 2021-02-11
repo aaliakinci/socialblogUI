@@ -1,5 +1,4 @@
 import { useState, createContext, useEffect } from 'react'
-import axios from 'axios'
 import BlogContext from '../BlogContext/BlogContext';
 const UserInfoContext = createContext({});
 
@@ -11,6 +10,8 @@ export const UserInforProvider = ({ children }) => {
     const [password, setPassword] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [gender, setGenter] = useState(false);
+
+
 
     const values = {
         name,
