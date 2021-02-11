@@ -21,7 +21,7 @@ const BlogPage = () => {
 
 	return (
 		<>
-			<section className="blog-posts" style={{ paddingTop: '150px' }}>
+			<section className="blog-posts">
 				<div className="container">
 					<div className="row">
 						<div className="col-lg-8">
