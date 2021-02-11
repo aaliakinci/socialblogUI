@@ -1,41 +1,36 @@
-import { useState, useRef } from 'react'
+import { useContext, useRef } from 'react'
 import Editable from "./Editable";
+import UserInfoContext from '../../Contexts/UserInfoContext/UserInfoContext'
+
 
 function Profile() {
+    const { name, surname, username, setUsername, setSurname, setName, email, setEmail, setPhoneNumber, phoneNumber, setPassword, password, gender, setGender } = useContext(UserInfoContext)
     // State for the input
     const inputRef = useRef();
-    const [name, setName] = useState("");
-    const [surname, setSurname] = useState("");
-    const [email, setEmail] = useState("");
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
-    const [gender, setGenter] = useState(false);
-
     return (
         <div style={{ paddingTop: '150px' }} className="row d-flex align-items-center justify-content-center">
             <div className="col-12 col-lg-4 col-sm-6">
                 <form action="" style={{ border: '2px solid black', padding: '20px', height: '500px' }} className="card d-flex">
-                <div className="form-group">
-                    <label className="d-inline">Name</label>
-                    <Editable
-                        text={name}
-                        placeholder="Enter your name"
-                        type="input"
-                        childRef={inputRef}
-                    >
-                        {/* <label htmlFor="name" className="form-label mr-3">Name</label> */}
-                        <input
-                            id="name"
-                            ref={inputRef}
-                            type="text"
-                            name="name"
+                    <div className="form-group">
+                        <label className="d-inline">Name</label>
+                        <Editable
+                            text={name}
                             placeholder="Enter your name"
-                            value={name}
-                            className="form-control"
-                            onChange={e => setName(e.target.value)}
-                        />
-                    </Editable>
+                            type="input"
+                            childRef={inputRef}
+                        >
+                            {/* <label htmlFor="name" className="form-label mr-3">Name</label> */}
+                            <input
+                                id="name"
+                                ref={inputRef}
+                                type="text"
+                                name="name"
+                                placeholder="Enter your name"
+                                value={name}
+                                className="form-control"
+                                onChange={e => setName(e.target.value)}
+                            />
+                        </Editable>
                     </div>
                     <Editable
                         className="form-group"
