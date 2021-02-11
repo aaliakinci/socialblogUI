@@ -15,7 +15,7 @@ function Header() {
 	useEffect(() => {
 		const result = isCookie('user');
 		setIsUser(result);
-	}, [setIsUser, isUserCookie]);
+	}, [setIsUser, isUserCookie, isCookie]);
 
 	useEffect(() => {
 		if (isUser === 1) {
@@ -27,14 +27,14 @@ function Header() {
 		}
 	}, [isUser, isUserCookie, userFromCookie, setUser]);
 	return (
-		<header className="">
-			<nav className="navbar navbar-expand-lg">
-				<div className="container">
+		<header className=" sticky-top">
+			<div className="container-md p-0">
+				<nav className="navbar navbar-expand-sm p-0">
 					<a href="/" className="navbar-brand">
-						<img src={Logo} alt="" />
+						<img src={Logo} className="mt-3" alt="" />
 					</a>
 					<button
-						className="navbar-toggler collapsed"
+						className="navbar-toggler"
 						type="button"
 						data-toggle="collapse"
 						data-target="#navbarResponsive"
@@ -87,9 +87,9 @@ function Header() {
 							)}
 						</ul>
 					</div>
-				</div>
-			</nav>
-		</header>
+				</nav>
+			</div>
+		</header >
 	);
 }
 export default Header;
