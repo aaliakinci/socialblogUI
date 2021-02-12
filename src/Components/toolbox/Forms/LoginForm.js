@@ -14,8 +14,7 @@ function LoginForm() {
 
 	const result = isCookie('user');
 	if(result===1)return <Redirect to="/"/>
-
-
+	
 	const handleSubmit = async(e) => {
 		e.preventDefault();
 		if(userDataLogin.username===""||userDataLogin.password==="")setErrorMessage('* ile işaretli alanlar boş bırakılamaz !')
