@@ -12,6 +12,7 @@ import Profile from './Components/Profile/index'
 import TextEditor from './Components/TextEditor';
 import { Switch, Route } from 'react-router-dom';
 import UserPage from './Views/UserPage';
+import HashtagArticle from './Components/HashtagArticle';
 function App() {
 	return (
 		<>
@@ -25,6 +26,7 @@ function App() {
 				<Route path="/user/:username" component={UserDetail} />
 				<Route path="/articles/:username" component={UserPage} />
 				<Route path="/write-article" component={TextEditor} />
+				<Route path="/hashtag/:id" component={HashtagArticle} />
 			</Switch>
 			<Footer />
 		</>
