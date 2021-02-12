@@ -11,7 +11,6 @@ export const BlogProvider = ({ children }) => {
 		const url = `${process.env.REACT_APP_DEPLOY_URL}/articles/reactionPoint`
 		console.log(url);
 		const articles = axios.get(url);
-
 		articles
 			.then((res) => {
 				return res;

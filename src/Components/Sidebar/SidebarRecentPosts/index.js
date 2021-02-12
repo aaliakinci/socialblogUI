@@ -1,7 +1,14 @@
 import React from 'react';
 import './recentPosts.css'
+import { useContext, useState, useEffect } from 'react' 
+import Card from '../../Card/recentPostsCard'
+
+import BlogContext from '../../../Contexts/BlogContext';
 
 export default function SidebarRecentPosts() {
+
+    const { articles } = useContext(BlogContext);
+
     return (
         <div className="sidebar-item recent-posts">
             <div className="sidebar-heading">
@@ -12,22 +19,13 @@ export default function SidebarRecentPosts() {
                 <ul>
                     <li>
                         <a href="javascript">
-                            <h5>Vestibulum id turpis porttitor sapien facilisis scelerisque</h5>
-                            <span>May 31, 2020</span>
+                        {articles.length && articles.map(article => {
+                                            console.log(article)
+                                            return <Card key={article._id} id={article._id} title={article.title}  createAt={article.createAt} user={article.user_id} />
+                                        })}
                         </a>
                     </li>
-                    <li>
-                        <a href="javascript">
-                            <h5>Vestibulum id turpis porttitor sapien facilisis scelerisque</h5>
-                            <span>May 31, 2020</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript">
-                            <h5>Vestibulum id turpis porttitor sapien facilisis scelerisque</h5>
-                            <span>May 31, 2020</span>
-                        </a>
-                    </li>
+                 
                 </ul>
             </div>
         </div>
