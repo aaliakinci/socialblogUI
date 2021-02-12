@@ -3,7 +3,6 @@ import './userProfile.css'
 
 import img1 from '../../assets/images/comment-author-01.jpg';
 function UserProfileBanner({ user }) {
-	console.log(user);
 	return (
 		<>
 			{
@@ -17,6 +16,7 @@ function UserProfileBanner({ user }) {
 									className="img-responsive"
 									alt=""
 								/>
+
 							</div>
 							<div className="user-info-text">
 								<div className="d-flex">

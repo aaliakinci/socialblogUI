@@ -55,7 +55,7 @@ function RegisterForm() {
 		data.append('gender', gender);
 		data.append('profilPicture', file);
 		const config = {
-			headers: { 'content-type': 'multipart/form-data'},
+			headers: { 'content-type': 'multipart/form-data' },
 		};
 
 		const response = await axios.post(`${process.env.REACT_APP_DEPLOY_URL}/users/register`, data, config);
@@ -66,7 +66,7 @@ function RegisterForm() {
 		console.log(response);
 		if (response.data.token) {
 			setUserCookie('user', response.data.token);
-			window.location.href = '/';
+			window.location.to = '/';
 		}
 	};
 

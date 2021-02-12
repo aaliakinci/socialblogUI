@@ -2,6 +2,7 @@ import React from 'react'
 import OwlCarousel from "react-owl-carousel";
 import './banner.css'
 import '../../assets/css/owl.css'
+import { Link } from 'react-router-dom'
 import BannerItem1 from '../../assets/images/banner-item-01.jpg'
 import BannerItem2 from '../../assets/images/banner-item-02.jpg'
 import BannerItem3 from '../../assets/images/banner-item-03.jpg'
@@ -40,13 +41,13 @@ export default function Banner() {
                                     <div className="meta-category">
                                         <span>Fashion</span>
                                     </div>
-                                    <a href="javascript">
+                                    <Link to="javascript">
                                         <h4>Morbi dapibus condimentum</h4>
-                                    </a>
+                                    </Link>
                                     <ul className="post-info">
-                                        <li><a href="javascript">Admin</a></li>
-                                        <li><a href="javascript"> May 12, 2020</a></li>
-                                        <li><a href="javascript"> 12 Comments</a></li>
+                                        <li><Link to="javascript">Admin</Link></li>
+                                        <li><Link to="javascript"> May 12, 2020</Link></li>
+                                        <li><Link to="javascript"> 12 Comments</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -58,17 +59,17 @@ export default function Banner() {
                                     <div className="meta-category">
                                         <span>Fashion</span>
                                     </div>
-                                    <a href="javascript">
+                                    <Link to="javascript">
                                         <h4>Morbi dapibus condimentum</h4>
-                                    </a>
+                                    </Link>
                                     <ul className="post-info">
-                                        <li><a href="javascript">Admin</a></li>
-                                        <li><a href="javascript"> May 12, 2020</a></li>
-                                        <li><a href="javascript"> 12 Comments</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                                        <li><Link to="javascript">Admin</Link></li>
+                                        <li><Link to="javascript"> May 12, 2020</Link></li>
+                                        <li><Link to="javascript"> 12 Comments</Link></li>
+                                    </ul >
+                                </div >
+                            </div >
+                        </div >
                         <div className="item">
                             <img className="img" alt="" src={BannerItem3} />
                             <div className="item-content">
@@ -76,17 +77,17 @@ export default function Banner() {
                                     <div className="meta-category">
                                         <span>Fashion</span>
                                     </div>
-                                    <a href="javascript">
+                                    <Link to="javascript">
                                         <h4>Morbi dapibus condimentum</h4>
-                                    </a>
+                                    </Link>
                                     <ul className="post-info">
-                                        <li><a href="javascript">Admin</a></li>
-                                        <li><a href="javascript"> May 12, 2020</a></li>
-                                        <li><a href="javascript"> 12 Comments</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                                        <li><Link to="javascript">Admin</Link></li>
+                                        <li><Link to="javascript"> May 12, 2020</Link></li>
+                                        <li><Link to="javascript"> 12 Comments</Link></li>
+                                    </ul >
+                                </div >
+                            </div >
+                        </div >
                         <div className="item">
                             <img className="img" alt="" src={BannerItem4} />
                             <div className="item-content">
@@ -94,17 +95,17 @@ export default function Banner() {
                                     <div className="meta-category">
                                         <span>Fashion</span>
                                     </div>
-                                    <a href="javascript">
+                                    <Link to="javascript">
                                         <h4>Morbi dapibus condimentum</h4>
-                                    </a>
+                                    </Link>
                                     <ul className="post-info">
-                                        <li><a href="javascript">Admin</a></li>
-                                        <li><a href="javascript"> May 12, 2020</a></li>
-                                        <li><a href="javascript"> 12 Comments</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                                        <li><Link to="javascript">Admin</Link></li>
+                                        <li><Link to="javascript"> May 12, 2020</Link></li>
+                                        <li><Link to="javascript"> 12 Comments</Link></li>
+                                    </ul >
+                                </div >
+                            </div >
+                        </div >
                         <div className="item">
                             <img className="img" alt="" src={BannerItem5} />
                             <div className="item-content">
@@ -112,17 +113,17 @@ export default function Banner() {
                                     <div className="meta-category">
                                         <span>Fashion</span>
                                     </div>
-                                    <a href="javascript">
+                                    <Link to="javascript">
                                         <h4>Morbi dapibus condimentum</h4>
-                                    </a>
+                                    </Link>
                                     <ul className="post-info">
-                                        <li><a href="javascript">Admin</a></li>
-                                        <li><a href="javascript"> May 12, 2020</a></li>
-                                        <li><a href="javascript"> 12 Comments</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                                        <li><Link to="javascript">Admin</Link></li>
+                                        <li><Link to="javascript"> May 12, 2020</Link></li>
+                                        <li><Link to="javascript"> 12 Comments</Link></li>
+                                    </ul >
+                                </div >
+                            </div >
+                        </div >
                         <div className="item">
                             <img className="img" alt="" src={BannerItem6} />
                             <div className="item-content">
@@ -130,20 +131,20 @@ export default function Banner() {
                                     <div className="meta-category">
                                         <span>Fashion</span>
                                     </div>
-                                    <a href="javascript">
+                                    <Link to="javascript">
                                         <h4>Morbi dapibus condimentum</h4>
-                                    </a>
+                                    </Link>
                                     <ul className="post-info">
-                                        <li><a href="javascript">Admin</a></li>
-                                        <li><a href="javascript"> May 12, 2020</a></li>
-                                        <li><a href="javascript"> 12 Comments</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </OwlCarousel>
-                </div>
-            </div>
-        </div>
+                                        <li><Link to="javascript">Admin</Link></li>
+                                        <li><Link to="javascript"> May 12, 2020</Link></li>
+                                        <li><Link to="javascript"> 12 Comments</Link></li>
+                                    </ul >
+                                </div >
+                            </div >
+                        </div >
+                    </OwlCarousel >
+                </div >
+            </div >
+        </div >
     )
 }

@@ -17,14 +17,13 @@ function Profile() {
         }
         getUser();
     }, [setData])
-    console.log(data)
     const inputRef = useRef();
     return (
         <div className="row d-flex align-items-center justify-content-center">
             <div className="col-12 col-lg-4 col-sm-6">
                 <form action="" className="card d-flex user-form">
                     <div className="ml-auto mr-auto">
-                        {/* <img src={data} alt="" className="user-image" /> */}
+                        <img src={img1} alt="" className="user-image" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="name" className="form-label mr-3 d-inline">Ad:</label>

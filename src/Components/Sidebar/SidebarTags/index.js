@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import './sidebarTags.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import HashtagContext from '../../../Contexts/HashtagContext/hashtagContext';
 import Loading from '../../Loading';
 function SidebarTags() {
@@ -22,7 +22,7 @@ function SidebarTags() {
 				<ul>
 					{hashtags.length > 0
 						? hashtags.map((hashtag) => <li><Link to={`/hashtag/${hashtag._id}`}>{hashtag.body}</Link></li>)
-						: <Loading/>}
+						: <Loading />}
 				</ul>
 			</div>
 		</div>

@@ -31,9 +31,9 @@ function Header() {
 		<header className=" sticky-top">
 			<div className="container-md p-0">
 				<nav className="navbar navbar-expand-sm p-0">
-					<a href="/" className="navbar-brand">
+					<Link to="/" className="navbar-brand">
 						<img src={Logo} className="mt-3" alt="" />
-					</a>
+					</Link>
 					<button
 						className="navbar-toggler"
 						type="button"
@@ -87,9 +87,9 @@ function Header() {
 								</>
 							)}
 						</ul>
-					</div>
-				</nav>
-			</div>
+					</div >
+				</nav >
+			</div >
 		</header >
 	);
 }
