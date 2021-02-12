@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import styles from './styles.module.css';
-function SearchBar({ setSelectedData, data,returnValue,searchValue,holder}) {
+function SearchBar({ setSelectedData, data, returnValue, searchValue, holder }) {
 	const [search, setSearch] = useState('');
 	const [filterData, setFilterData] = useState([]);
 
-	const changeFilter = (searchValue,returnValue) => {
+	const changeFilter = (searchValue, returnValue) => {
 		if (filterData.length > 0) {
 			if (filterData.length < 2 && search === filterData[0][searchValue]) {
 				setSelectedData(filterData[0][returnValue]);
@@ -20,7 +20,7 @@ function SearchBar({ setSelectedData, data,returnValue,searchValue,holder}) {
 		);
 	};
 	useEffect(() => {
-		fetchData(searchValue,returnValue);
+		fetchData(searchValue, returnValue);
 		changeFilter(searchValue);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [search]);
