@@ -17,6 +17,7 @@ function UserProfileBanner({ user }) {
 									className="img-responsive"
 									alt=""
 								/>
+
 							</div>
 							<div className="user-info-text">
 								<div className="d-flex">

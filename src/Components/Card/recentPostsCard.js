@@ -1,17 +1,18 @@
 import React from 'react'
 import './blogCard.css'
 import moment from "moment";
+import { Link } from 'react-router-dom'
 //import blogPost02 from '../../assets/images/blog-post-02.jpg';
 
 function BlogCard2({ title, description, content, user, createAt, id, hashtags }) {
 
     return (
-            <div >
-                <a href={`/article/${id}`}>
+        <div >
+            <Link to={`/article/${id}`}>
                 <h5>{title}</h5>
-                <span href="javascript">  {moment({createAt}).format("l")} </span>
-                 </a>
-            </div>
+                <span>{moment({ createAt }).format("l")} </span>
+            </Link>
+        </div>
     )
 }
 export default BlogCard2
