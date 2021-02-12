@@ -15,7 +15,7 @@ function PreviewArticle({ title, content, image }) {
 		<div
 			className="modal fade"
 			id="exampleModalLong"
-			tabindex="-1"
+			tabIndex="-1"
 			role="dialog"
 			aria-labelledby="exampleModalLongTitle"
 			aria-hidden="true"
@@ -33,7 +33,7 @@ function PreviewArticle({ title, content, image }) {
 					</div>
 					<div className="modal-body">
 						{
-							image !== undefined && <img src={handleImagePreview()} className="img-fluid" id="previewImg" style={{ width: '100%', height: '150px' }} />
+							image !== undefined && <img src={handleImagePreview()} className="img-fluid" alt="" id="previewImg" style={{ width: '100%', height: '150px' }} />
 						}
 						<div className="modal-body" id="previewContent"></div>
 					</div>
