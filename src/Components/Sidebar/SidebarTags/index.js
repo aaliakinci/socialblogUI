@@ -20,8 +20,8 @@ function SidebarTags() {
 			</div>
 			<div className="content">
 				<ul>
-					{hashtags.length > 0
-						? hashtags.map((hashtag) => <li><Link to={`/hashtag/${hashtag._id}`}>{hashtag.body}</Link></li>)
+					{hashtags.length && hashtags.length > 0
+						? hashtags.map((hashtag) => <li key={hashtag._id}><Link to={`/hashtag/${hashtag._id}`}>{hashtag.body}</Link></li>)
 						: <Loading />}
 				</ul>
 			</div>
