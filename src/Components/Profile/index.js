@@ -1,29 +1,32 @@
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useRef, useContext, useState, useEffect } from 'react'
 import Editable from "./Editable";
-import axios from 'axios'
-import UserInfoContext from '../../Contexts/UserInfoContext/UserInfoContext'
 import './profile.css';
 import img1 from '../../assets/images/comment-author-01.jpg';
+import CookieContext from '../../Contexts/CookieContext/cookieContext';
+import BlogContext from '../../Contexts/BlogContext/BlogContext';
+
 
 function Profile() {
-    const [data, setData] = useState([]);
-    const { name, surname, username, setUsername, setSurname, setName, email, setEmail, setPhoneNumber, phoneNumber, setPassword, password, gender, setGender } = useContext(UserInfoContext)
-    // State for the input
+    const { userFromCookie } = useContext(CookieContext);
+    const { getUserbyUsername } = useContext(BlogContext);
+    const [data, setData] = useState({});
+    const user = userFromCookie('user');
+    const username = user.username;
     useEffect(() => {
-        const getUser = async () => {
-            const data = await axios(`${process.env.REACT_APP_DEPLOY_URL}/users/aliiakinci`)
-            const user = data.data[0];
-            setData(user);
+        const fetchUserInfo = async () => {
+            const userInfo = await getUserbyUsername(username);
+            setData(userInfo[0]);
         }
-        getUser();
-    }, [setData])
+        fetchUserInfo();
+    }, [getUserbyUsername, username]);
+    console.log(data)
     const inputRef = useRef();
     return (
         <div className="row d-flex align-items-center justify-content-center">
             <div className="col-12 col-lg-4 col-sm-6">
                 <form action="" className="card d-flex user-form">
                     <div className="ml-auto mr-auto">
-                        <img src={img1} alt="" className="user-image" />
+                        <img src={data.profilPicture} alt="" className="user-image img-responsive" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="name" className="form-label mr-3 d-inline">Ad:</label>
@@ -40,9 +43,8 @@ function Profile() {
                                 type="text"
                                 name="name"
                                 placeholder="Adınızı giriniz"
-                                value={name}
+                                value={data.name}
                                 className="form-control mt-2"
-                                onChange={e => setName(e.target.value)}
                             />
                         </Editable>
                     </div>
@@ -62,9 +64,8 @@ function Profile() {
                                 type="text"
                                 name="surname"
                                 placeholder="Soyadınızı giriniz"
-                                value={surname}
+                                value={data.surname}
                                 className="form-control mt-2"
-                                onChange={e => setSurname(e.target.value)}
                             />
                         </Editable>
                     </div>
@@ -84,53 +85,8 @@ function Profile() {
                                 type="email"
                                 name="email"
                                 placeholder="Email adresinizi giriniz"
-                                value={email}
+                                value={data.email}
                                 className="form-control mt-2"
-                                onChange={e => setEmail(e.target.value)}
-                            />
-                        </Editable>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="username" className="form-label d-inline mr-3">Kullanıcı Adı:</label>
-                        <Editable
-                            className="d-inline"
-                            text={data.username}
-                            placeholder="Kullanıcı adınızı giriniz"
-                            type="input"
-                            childRef={inputRef}
-                            style={{ width: '100%' }}
-                        >
-                            <input
-                                id="username"
-                                ref={inputRef}
-                                type="text"
-                                name="username"
-                                placeholder="Kullanıcı adınızı giriniz"
-                                value={username}
-                                className="form-control mt-2"
-                                onChange={e => setUsername(e.target.value)}
-                            />
-                        </Editable>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="password" className="form-label d-inline mr-3">Şifre:</label>
-                        <Editable
-                            className="d-inline"
-                            text={data.password}
-                            placeholder="Şifrenizi giriniz"
-                            type="input"
-                            childRef={inputRef}
-                            style={{ width: '100%' }}
-                        >
-                            <input
-                                id="password"
-                                ref={inputRef}
-                                type="password"
-                                name="password"
-                                placeholder="Şifrenizi giriniz"
-                                value={password}
-                                className="form-control mt-2"
-                                onChange={e => setPassword(e.target.value)}
                             />
                         </Editable>
                     </div>
@@ -151,17 +107,28 @@ function Profile() {
                                 type="tel"
                                 name="phoneNumber"
                                 placeholder="Telefon numaranızı giriniz"
-                                value={phoneNumber}
+                                // value={userInfo.phoneNumber}
                                 className="form-control mt-2"
-                                onChange={e => setPhoneNumber(e.target.value)}
                             />
                         </Editable>
                     </div>
-                    <select name="gender" id="gender" className="p-2">
-                        <option value="--">Cinsiyet Giriniz</option>
-                        <option value="Kadın">Kadın</option>
-                        <option value="Erkek">Erkek</option>
-                    </select>
+                    <div className="form-group border-0 p-0 m-0">
+                        <label className="d-inline mr-2">Male</label>
+                        <input
+                            className="d-inline mr-4"
+                            type="radio"
+                            name="gender"
+                            value="male"
+                            checked={data.gender === "Kadın"}
+                        />
+                        <label className="d-inline mr-2">Female</label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="female"
+                            checked={data.gender === "Erkek"}
+                        />
+                    </div>
                 </form>
             </div>
         </div>

@@ -1,15 +1,15 @@
-import {useEffect,useState,useContext} from 'react';
+import { useEffect, useState, useContext } from 'react';
 import CookieContext from '../../Contexts/CookieContext/cookieContext';
 import Follow from '../Follow';
 import './userProfile.css'
 
 function UserProfileBanner({ user }) {
 	const [cookieUser, setCookieUser] = useState({})
-	const {userFromCookie} = useContext(CookieContext);
+	const { userFromCookie } = useContext(CookieContext);
 	useEffect(() => {
 		const userCookie = userFromCookie('user');
-	  setCookieUser(userCookie);
-	}, [])
+		setCookieUser(userCookie);
+	}, [userFromCookie])
 	return (
 		<>
 			{
@@ -30,14 +30,21 @@ function UserProfileBanner({ user }) {
 										<span className="user-name">{user.name} {user.surname}</span>
 									</div>
 									{
-										user._id!==cookieUser._id?<Follow user={user} cookieUser={cookieUser}/>:""
+										user._id !== cookieUser._id ? <Follow user={user} cookieUser={cookieUser} /> : ""
 									}
 								</div>
-								<div className="create-at">
-									{user.createAt}
+								<div className="message-btn">
+									<button>Message</button>
 								</div>
 							</div>
+							<div className="create-at">
+								{user.createAt}
+							</div>
 						</div>
+					</div>
+					<div className="d-flex align-items-end">
+						<i class="fa fa-users fa-2x friends"></i>
+						<i class="fa fa-heart fa-2x likes"></i>
 					</div>
 				</div>
 			}

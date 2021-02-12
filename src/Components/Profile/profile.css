@@ -10,8 +10,6 @@
 	border-radius: 0;
 }
 .user-image {
-	width: 120px;
 	border-radius: 50%;
 	border: 5px solid lightgreen;
-	margin-bottom: 20px;
 }
