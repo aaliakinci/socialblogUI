@@ -1,9 +1,9 @@
 import React from 'react';
 import './recentPosts.css'
-import { useContext, useState, useEffect } from 'react' 
+import { useContext, useState, useEffect } from 'react'
 import Card from '../../Card/recentPostsCard'
 
-import BlogContext from '../../../Contexts/BlogContext';
+import BlogContext from '../../../Contexts/BlogContext/BlogContext';
 
 export default function SidebarRecentPosts() {
 
@@ -19,13 +19,13 @@ export default function SidebarRecentPosts() {
                 <ul>
                     <li>
                         <a href="javascript">
-                        {articles.length && articles.map(article => {
-                                            console.log(article)
-                                            return <Card key={article._id} id={article._id} title={article.title}  createAt={article.createAt} user={article.user_id} />
-                                        })}
+                            {articles.length && articles.map(article => {
+                                console.log(article)
+                                return <Card key={article._id} id={article._id} title={article.title} createAt={article.createAt} user={article.user_id} />
+                            })}
                         </a>
                     </li>
-                 
+
                 </ul>
             </div>
         </div>
