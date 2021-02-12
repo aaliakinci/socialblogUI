@@ -1,0 +1,125 @@
+.user-info-card {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+	border-radius: 0;
+}
+.user-info {
+	align-items: center;
+	display: inline-flex;
+}
+.img-responsive {
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+}
+.user-info-text {
+	margin-left: 12px;
+	width: 100%;
+	display: block;
+}
+.user-info-text div div .user-info-text {
+	color: rgba(41, 41, 41, 1);
+	line-height: 20px;
+	font-size: 20px;
+	font-weight: 400;
+}
+span.user-name {
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	display: -webkit-box;
+	max-height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: rgba(41, 41, 41, 1);
+	line-height: 20px;
+	font-size: 14px;
+	font-weight: 400;
+}
+.follow-btn {
+	margin-left: 8px;
+	flex: 0 0 auto;
+	display: block;
+}
+.follow-btn button {
+	padding: 0px 8px 1px;
+	border: 1px solid rgb(26, 137, 23);
+	border-radius: 4px;
+	line-height: 20px;
+	display: inline-block;
+	font-weight: 400;
+	background: rgb(26, 137, 23);
+	fill: white;
+	color: white;
+	font-size: 13px;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+.message-btn button {
+	margin-left: 4px;
+	padding: 0px 8px 1px;
+	border: 1px solid red;
+	border-radius: 4px;
+	line-height: 20px;
+	display: inline-block;
+	font-weight: 400;
+	background: red;
+	fill: white;
+	color: white;
+	font-size: 13px;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+.create-at {
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	display: -webkit-box;
+	max-height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: rgba(117, 117, 117, 1);
+	line-height: 20px;
+	font-size: 14px;
+	font-weight: 400;
+}
+.like-icon {
+	content: "\f184";
+	color: black;
+	font-size: 30px;
+	line-height: 30px;
+	font-family: "FontAwesome";
+}
+/* .profileUserpic img {
+	float: none;
+	margin: 0 auto;
+	width: 50%;
+	height: 50%;
+	-webkit-border-radius: 50% !important;
+	-moz-border-radius: 50% !important;
+	border-radius: 50% !important;
+} */
+/* .profileUsertitle {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.profileUsertitleName {
+	color: #5a7391;
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 7px;
+}
+
+.profileUsertitleJob {
+	text-transform: uppercase;
+	color: #5b9bd1;
+	font-size: 12px;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+
+.profileUserbuttons {
+	text-align: center;
+	margin-top: 10px;
+} */

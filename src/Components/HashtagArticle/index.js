@@ -1,20 +1,22 @@
-
-import React, { useContext } from 'react'
-import Card from '../../Components/Card'
-import Sidebar from '../../Components/Sidebar'
-import Banner from '../../Components/Banner';
-import MainButton from '../../Components/MainButton'
-import './homepage.css'
-import BlogContext from '../../Contexts/BlogContext/BlogContext';
-
-
-
-export default function HomePage() {
-    const { articles, setArticles } = useContext(BlogContext);
-    return (
-        <>
-            <Banner />
-            <section className="blog-posts">
+import {useEffect,useState,useContext} from 'react'
+import {useParams} from 'react-router-dom';
+import HashtagContext from '../../Contexts/HashtagContext/hashtagContext';
+import Card from '../Card';
+import MainButton from '../MainButton';
+import Sidebar from '../Sidebar/index';
+function HashtagArticle() {
+	const {id} = useParams();
+	const {getArticleByHashtagId}=useContext(HashtagContext);
+	const [articles, setArticles] = useState([])
+	useEffect(() => {
+		 const fetchArticleByHashtagId = async() =>{
+			const articles = await getArticleByHashtagId(id);
+			setArticles(articles)
+		 }
+		 fetchArticleByHashtagId();
+	}, [])
+	return (
+		<section className="blog-posts">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8 col-12">
@@ -37,6 +39,7 @@ export default function HomePage() {
                     </div >
                 </div >
             </section >
-        </>
-    )
+	)
 }
+
+export default HashtagArticle

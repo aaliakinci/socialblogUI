@@ -1,6 +1,7 @@
 import React from 'react';
 import RegisterForm from '../../Components/toolbox/Forms/RegisterForm';
 import './styles.css';
+import { Link } from 'react-router-dom'
 function index() {
 	return (
 		<section className="blog-posts">
@@ -17,7 +18,7 @@ function index() {
 					</div>
 					<div className="col-12 my-3">
 						<p className="lead text-center" style={{ fontSize: '12px' }}>
-							Zaten üye misiniz ? Giriş yapmak için <a href="/login">tıklayınız</a>{' '}
+							Zaten üye misiniz ? Giriş yapmak için <Link to="/login">tıklayınız</Link>{' '}
 						</p>
 					</div>
 				</div>

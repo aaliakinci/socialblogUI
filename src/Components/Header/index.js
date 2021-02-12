@@ -3,6 +3,7 @@ import './header.css';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/images/logo.jpg';
 import CookieContext from '../../Contexts/CookieContext/cookieContext';
+import HeaderProfil from '../HeaderProfil';
 function Header() {
 	const { isUserCookie, isCookie, userFromCookie } = useContext(CookieContext);
 	const [isUser, setIsUser] = useState(0);
@@ -15,7 +16,7 @@ function Header() {
 	useEffect(() => {
 		const result = isCookie('user');
 		setIsUser(result);
-	}, [setIsUser, isUserCookie]);
+	}, [setIsUser, isUserCookie, isCookie]);
 
 	useEffect(() => {
 		if (isUser === 1) {
@@ -27,14 +28,14 @@ function Header() {
 		}
 	}, [isUser, isUserCookie, userFromCookie, setUser]);
 	return (
-		<header className="">
-			<nav className="navbar navbar-expand-lg">
-				<div className="container">
-					<a href="/" className="navbar-brand">
-						<img src={Logo} alt="" />
-					</a>
+		<header className=" sticky-top">
+			<div className="container-md p-0">
+				<nav className="navbar navbar-expand-sm p-0">
+					<Link to="/" className="navbar-brand">
+						<img src={Logo} className="mt-3" alt="" />
+					</Link>
 					<button
-						className="navbar-toggler collapsed"
+						className="navbar-toggler"
 						type="button"
 						data-toggle="collapse"
 						data-target="#navbarResponsive"
@@ -67,12 +68,12 @@ function Header() {
 							)}
 							{isUser === 1 && (
 								<>
-									<li className="nav-item">
+									<li className="nav-item d-flex align-items-center">
 										<Link
 											to="/write-article"
 											className="nav-link d-flex align-items-center bg-info	px-4 rounded"
 										>
-											<i className="fa fa-edit fa-2x text-danger"></i>Yazı Yaz
+											<i className="fa fa-edit fa-2x text-danger"></i>
 										</Link>
 									</li>
 									<li className="nav-item">
@@ -80,16 +81,16 @@ function Header() {
 											to={`/articles/${user.username}`}
 											className="nav-link d-flex align-items-center"
 										>
-											<i className="fa fa-user fa-2x "></i>Profil
+											<HeaderProfil user={user}/>
 										</Link>
 									</li>
 								</>
 							)}
 						</ul>
-					</div>
-				</div>
-			</nav>
-		</header>
+					</div >
+				</nav >
+			</div >
+		</header >
 	);
 }
 export default Header;

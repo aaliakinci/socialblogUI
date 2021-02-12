@@ -7,7 +7,7 @@ function Comment({ comment }) {
 	return (
 		<li className="d-flex align-items-center">
 			<div className="author-thumb">
-				<img src={user.profilPicture} alt="" />
+				<img src={user.profilPicture} className="img-responsive" alt="" />
 			</div>
 			<div className="right-content">
 				<h4>
