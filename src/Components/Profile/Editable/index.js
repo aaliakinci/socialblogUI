@@ -15,24 +15,24 @@ export default function Editable({ childRef, text, type, placeholder, children, 
             setEditing(false);
         }
     };
-    // useEffect(() => {
-    //     if (childRef && childRef.current && isEditing === true) {
-    //         childRef.current.focus();
-    //     }
-    // }, [isEditing, childRef]);
+    useEffect(() => {
+        if (childRef && childRef.current && isEditing === true) {
+            childRef.current.focus();
+        }
+    }, [isEditing, childRef]);
     return (
         <section {...props} >
             {isEditing ? (
                 <div
                     onBlur={() => setEditing(false)}
                     onKeyDown={e => handleKeyDown(e, type)}
-                    style={{width:'100%'}}
                 >
                     {children}
                 </div>
             ) : (
                 <div
-                    onClick={() => setEditing(true)} style={{textAlign:'left',width:'100%'}}
+                    className="d-inline"
+                    onClick={() => setEditing(true)}
                 >
                     <span>
                         {text || placeholder}
