@@ -10,6 +10,8 @@ function BlogCard2({ title, description, content, user, createAt, id, hashtags }
         <div >
             <Link to={`/article/${id}`}>
                 <h5>{title}</h5>
+                <p>{description}</p>
+                <p>{content}</p>
                 <span>{moment({ createAt }).format("l")} </span>
             </Link>
         </div>

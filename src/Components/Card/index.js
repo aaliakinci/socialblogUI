@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 function BlogCard({ title, description, content, user, createAt, id, hashtags }) {
 	const { getLikesByArticleId } = useContext(LikeContext)
 	const [likes, setLikes] = useState()
-	console.log(id);
 	useEffect(() => {
 		const fetchLikes = async () => {
 			const likes = await getLikesByArticleId(id)
