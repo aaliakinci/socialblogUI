@@ -1,35 +1,43 @@
 import React from 'react';
-import styles from './styles.module.css'
-function UserProfileBanner({user}) {
+import './userProfile.css'
+
+import img1 from '../../assets/images/comment-author-01.jpg';
+function UserProfileBanner({ user }) {
 	console.log(user);
 	return (
 		<>
 			{
-				user && 
-				<>
-				<div class={`d-flex justify-content-center ${styles.profileUserpic}`}>
-				<img
-					src={user.profilPicture}
-					class="img-responsive"
-					alt=""
-				/>
-			</div>
-
-			<div class={`${styles.profileUsertitle}`}>
-				<div class={`${styles.profileUsertitleName}`}>{user.name} {user.surname}</div>
-				<div class={`${styles.profileUsertitleJob}`}>Developer</div>
-			</div>
-
-			<div class={`${styles.profileUserbuttons}`}>
-				<button type="button" class="btn btn-success btn-sm mr-3">
-					Follow
-				</button>
-				<button type="button" class="btn btn-danger btn-sm">
-					Message
-				</button>
-			</div>
-				</>
-				
+				user &&
+				<div className="user-info-card mx-0 card">
+					<div className="card-body">
+						<div className="user-info">
+							<div className="user-image profileUserpic">
+								<img
+									src={user.profilPicture}
+									className="img-responsive"
+									alt=""
+								/>
+								<img src={img1} alt="" className="img-responsive" />
+							</div>
+							<div className="user-info-text">
+								<div className="d-flex">
+									<div>
+										<span className="user-name">{user.name} {user.surname}</span>
+									</div>
+									<div className="follow-btn">
+										<button>Follow</button>
+									</div>
+									<div className="message-btn">
+										<button>Message</button>
+									</div>
+								</div>
+								<div className="create-at">
+									{user.createAt}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			}
 		</>
 	);

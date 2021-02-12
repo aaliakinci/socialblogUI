@@ -6,7 +6,7 @@ import './sidebar.css'
 
 export default function Sidebar() {
     return (
-        <div className="sidebar mt-4 mt-lg-0">
+        <div className="sidebar">
             <div className="row">
                 <div className="col-lg-12">
                     <ItemSearch />

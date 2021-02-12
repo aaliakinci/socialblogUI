@@ -1,16 +1,17 @@
+
 import React, { useContext } from 'react'
 import Card from '../../Components/Card'
 import Sidebar from '../../Components/Sidebar'
 import Banner from '../../Components/Banner';
 import MainButton from '../../Components/MainButton'
 import './homepage.css'
-import BlogContext from '../../Contexts/BlogContext';
+import BlogContext from '../../Contexts/BlogContext/BlogContext';
 
 
 
 export default function HomePage() {
     const { articles, setArticles } = useContext(BlogContext);
-     return (
+    return (
         <>
             <Banner />
             <section className="blog-posts">
