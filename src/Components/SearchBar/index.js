@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './styles.module.css';
-function SearchBar({ setSelectedData, data,returnValue,searchValue}) {
+function SearchBar({ setSelectedData, data,returnValue,searchValue,holder}) {
 	const [search, setSearch] = useState('');
 	const [filterData, setFilterData] = useState([]);
 
@@ -12,7 +12,6 @@ function SearchBar({ setSelectedData, data,returnValue,searchValue}) {
 			}
 		}
 	}
-
 	const fetchData = async (searchValue) => {
 		setFilterData(
 			data.filter((filteredData) => {
@@ -37,7 +36,7 @@ function SearchBar({ setSelectedData, data,returnValue,searchValue}) {
 	};
 	return (
 		<div className="form-group">
-			<input id="search" autoComplete="off" className="form-control" onChange={handleChange} />
+			<input id="search" autoComplete="off" className="form-control" placeholder={holder} onChange={handleChange} />
 			{filterData.length < 200 ? (
 				<ul id="hashtags" className="list-group list-group-flush">
 					{filterData.map((filteredData) => (
