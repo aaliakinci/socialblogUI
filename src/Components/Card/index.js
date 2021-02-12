@@ -6,15 +6,7 @@ import blogPost01 from '../../assets/images/blog-post-01.jpg';
 import { Link } from 'react-router-dom'
 
 function BlogCard({ title, description, content, user, createAt, id, hashtags }) {
-	const { getLikesByArticleId } = useContext(LikeContext)
-	const [likes, setLikes] = useState()
-	useEffect(() => {
-		const fetchLikes = async () => {
-			const likes = await getLikesByArticleId(id)
-			setLikes(likes)
-		}
-		fetchLikes();
-	}, [getLikesByArticleId, id])
+
 	useEffect(() => {
 		if (content !== undefined) {
 			const area = document.getElementById('contentArea');
