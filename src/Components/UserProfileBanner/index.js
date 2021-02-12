@@ -1,29 +1,37 @@
-import React from 'react';
+import { useEffect, useState, useContext } from 'react';
+import CookieContext from '../../Contexts/CookieContext/cookieContext';
+import Follow from '../Follow';
 import './userProfile.css'
 
-import img1 from '../../assets/images/comment-author-01.jpg';
 function UserProfileBanner({ user }) {
+	const [cookieUser, setCookieUser] = useState({})
+	const { userFromCookie } = useContext(CookieContext);
+	useEffect(() => {
+		const userCookie = userFromCookie('user');
+		setCookieUser(userCookie);
+	}, [userFromCookie])
 	return (
 		<>
 			{
 				user &&
-				<div className="user-info-card mx-0">
-					<div className="user-info">
-						<div className="user-image profileUserpic">
-							<img
-								src={user.profilPicture}
-								className="img-responsive"
-								alt=""
-							/>
-
-						</div>
-						<div className="user-info-text">
-							<div className="d-flex">
-								<div>
-									<span className="user-name">{user.name} {user.surname}</span>
-								</div>
-								<div className="follow-btn">
-									<button>Follow</button>
+				<div className="user-info-card mx-0 card">
+					<div className="card-body">
+						<div className="user-info">
+							<div className="user-image profileUserpic">
+								<img
+									src={user.profilPicture}
+									className="img-responsive"
+									alt=""
+								/>
+							</div>
+							<div className="user-info-text">
+								<div className="d-flex">
+									<div>
+										<span className="user-name">{user.name} {user.surname}</span>
+									</div>
+									{
+										user._id !== cookieUser._id ? <Follow user={user} cookieUser={cookieUser} /> : ""
+									}
 								</div>
 								<div className="message-btn">
 									<button>Message</button>

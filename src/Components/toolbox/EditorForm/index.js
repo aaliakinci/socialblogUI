@@ -185,7 +185,7 @@ function EditorForm() {
 				/>
 			</div>
 	 
-				<SearchBar setSelectedData={setSelectedHashtag} data={hashtags} returnValue='_id' searchValue='body'/>
+				<SearchBar setSelectedData={setSelectedHashtag} data={hashtags} returnValue='_id' searchValue='body' holder="Hashtags"/>
  
 			<div className="button-group d-flex justify-content-end">
 				<button

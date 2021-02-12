@@ -1,27 +1,19 @@
 import { useEffect, useContext, useState } from 'react'
 import LikeContext from '../../Contexts/LikeContext/likeContext';
 import './blogCard.css'
-import moment from "moment";
+import Moment from 'react-moment';
 import blogPost01 from '../../assets/images/blog-post-01.jpg';
 import { Link } from 'react-router-dom'
 
 function BlogCard({ title, description, content, user, createAt, id, hashtags }) {
-	const { getLikesByArticleId } = useContext(LikeContext)
-	const [likes, setLikes] = useState()
-	useEffect(() => {
-		const fetchLikes = async () => {
-			const likes = await getLikesByArticleId(id)
-			setLikes(likes)
-		}
-		fetchLikes();
-	}, [getLikesByArticleId, id])
+
 	useEffect(() => {
 		if (content !== undefined) {
 			const area = document.getElementById('contentArea');
 			area.innerHTML = content
 		}
 	}, [content])
-
+	
 	return (
 		<div className="blog-post">
 			<div className="blog-thumb">
@@ -36,7 +28,10 @@ function BlogCard({ title, description, content, user, createAt, id, hashtags })
 					{
 						user && <Link to={`/articles/${user[0].username}`} className="link">{user[0].username}</Link>
 					}
-					<li><Link to="javascript">{createAt} </Link></li>
+					<li>
+						<Moment format="YYYY/MM/DD"> 
+						{createAt}
+						</Moment></li>
 					<li><Link to="javascript">12 Comments</Link></li>
 				</ul>
 				<p>{description}</p>
