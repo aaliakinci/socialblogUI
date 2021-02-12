@@ -26,7 +26,7 @@ const BlogPage = () => {
 		response.then((data) => setArticle(data[0]));
 		const user = userFromCookie('user');
 		setUser(user);
-		
+
 	}, [id, getArticleById]);
 
 	console.log(article);
@@ -47,14 +47,15 @@ const BlogPage = () => {
 										user={article.user}
 										createAt={article.createAt}
 									/>
+									{
+										article && <Like article_id={article._id} user_id={user._id} />
+									}
 									<Comments article_id={article._id} />
 									<SubmitComment article={article} />
 								</>
 							)}
+
 						</div>
-						{
-							article && <Like article_id={article._id} user_id={user._id} />
-						}
 						<div className="col-lg-4">
 							<Sidebar />
 						</div>
