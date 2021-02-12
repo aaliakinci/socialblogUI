@@ -14,6 +14,7 @@ import { BlogProvider } from './Contexts/BlogContext/BlogContext';
 import { CommentProvider } from './Contexts/Comments/commentContext';
 import { LikeProvider } from './Contexts/LikeContext/likeContext';
 import { HashtagProvider } from './Contexts/HashtagContext/hashtagContext';
+import { FollowProvider } from './Contexts/FollowContext/followContext';
 ReactDOM.render(
 	<BlogProvider>
 		<BrowserRouter>
@@ -21,7 +22,9 @@ ReactDOM.render(
 				<CommentProvider>
 					<LikeProvider>
 						<HashtagProvider>
-							<App />
+							<FollowProvider>
+								<App />
+							</FollowProvider>
 						</HashtagProvider>
 					</LikeProvider>
 				</CommentProvider>

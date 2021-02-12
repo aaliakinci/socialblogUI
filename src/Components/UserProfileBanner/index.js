@@ -1,8 +1,15 @@
-import React from 'react';
+import {useEffect,useState,useContext} from 'react';
+import CookieContext from '../../Contexts/CookieContext/cookieContext';
+import Follow from '../Follow';
 import './userProfile.css'
 
-import img1 from '../../assets/images/comment-author-01.jpg';
 function UserProfileBanner({ user }) {
+	const [cookieUser, setCookieUser] = useState({})
+	const {userFromCookie} = useContext(CookieContext);
+	useEffect(() => {
+		const userCookie = userFromCookie('user');
+	  setCookieUser(userCookie);
+	}, [])
 	return (
 		<>
 			{
@@ -16,19 +23,15 @@ function UserProfileBanner({ user }) {
 									className="img-responsive"
 									alt=""
 								/>
-
 							</div>
 							<div className="user-info-text">
 								<div className="d-flex">
 									<div>
 										<span className="user-name">{user.name} {user.surname}</span>
 									</div>
-									<div className="follow-btn">
-										<button>Follow</button>
-									</div>
-									<div className="message-btn">
-										<button>Message</button>
-									</div>
+									{
+										user._id!==cookieUser._id?<Follow user={user} cookieUser={cookieUser}/>:""
+									}
 								</div>
 								<div className="create-at">
 									{user.createAt}
