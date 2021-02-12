@@ -1,16 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import OwlCarousel from "react-owl-carousel";
+import BlogContext from '../../Contexts/BlogContext/BlogContext'
 import './banner.css'
+import BannerItem from '../BannerItem/BannerItem'
 import '../../assets/css/owl.css'
-import { Link } from 'react-router-dom'
-import BannerItem1 from '../../assets/images/banner-item-01.jpg'
-import BannerItem2 from '../../assets/images/banner-item-02.jpg'
-import BannerItem3 from '../../assets/images/banner-item-03.jpg'
-import BannerItem4 from '../../assets/images/banner-item-04.jpg'
-import BannerItem5 from '../../assets/images/banner-item-05.jpg'
-import BannerItem6 from '../../assets/images/banner-item-06.jpg'
 
 export default function Banner() {
+    const { articles } = useContext(BlogContext);
     const state = {
         responsive: {
             0: {
@@ -34,114 +30,15 @@ export default function Banner() {
                         dots={false}
                         responsive={state.responsive}
                     >
-                        <div className="item">
-                            <img className="img" alt="" src={BannerItem1} />
-                            <div className="item-content">
-                                <div className="main-content">
-                                    <div className="meta-category">
-                                        <span>Fashion</span>
-                                    </div>
-                                    <Link to="javascript">
-                                        <h4>Morbi dapibus condimentum</h4>
-                                    </Link>
-                                    <ul className="post-info">
-                                        <li><Link to="javascript">Admin</Link></li>
-                                        <li><Link to="javascript"> May 12, 2020</Link></li>
-                                        <li><Link to="javascript"> 12 Comments</Link></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="item">
-                            <img className="img" alt="" src={BannerItem2} />
-                            <div className="item-content">
-                                <div className="main-content">
-                                    <div className="meta-category">
-                                        <span>Fashion</span>
-                                    </div>
-                                    <Link to="javascript">
-                                        <h4>Morbi dapibus condimentum</h4>
-                                    </Link>
-                                    <ul className="post-info">
-                                        <li><Link to="javascript">Admin</Link></li>
-                                        <li><Link to="javascript"> May 12, 2020</Link></li>
-                                        <li><Link to="javascript"> 12 Comments</Link></li>
-                                    </ul >
-                                </div >
-                            </div >
-                        </div >
-                        <div className="item">
-                            <img className="img" alt="" src={BannerItem3} />
-                            <div className="item-content">
-                                <div className="main-content">
-                                    <div className="meta-category">
-                                        <span>Fashion</span>
-                                    </div>
-                                    <Link to="javascript">
-                                        <h4>Morbi dapibus condimentum</h4>
-                                    </Link>
-                                    <ul className="post-info">
-                                        <li><Link to="javascript">Admin</Link></li>
-                                        <li><Link to="javascript"> May 12, 2020</Link></li>
-                                        <li><Link to="javascript"> 12 Comments</Link></li>
-                                    </ul >
-                                </div >
-                            </div >
-                        </div >
-                        <div className="item">
-                            <img className="img" alt="" src={BannerItem4} />
-                            <div className="item-content">
-                                <div className="main-content">
-                                    <div className="meta-category">
-                                        <span>Fashion</span>
-                                    </div>
-                                    <Link to="javascript">
-                                        <h4>Morbi dapibus condimentum</h4>
-                                    </Link>
-                                    <ul className="post-info">
-                                        <li><Link to="javascript">Admin</Link></li>
-                                        <li><Link to="javascript"> May 12, 2020</Link></li>
-                                        <li><Link to="javascript"> 12 Comments</Link></li>
-                                    </ul >
-                                </div >
-                            </div >
-                        </div >
-                        <div className="item">
-                            <img className="img" alt="" src={BannerItem5} />
-                            <div className="item-content">
-                                <div className="main-content">
-                                    <div className="meta-category">
-                                        <span>Fashion</span>
-                                    </div>
-                                    <Link to="javascript">
-                                        <h4>Morbi dapibus condimentum</h4>
-                                    </Link>
-                                    <ul className="post-info">
-                                        <li><Link to="javascript">Admin</Link></li>
-                                        <li><Link to="javascript"> May 12, 2020</Link></li>
-                                        <li><Link to="javascript"> 12 Comments</Link></li>
-                                    </ul >
-                                </div >
-                            </div >
-                        </div >
-                        <div className="item">
-                            <img className="img" alt="" src={BannerItem6} />
-                            <div className="item-content">
-                                <div className="main-content">
-                                    <div className="meta-category">
-                                        <span>Fashion</span>
-                                    </div>
-                                    <Link to="javascript">
-                                        <h4>Morbi dapibus condimentum</h4>
-                                    </Link>
-                                    <ul className="post-info">
-                                        <li><Link to="javascript">Admin</Link></li>
-                                        <li><Link to="javascript"> May 12, 2020</Link></li>
-                                        <li><Link to="javascript"> 12 Comments</Link></li>
-                                    </ul >
-                                </div >
-                            </div >
-                        </div >
+                        {
+                            articles && articles.map(article => {
+                                return (
+                                    < BannerItem key={article._id} title={article.title} description={article.description} createAt={article.createAt} user={article.user} />
+                                )
+                            }
+                            )
+                        }
+
                     </OwlCarousel >
                 </div >
             </div >
