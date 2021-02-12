@@ -1,0 +1,27 @@
+.cartIcon {
+	color: black;
+	font-size: 1.5rem;
+	transition: all 0.2s;
+}
+.cartIcon:hover {
+			color: #ed6905;	
+}
+
+.linkcolor {
+
+	color: black !important;
+}
+.linkcolor:hover{
+	color:#ed6905 !important;
+}
+
+.navIitem{
+	list-style: none !important;
+}
+.dropdownMenu{
+	margin-top:0 !important;
+}
+@media all and (min-width: 992px) {
+	.dropdownMenu{ display: none; }
+ .navIitem:hover .dropdownMenu{ display: block; }
+}

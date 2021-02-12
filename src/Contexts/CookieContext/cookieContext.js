@@ -22,8 +22,11 @@ export const CookieProvider = ({ children }) => {
 			const token = bearerToken.replace('Bearer ', '');
 			const user = jwt_decode(token);
 			return user;
- 
 	};
+	const removeCookie = (name) => {
+  cookie.remove(name);
+	window.location.reload();
+	}
 	const userAuth = (name) => {
 		const bearerToken = cookie.getJSON(name);
 		return bearerToken;
@@ -33,6 +36,7 @@ export const CookieProvider = ({ children }) => {
 		isCookie,
 		userFromCookie,
 		userAuth,
+		removeCookie
 	};
 
 	return <CookieContext.Provider value={values}>{children}</CookieContext.Provider>;
