@@ -81,7 +81,7 @@ function Header() {
 											to={`/articles/${user.username}`}
 											className="nav-link d-flex align-items-center"
 										>
-											<HeaderProfil/>
+											<HeaderProfil user={user}/>
 										</Link>
 									</li>
 								</>

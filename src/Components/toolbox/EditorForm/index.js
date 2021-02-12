@@ -3,12 +3,16 @@ import { useContext, useState, useEffect } from 'react';
 import PreviewArticle from '../../PreviewArticle';
 import CookieContext from '../../../Contexts/CookieContext/cookieContext';
 import axios from 'axios';
+import HashtagContext from '../../../Contexts/HashtagContext/hashtagContext';
+import SearchBar from '../../SearchBar';
 function EditorForm() {
-	const { userFromCookie } = useContext(CookieContext)
-	const [title, setTitle] = useState("");
+	const { userFromCookie } = useContext(CookieContext);
+	const { getHashtags } = useContext(HashtagContext);
+	const [title, setTitle] = useState('');
 	const [file, setFile] = useState();
-	const [description, setDescription] = useState("");
-	const [user_id, setUser_id] = useState()
+	const [description, setDescription] = useState('');
+	const [selectedHashtag,setSelectedHashtag]=useState({});
+	const [user_id, setUser_id] = useState();
 	const [hashtags, setHashtags] = useState([]);
 	const [content, setContent] = useState('<p></p>');
 	const [location, setLocation] = useState({
@@ -18,9 +22,15 @@ function EditorForm() {
 	const [errorEditor, setErrorEditor] = useState('');
 	const [error, setError] = useState('');
 	useEffect(() => {
-		const { _id } = userFromCookie('user')
-		setUser_id(_id)
-	}, [userFromCookie])
+		const { _id } = userFromCookie('user');
+		setUser_id(_id);
+		const fetchHashtags = async () => {
+			const hashtags = await getHashtags();
+			setHashtags(hashtags);
+		};
+		fetchHashtags();
+	}, [userFromCookie]);
+	console.log(selectedHashtag);
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const data = new FormData();
@@ -28,14 +38,14 @@ function EditorForm() {
 		data.append('contentImage', file);
 		data.append('content', content);
 		data.append('description', description);
-		data.append('user_id', user_id)
-		const url = `${process.env.REACT_APP_DEPLOY_URL}/articles/create`
+		data.append('user_id', user_id);
+		const url = `${process.env.REACT_APP_DEPLOY_URL}/articles/create`;
 		const config = {
-			headers: { 'content-type': 'multipart/form-data' }
-		}
+			headers: { 'content-type': 'multipart/form-data' },
+		};
 		const response = await axios.post(url, data, config);
 		console.log(response);
-	}
+	};
 	const handleChangeTextArea = (e) => {
 		setContent(e.target.value);
 	};
@@ -54,10 +64,20 @@ function EditorForm() {
 		console.log(p);
 		switch (val) {
 			case 'strong':
-				setContent(`${content.substring(0, location.start)} <b>${subs}</b> ${content.substring(location.end, content.length)}`);
+				setContent(
+					`${content.substring(0, location.start)} <b>${subs}</b> ${content.substring(
+						location.end,
+						content.length,
+					)}`,
+				);
 				break;
 			case 'italic':
-				setContent(`${content.substring(0, location.start)} <em>${subs}</em> ${content.substring(location.end, content.length)}`);
+				setContent(
+					`${content.substring(0, location.start)} <em>${subs}</em> ${content.substring(
+						location.end,
+						content.length,
+					)}`,
+				);
 				break;
 			case 'left':
 				if (p !== '<p' || isStyle === 's') {
@@ -89,7 +109,7 @@ function EditorForm() {
 	};
 	const handleFile = (e) => {
 		setFile(e.target.files[0]);
-	}
+	};
 	return (
 		<form onSubmit={handleSubmit}>
 			<div className="form-group">
@@ -104,7 +124,11 @@ function EditorForm() {
 					{' '}
 					Açıklama<span className="text-danger">*</span>
 				</label>
-				<input className="form-control" value={description} onChange={(e) => setDescription(e.target.value)} />
+				<input
+					className="form-control"
+					value={description}
+					onChange={(e) => setDescription(e.target.value)}
+				/>
 			</div>
 			<div className="form-group">
 				<label htmlFor="headerPicture">
@@ -160,18 +184,15 @@ function EditorForm() {
 					onSelect={(e) => handleSelect(e)}
 				/>
 			</div>
-			<div className="form-group">
-				<select className="form-control">
-					<option>Hashtags</option>
-				</select>
-			</div>
+	 
+				<SearchBar setSelectedData={setSelectedHashtag} data={hashtags} returnValue='_id' searchValue='body'/>
+ 
 			<div className="button-group d-flex justify-content-end">
 				<button
 					type="button"
 					className="btn btn-info"
 					data-toggle="modal"
 					data-target="#exampleModalLong"
-
 				>
 					Önizleme
 				</button>
@@ -179,11 +200,7 @@ function EditorForm() {
 					Yayınla
 				</button>
 			</div>
-			<PreviewArticle
-				title={title}
-				content={content}
-				image={file}
-			/>
+			<PreviewArticle title={title} content={content} image={file} />
 			<div>{content.length > 0 ? <p>{content}</p> : <p>0</p>}</div>
 		</form>
 	);

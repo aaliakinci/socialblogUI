@@ -1,12 +1,12 @@
 
-import {createContext} from 'react';
+import {createContext,useState} from 'react';
 import axios from 'axios';
 
 
 const HashtagContext = createContext(null);
 
 export const HashtagProvider = ({children}) => {
-
+ 
 
 	const getHashtags = async() =>
 	{
@@ -24,7 +24,8 @@ export const HashtagProvider = ({children}) => {
 
 	 const values ={
 		getHashtags,
-		getArticleByHashtagId
+		getArticleByHashtagId,
+ 
 	}
 	return <HashtagContext.Provider value={values}>{children}</HashtagContext.Provider>
 }
