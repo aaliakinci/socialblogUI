@@ -11,7 +11,7 @@ function EditorForm() {
 	const [title, setTitle] = useState('');
 	const [file, setFile] = useState();
 	const [description, setDescription] = useState('');
-	const [selectedHashtag,setSelectedHashtag]=useState({});
+	const [selectedHashtag, setSelectedHashtag] = useState({});
 	const [user_id, setUser_id] = useState();
 	const [hashtags, setHashtags] = useState([]);
 	const [content, setContent] = useState('<p></p>');
@@ -118,7 +118,7 @@ function EditorForm() {
 					{' '}
 					Başlık<span className="text-danger">*</span>
 				</label>
-				<input className="form-control" value={title} onChange={(e) => setTitle(e.target.value)} />
+				<input className="form-control rounded-0" value={title} onChange={(e) => setTitle(e.target.value)} />
 			</div>
 			<div className="form-group">
 				<label className="label">
@@ -126,7 +126,7 @@ function EditorForm() {
 					Açıklama<span className="text-danger">*</span>
 				</label>
 				<input
-					className="form-control"
+					className="form-control rounded-0"
 					value={description}
 					onChange={(e) => setDescription(e.target.value)}
 				/>
@@ -185,9 +185,9 @@ function EditorForm() {
 					onSelect={(e) => handleSelect(e)}
 				/>
 			</div>
-	 
-				<SearchBar setSelectedData={setSelectedHashtag} data={hashtags} returnValue='_id' searchValue='body' holder="Hashtags"/>
- 
+
+			<SearchBar setSelectedData={setSelectedHashtag} data={hashtags} returnValue='_id' searchValue='body' holder="Hashtags" />
+
 			<div className="button-group d-flex justify-content-end">
 				<button
 					type="button"

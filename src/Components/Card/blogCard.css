@@ -11,7 +11,6 @@ h6 {
 }
 .user-img {
 	padding: 15px;
-	margin-left: 10px;
 }
 .user-info {
 	color: var(--dark-gray);
@@ -19,9 +18,9 @@ h6 {
 	font-size: 18px;
 }
 .blog-posts .down-content {
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-bottom: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
 	padding-top: 10px;
 	border-right: 1px solid var(--border-color);
 	border-left: 1px solid var(--border-color);
@@ -104,10 +103,6 @@ h6 {
 }
 .blog-posts .down-content ul.post-info .link:hover {
 	color: var(--orannnge);
-}
-
-.blog-posts .down-content p {
-	margin: 25px 0 0 0px;
 }
 
 .blog-posts .down-content ul.post-share {

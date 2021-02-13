@@ -84,25 +84,25 @@ function RegisterForm() {
 				<label htmlFor="name">
 					Adınız <span className="text-danger">*</span>
 				</label>
-				<input name="name" className="form-control" onChange={handleChange} />
+				<input name="name" className="form-control rounded-0" onChange={handleChange} />
 			</div>
 			<div className="form-group">
 				<label htmlFor="surname">
 					Soyadınız <span className="text-danger">*</span>
 				</label>
-				<input name="surname" className="form-control" onChange={handleChange} />
+				<input name="surname" className="form-control rounded-0" onChange={handleChange} />
 			</div>
 			<div className="form-group">
 				<label htmlFor="username">
 					Kullanıcı adınız <span className="text-danger">*</span>
 				</label>
-				<input name="username" className="form-control" onChange={handleChange} />
+				<input name="username" className="form-control rounded-0" onChange={handleChange} />
 			</div>
 			<div className="form-group">
 				<label htmlFor="password" className="form-control-label">
 					Şifreniz <span className="text-danger">*</span>
 				</label>
-				<input name="password" type="password" className="form-control" onChange={handleChange} />
+				<input name="password" type="password" className="form-control rounded-0" onChange={handleChange} />
 			</div>
 			<div className="form-group">
 				<label htmlFor="confirmPassword" className="form-control-label">
@@ -111,7 +111,7 @@ function RegisterForm() {
 				<input
 					name="confirmPassword"
 					type="password"
-					className="form-control"
+					className="form-control rounded-0"
 					onChange={handleChange}
 				/>
 			</div>
@@ -119,19 +119,19 @@ function RegisterForm() {
 				<label htmlFor="phoneNumber" className="form-control-label">
 					Telefon Numaranız<span className="text-danger">*</span>
 				</label>
-				<input name="phoneNumber" className="form-control" onChange={handleChange} />
+				<input name="phoneNumber" className="form-control rounded-0" onChange={handleChange} />
 			</div>
 			<div className="form-group">
 				<label htmlFor="email" className="form-control-label">
 					E-posta Adresiniz<span className="text-danger">*</span>
 				</label>
-				<input name="email" className="form-control" onChange={handleChange} />
+				<input name="email" className="form-control rounded-0" onChange={handleChange} />
 			</div>
 			<div className="form-group">
 				<label htmlFor="gender" className="form-control-label">
 					Cinsiyet <span className="text-danger">*</span>{' '}
 				</label>
-				<select className="form-control" name="gender" onChange={handleChange}>
+				<select className="form-control rounded-0" name="gender" onChange={handleChange}>
 					<option defaultValue="selected">Cinsiyet Seçiniz</option>
 					<option defaultValue="Woman">Kadın</option>
 					<option defaultValue="Man">Erkek</option>
@@ -149,7 +149,7 @@ function RegisterForm() {
 					onChange={handleFile}
 				/>
 			</div>
-			<button type="submit" className="btn btn-block btnBg text-white my-2">
+			<button type="submit" className="btn btn-block btnBg text-white my-2 rounded-0">
 				Kayıt Ol
 			</button>
 			{errorMessage !== '' && <small className="text-danger lead">{errorMessage}</small>}
