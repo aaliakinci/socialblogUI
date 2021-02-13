@@ -17,8 +17,7 @@ function UserProfileBanner({ user, setArticles, articles, setIsLikeArticles, set
 			setCookieUser(userCookie);
 		}
 
-	}, [userFromCookie]);
-	console.log(user);
+	}, [isCookie, userFromCookie]);
 	const handleClick = async (type) => {
 		switch (type) {
 			case 'follows':
@@ -40,7 +39,6 @@ function UserProfileBanner({ user, setArticles, articles, setIsLikeArticles, set
 		}
 
 	};
-	console.log(cookieUser);
 	return (
 		<>
 			{user && (

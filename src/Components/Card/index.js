@@ -13,7 +13,6 @@ function BlogCard({ title, description, content, user, createAt, id, hashtags, i
 	const handleHref = () => {
 		window.location.href = `/articles/${user[0].username}`
 	}
-	console.log(image)
 
 	return (
 		<div className="blog-post">
