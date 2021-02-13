@@ -16,11 +16,6 @@
 	width: 80px;
 	height: 80px;
 }
-.user-info-text {
-	margin-left: 12px;
-	width: 100%;
-	display: block;
-}
 .user-info-text div div .user-info-text {
 	color: var(--dark-blue);
 	line-height: 20px;

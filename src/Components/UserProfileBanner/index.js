@@ -44,21 +44,17 @@ function UserProfileBanner({ user, setArticles, articles }) {
 						<div className="user-image profileUserpic">
 							<img src={user.profilPicture} className="img-responsive" alt="" />
 						</div>
-						<div className="user-info-text">
-							<div className="d-flex">
-								<div>
-									<span className="user-name">
-										{user.name} {user.surname}
-									</span>
-								</div>
-								{user._id !== cookieUser._id ? <Follow user={user} cookieUser={cookieUser} /> : ''}
-							</div>
+						<div className="d-flex ml-2">
+							<span className="user-info" style={{ fontSize: '22px' }}>
+								{user.name} {user.surname}
+							</span>
+							{user._id !== cookieUser._id ? <Follow user={user} cookieUser={cookieUser} /> : ''}
 						</div>
 					</div>
 					{user._id === cookieUser._id ? (
 						<div className="d-flex align-items-end">
-							<i class="fa fa-users fa-2x friends" onClick={() => handleClick('follows')}></i>
-							<i class="fa fa-heart fa-2x likes" onClick={() => handleClick('likes')}></i>
+							<i className="fa fa-users fa-2x friends" onClick={() => handleClick('follows')}></i>
+							<i className="fa fa-heart fa-2x likes" onClick={() => handleClick('likes')}></i>
 						</div>
 					) : (
 						''

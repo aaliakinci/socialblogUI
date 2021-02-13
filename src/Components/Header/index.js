@@ -51,17 +51,17 @@ function Header() {
 								<>
 									<li className="nav-item">
 										<Link to="/" className="nav-link">
-											Home <span className="sr-only">(current)</span>
+											Ana Sayfa <span className="sr-only">(current)</span>
 										</Link>
 									</li>
 									<li className="nav-item">
 										<Link to="/login" className="nav-link">
-											<i className="fa fa-user"></i> Log in
+											<i className="fa fa-user"></i> Giriş Yap
 										</Link>
 									</li>
 									<li className="nav-item">
 										<Link to="/register" className="nav-link">
-											Register
+											KAyıt Ol
 										</Link>
 									</li>
 								</>

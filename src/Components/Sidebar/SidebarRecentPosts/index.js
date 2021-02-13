@@ -13,7 +13,7 @@ export default function SidebarRecentPosts() {
     return (
         <div className="sidebar-item recent-posts">
             <div className="sidebar-heading">
-                <h2>Recent Posts</h2>
+                <h2>Son Gönderiler</h2>
             </div>
 
             <div className="content">
