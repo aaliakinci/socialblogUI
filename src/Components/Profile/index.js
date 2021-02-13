@@ -22,9 +22,9 @@ function Profile() {
     console.log(data)
     const inputRef = useRef();
     return (
-        <div className="row d-flex align-items-center justify-content-center">
+        <div className="d-flex align-items-center justify-content-center" style={{ height: '550px' }}>
             <div className="col-12 col-lg-4 col-sm-6">
-                <form action="" className="card d-flex user-form">
+                <form action="" className="card user-form">
                     <div className="ml-auto mr-auto">
                         <img src={data.profilPicture} alt="" className="user-image img-responsive" />
                     </div>
@@ -131,7 +131,7 @@ function Profile() {
                     </div>
                 </form>
             </div>
-        </div>
+        </div >
     );
 }
 export default Profile;
