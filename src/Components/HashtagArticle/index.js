@@ -10,11 +10,11 @@ function HashtagArticle() {
     useEffect(() => {
         const fetchArticleByHashtagId = async () => {
             const articles = await getArticleByHashtagId(id);
-            setArticles(articles)
+            setArticles(articles[0].articles)
         }
         fetchArticleByHashtagId();
     }, [])
-		console.log(articles);
+		console.log(articles);	
     return (
         <section className="blog-posts">
             <div className="container">
@@ -22,7 +22,7 @@ function HashtagArticle() {
                     <div className="col-lg-8 col-12">
                         <div className="all-blog-posts">
                             {articles.length && articles.map(article => {
-                                return <Card key={article._id} hashtags={article.hashtag} id={article._id} title={article.title} description={article.description} content={article.content} createAt={article.createAt} user={article.user} />
+                                return <Card key={article._id} hashtags={article.hashtag} id={article._id} title={article.title} description={article.description} createAt={article.createAt} user={article.user} />
                             })}
                         </div>
                     </div >
