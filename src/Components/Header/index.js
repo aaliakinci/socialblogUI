@@ -28,8 +28,8 @@ function Header() {
 		}
 	}, [isUser, isUserCookie, userFromCookie, setUser]);
 	return (
-		<header className=" sticky-top">
-			<div className="container-md p-0">
+		<header>
+			<div className="container p-0">
 				<nav className="navbar navbar-expand-sm p-0">
 					<Link to="/" className="navbar-brand">
 						<img src={Logo} className="mt-3" alt="" />
