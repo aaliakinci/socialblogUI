@@ -17,19 +17,18 @@ const BlogPage = () => {
 	const [user, setUser] = useState();
 	const { id } = useParams();
 
+	const fetchArticle = async (id) => {
+		const data = await getArticleById(id);
+		return data;
+	};
+
 	useEffect(() => {
-		const fetchArticle = async (id) => {
-			const data = await getArticleById(id);
-			return data;
-		};
 		const response = fetchArticle(id);
-		response.then((data) => setArticle(data[0]));
+		response.then((data) => setArticle((oldData)=>data[0]));
 		const user = userFromCookie('user');
 		setUser(user);
-
 	}, [id, getArticleById]);
 
-	console.log(article);
 
 	return (
 		<>

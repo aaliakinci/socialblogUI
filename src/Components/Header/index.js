@@ -67,12 +67,8 @@ function Header() {
 								</>
 							)}
 							{isUser === 1 && (
-								<>
-									<li className="nav-item">
-										<Link to={`/articles/${user.username}`}>
+								<>	 
 											<HeaderProfil user={user} />
-										</Link>
-									</li>
 									<li className="nav-item">
 										<Link to="/write-article" className="write-icon">
 											<i className="fa fa-edit fa-lg"></i>
