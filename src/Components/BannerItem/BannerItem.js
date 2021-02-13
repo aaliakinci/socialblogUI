@@ -7,7 +7,7 @@ function BannerItem({ title, description, content, user, createAt, id, hashtags,
 
     return (
         <div className="item" >
-            <img className="img" alt="" src={image} style={{ objectFit: 'cover', height: '300px', width: '400px' }} />
+            <img className="img" alt="" src={image} style={{ objectFit: 'cover', height: '300px', width: '420px' }} />
             <div className="item-content">
                 <div className="main-content">
                     <div className="meta-category">

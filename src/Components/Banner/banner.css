@@ -14,8 +14,9 @@
 
 .owl-banner .item .item-content {
 	position: absolute;
-	bottom: 40px;
-	left: 40px;
+	bottom: 20px;
+	left: 20px;
+	right: 20px;
 }
 
 .owl-banner .item .item-content .meta-category span {
