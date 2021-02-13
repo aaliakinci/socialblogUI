@@ -30,7 +30,7 @@ function UserPage() {
 					<div className="col-md-9">
 						<div className="row">
 							<div className="col-12">
-						<UserProfileBanner setArticles={setArticles} articles={articles} user={user} setIsLikeArticles={setIsLikeArticles} setIsFollowsArticles={setIsFollowsArticles}/>
+						<UserProfileBanner user={user} setArticles={setArticles} articles={articles}  setIsLikeArticles={setIsLikeArticles} setIsFollowsArticles={setIsFollowsArticles}/>
 							</div>
 							{
 								isLikeArticles===false && isFollowsArticles===true?<div className="col-12">

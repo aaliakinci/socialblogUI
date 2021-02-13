@@ -5,7 +5,6 @@ import blogPost01 from '../../assets/images/blog-post-01.jpg';
 import { Link } from 'react-router-dom'
 
 function BlogCard({ title, description, content, user, createAt, id, hashtags,image}) {
-	console.log(hashtags);
 	useEffect(() => {
 		if (content !== undefined) {
 			const area = document.getElementById('contentArea');

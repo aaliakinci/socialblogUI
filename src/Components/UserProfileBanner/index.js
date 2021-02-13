@@ -3,6 +3,7 @@ import BlogContext from '../../Contexts/BlogContext/BlogContext';
 import CookieContext from '../../Contexts/CookieContext/cookieContext';
 import Follow from '../Follow';
 import './userProfile.css';
+import FollowersFollows from '../FollowersFollows'
 
 function UserProfileBanner({ user, setArticles, articles,setIsLikeArticles,setIsFollowsArticles }) {
 	const [cookieUser, setCookieUser] = useState({});
@@ -13,7 +14,7 @@ function UserProfileBanner({ user, setArticles, articles,setIsLikeArticles,setIs
 		const userCookie = userFromCookie('user');
 		setCookieUser(userCookie);
 	}, [userFromCookie]);
-
+	console.log(user);
 	const handleClick = async (type) => {
 		switch (type) {
 			case 'follows':
@@ -51,7 +52,7 @@ function UserProfileBanner({ user, setArticles, articles,setIsLikeArticles,setIs
 										{user.name} {user.surname}
 									</span>
 								</div>
-								{user._id !== cookieUser._id ? <Follow user={user} cookieUser={cookieUser} /> : ''}
+								{user._id !== cookieUser._id ? <Follow user={user} cookieUser={cookieUser} /> : <FollowersFollows user = {user}/>}
 							</div>
 						</div>
 					</div>
