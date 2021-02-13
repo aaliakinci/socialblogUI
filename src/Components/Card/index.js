@@ -20,7 +20,7 @@ function BlogCard({ title, description, content, user, createAt, id, hashtags,im
 		<div className="blog-post">
 			{
 				image && <div className="blog-thumb">
-				<img src={blogPost01} alt="" />
+				<img src={image} alt="" />
 			</div>
 			}
 			{

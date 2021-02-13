@@ -32,8 +32,7 @@ const BlogPage = () => {
 		 }
 		
 	}, [id, getArticleById]);
-
-
+ 
 	return (
 		<>
 			<section className="blog-posts">
@@ -49,6 +48,7 @@ const BlogPage = () => {
 										content={article.content}
 										user={article.user}
 										createAt={article.createAt}
+										image={article.contentImage}
 									/>
 									{ user &&
 										article && <Like article_id={article._id} user_id={user._id} />
