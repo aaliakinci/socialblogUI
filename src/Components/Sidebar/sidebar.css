@@ -1,10 +1,11 @@
+@import "../../index.css";
 .sidebar .sidebar-heading h2 {
 	font-size: 18px;
 	text-transform: uppercase;
 	font-weight: 900;
 	letter-spacing: 0.5px;
 	color: var(--dark-blue);
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid var(--border-color);
 	padding-bottom: 15px;
 	margin-bottom: 25px;
 }

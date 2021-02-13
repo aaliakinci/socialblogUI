@@ -1,7 +1,8 @@
 @import "../../index.css";
 .main-banner .container-fluid {
 	padding: 0px 10px;
-	margin-bottom: -24px;
+	margin-bottom: -20px;
+	margin-bottom: 20px;
 }
 .owl-banner {
 	padding-top: 20px;

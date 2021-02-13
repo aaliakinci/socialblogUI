@@ -45,15 +45,11 @@ function UserProfileBanner({ user, setArticles, articles,setIsLikeArticles,setIs
 						<div className="user-image profileUserpic">
 							<img src={user.profilPicture} className="img-responsive" alt="" />
 						</div>
-						<div className="user-info-text">
-							<div className="d-flex">
-								<div>
-									<span className="user-name">
-										{user.name} {user.surname}
-									</span>
-								</div>
-								{user._id !== cookieUser._id ? <Follow user={user} cookieUser={cookieUser} /> : <FollowersFollows user = {user}/>}
-							</div>
+						<div className="d-flex ml-2">
+							<span className="user-info" style={{ fontSize: '22px' }}>
+								{user.name} {user.surname}
+							</span>
+							{user._id !== cookieUser._id ? <Follow user={user} cookieUser={cookieUser} /> : ''}
 						</div>
 					</div>
 					{user._id === cookieUser._id ? (
