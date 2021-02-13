@@ -35,8 +35,8 @@ function UserProfileBanner({ user }) {
 						</div>
 					</div>
 					<div className="d-flex align-items-end">
-						<i class="fa fa-users fa-2x friends"></i>
-						<i class="fa fa-heart fa-2x likes"></i>
+						<i className="fa fa-users fa-2x friends"></i>
+						<i className="fa fa-heart fa-2x likes"></i>
 					</div>
 				</div>
 			}

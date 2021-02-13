@@ -11,21 +11,23 @@ function BannerItem({ title, description, content, user, createAt, id, hashtags 
             <div className="item-content">
                 <div className="main-content">
                     <div className="meta-category">
-                    <Link to={`/article/${id}`}>
-					    <span>{title}</span>
-		    		</Link>
+                        <Link to={`/article/${id}`}>
+                            <span>{title}</span>
+                        </Link>
                     </div>
                     <Link to="javascript">
                         <h4>{description}</h4>
                     </Link>
                     <ul className="post-info">
-                    {
-						user && <Link to={`/articles/${user[0].username}`} className="link">{user[0].username}   </Link>
-					}
+                        <li>
+                            {
+                                user && <Link to={`/articles/${user[0].username}`} className="link">{user[0].username}   </Link>
+                            }
+                        </li>
                         <li><Link to="javascript">
-						<Moment format="YYYY/MM/DD"> 
-                        {createAt} 
-                        </Moment></Link></li>
+                            <Moment format="YYYY/MM/DD">
+                                {createAt}
+                            </Moment></Link></li>
                         <li><Link to="javascript"> 12 Comments</Link></li>
                     </ul>
                 </div>
