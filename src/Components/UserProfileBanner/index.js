@@ -5,18 +5,18 @@ import Follow from '../Follow';
 import './userProfile.css';
 import FollowersFollows from '../FollowersFollows'
 
-function UserProfileBanner({ user, setArticles, articles,setIsLikeArticles,setIsFollowsArticles }) {
+function UserProfileBanner({ user, setArticles, articles, setIsLikeArticles, setIsFollowsArticles }) {
 	const [cookieUser, setCookieUser] = useState({});
-	const { userFromCookie,isCookie } = useContext(CookieContext);
+	const { userFromCookie, isCookie } = useContext(CookieContext);
 	const { getArticleFollows, getArticleLikes } = useContext(BlogContext);
 	const [likeArticles, setLikeArticles] = useState([])
 	useEffect(() => {
 		const result = isCookie('user')
-		if(result===1){
+		if (result === 1) {
 			const userCookie = userFromCookie('user');
-		setCookieUser(userCookie);
+			setCookieUser(userCookie);
 		}
-		
+
 	}, [userFromCookie]);
 	console.log(user);
 	const handleClick = async (type) => {
@@ -30,8 +30,8 @@ function UserProfileBanner({ user, setArticles, articles,setIsLikeArticles,setIs
 			case 'likes':
 				setArticles([])
 				const likesArticles = await getArticleLikes(cookieUser._id);
-				if(likesArticles.length>0)
-				setIsLikeArticles(true);
+				if (likesArticles.length > 0)
+					setIsLikeArticles(true);
 				setIsFollowsArticles(false)
 				setArticles(likesArticles);
 				break;
@@ -52,11 +52,11 @@ function UserProfileBanner({ user, setArticles, articles,setIsLikeArticles,setIs
 						<div className="user-info-text">
 							<div className="d-flex">
 								<div>
-									<span className="user-name">
+									<span className="user-info ml-2">
 										{user.name} {user.surname}
 									</span>
 								</div>
-								{ cookieUser && user._id !== cookieUser._id ? <Follow user={user} cookieUser={cookieUser} /> : <FollowersFollows user = {user}/>}
+								{cookieUser && user._id !== cookieUser._id ? <Follow user={user} cookieUser={cookieUser} /> : <FollowersFollows user={user} />}
 							</div>
 						</div>
 					</div>

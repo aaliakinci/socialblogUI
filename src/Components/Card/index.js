@@ -1,19 +1,19 @@
-import { useEffect} from 'react'
+import { useEffect } from 'react'
 import './blogCard.css'
 import Moment from 'react-moment';
 import blogPost01 from '../../assets/images/blog-post-01.jpg';
 import { Link } from 'react-router-dom'
 
-function BlogCard({ title, description, content, user, createAt, id, hashtags,image}) {
+function BlogCard({ title, description, content, user, createAt, id, hashtags, image }) {
 	useEffect(() => {
 		if (content !== undefined) {
 			const area = document.getElementById('contentArea');
 			area.innerHTML = content
 		}
 	}, [content])
- 
-	const handleHref=()=>{
-		window.location.href=`/articles/${user[0].username}`
+
+	const handleHref = () => {
+		window.location.href = `/articles/${user[0].username}`
 	}
 
 	return (
@@ -24,11 +24,11 @@ function BlogCard({ title, description, content, user, createAt, id, hashtags,im
 			</div>
 			}
 			{
-				user&&<div className="border">
-				<img src={user[0].profilPicture} className="img-responsive user-img" alt="" onClick={handleHref}/>
-				<div className="d-inline user-info" onClick={handleHref}>{user[0].name}  </div>
-				<div className="d-inline user-info" onClick={handleHref}>{user[0].surname}</div>
-			</div>
+				user && <div className="border">
+					<img src={user[0].profilPicture} className="img-responsive user-img" alt="" onClick={handleHref} />
+					<div className="d-inline user-info" onClick={handleHref}>{user[0].name}  </div>
+					<div className="d-inline user-info" onClick={handleHref}>{user[0].surname}</div>
+				</div>
 			}
 			<div className="down-content">
 				<Link to={`/article/${id}`}>
@@ -43,7 +43,7 @@ function BlogCard({ title, description, content, user, createAt, id, hashtags,im
 				</ul>
 				<p>{description}</p>
 				{
-					content && <div className="card-body" id="contentArea"></div>
+					content && <div id="contentArea"></div>
 				}
 
 			</div >
