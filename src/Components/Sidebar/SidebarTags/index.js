@@ -16,7 +16,7 @@ function SidebarTags() {
 	return (
 		<div className="sidebar-item tags">
 			<div className="sidebar-heading">
-				<h2>#Hashtag</h2>
+				<h2>#Hashtags</h2>
 			</div>
 			<div className="content">
 				<ul>

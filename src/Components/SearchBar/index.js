@@ -35,7 +35,7 @@ function SearchBar({ setSelectedData, data, returnValue, searchValue, holder }) 
 		setFilterData([]);
 	};
 	return (
-		<div className="form-group">
+		<div className="form-group border-0">
 			<input id="search" autoComplete="off" className="form-control" placeholder={holder} onChange={handleChange} />
 			{filterData.length < 200 ? (
 				<ul id="hashtags" className="list-group list-group-flush">

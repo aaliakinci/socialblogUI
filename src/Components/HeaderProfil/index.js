@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import CookieContext from '../../Contexts/CookieContext/cookieContext';
-import './headerProfile.css'
+import '../Header/header.css'
 function HeaderProfil({ user }) {
 	const { removeCookie } = useContext(CookieContext);
 	const logOut = () => {
