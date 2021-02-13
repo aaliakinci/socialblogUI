@@ -42,6 +42,7 @@ const BlogPage = () => {
 							{article && (
 								<>
 									<Card
+										key={article._id}
 										id={article._id}
 										title={article.title}
 										description={article.description}
