@@ -1,45 +1,70 @@
 import { useEffect, useState, useContext } from 'react';
+import BlogContext from '../../Contexts/BlogContext/BlogContext';
 import CookieContext from '../../Contexts/CookieContext/cookieContext';
 import Follow from '../Follow';
-import './userProfile.css'
+import './userProfile.css';
 
-function UserProfileBanner({ user }) {
-	const [cookieUser, setCookieUser] = useState({})
+function UserProfileBanner({ user, setArticles,articles }) {
+	const [cookieUser, setCookieUser] = useState({});
 	const { userFromCookie } = useContext(CookieContext);
+	const { getArticleFollows, getArticleLikes} = useContext(BlogContext);
+	const [likeArticles, setLikeArticles] = useState([])
 	useEffect(() => {
 		const userCookie = userFromCookie('user');
 		setCookieUser(userCookie);
-	}, [userFromCookie])
+	}, [userFromCookie]);
+
+	const handleClick = async (type) => {
+		switch (type) {
+			case 'follows':
+				const followsArticles = await getArticleFollows(cookieUser._id);
+				console.log(followsArticles);
+				// followsArticles.map(followsArticle=>{
+				// 	setArticles(...followsArticle.articles);
+				// })
+				break;
+			case 'likes':
+				setArticles([])
+				const likesArticles = await getArticleLikes(cookieUser._id);
+				likesArticles.map(likesArticles=>{
+					console.log(likesArticles);
+				})
+				break;
+			default:
+				break;
+		}
+
+	};
+	console.log(user);
 	return (
 		<>
-			{
-				user &&
+			{user && (
 				<div className="user-info-card mx-0">
 					<div className="user-info">
 						<div className="user-image profileUserpic">
-							<img
-								src={user.profilPicture}
-								className="img-responsive"
-								alt=""
-							/>
+							<img src={user.profilPicture} className="img-responsive" alt="" />
 						</div>
 						<div className="user-info-text">
 							<div className="d-flex">
 								<div>
-									<span className="user-name">{user.name} {user.surname}</span>
+									<span className="user-name">
+										{user.name} {user.surname}
+									</span>
 								</div>
-								{
-									user._id !== cookieUser._id ? <Follow user={user} cookieUser={cookieUser} /> : ""
-								}
+								{user._id !== cookieUser._id ? <Follow user={user} cookieUser={cookieUser} /> : ''}
 							</div>
 						</div>
 					</div>
-					<div className="d-flex align-items-end">
-						<i class="fa fa-users fa-2x friends"></i>
-						<i class="fa fa-heart fa-2x likes"></i>
-					</div>
+					{user._id === cookieUser._id ? (
+						<div className="d-flex align-items-end">
+							<i class="fa fa-users fa-2x friends" onClick={()=>handleClick('follows')}></i>
+							<i class="fa fa-heart fa-2x likes" onClick={()=>handleClick('likes')}></i>
+						</div>
+					) : (
+						''
+					)}
 				</div>
-			}
+			)}
 		</>
 	);
 }
