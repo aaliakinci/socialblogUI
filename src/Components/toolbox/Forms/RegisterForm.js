@@ -66,7 +66,7 @@ function RegisterForm() {
 		console.log(response);
 		if (response.data.token) {
 			setUserCookie('user', response.data.token);
-			window.location.to = '/';
+			window.location.href = '/';
 		}
 	};
 
