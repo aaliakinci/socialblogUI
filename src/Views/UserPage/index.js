@@ -7,9 +7,9 @@ import Card from '../../Components/Card';
 function UserPage() {
 	const { getUserbyUsername, getArticlesByUserId } = useContext(BlogContext);
 	const [user, setUser] = useState();
-	const [articles, setArticles] = useState()
+	const [articles, setArticles] = useState([])
 	const { username } = useParams();
-
+  
 	useEffect(() => {
 		async function fetchUserAndArticles() {
 			const user = await getUserbyUsername(username);
@@ -19,6 +19,7 @@ function UserPage() {
 		}
 		fetchUserAndArticles();
 	}, [username, getUserbyUsername, getArticlesByUserId]);
+	console.log(articles);
 	return (
 		<section className="blog-posts">
 			<div className="container">
@@ -26,10 +27,10 @@ function UserPage() {
 					<div className="col-md-9">
 						<div className="row">
 							<div className="col-12">
-								<UserProfileBanner user={user} />
+								<UserProfileBanner setArticles={setArticles} articles={articles} user={user} />
 							</div>
 							<div className="col-12">
-								{articles &&
+								{articles.length>0 &&
 									articles.map((article) => {
 										return (
 											<Card

@@ -108,6 +108,7 @@ function EditorForm() {
 		setLocation({ start: e.target.selectionStart, end: e.target.selectionEnd });
 	};
 	const handleFile = (e) => {
+		console.log(e.target.files[0]);
 		setFile(e.target.files[0]);
 	};
 	return (

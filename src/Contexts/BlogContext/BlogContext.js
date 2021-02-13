@@ -8,7 +8,7 @@ export const BlogProvider = ({ children }) => {
 	const [userId, setUserId] = useState([]);
 	const [user, setUser] = useState({});
 	useEffect(() => {
-		const url = `${process.env.REACT_APP_DEPLOY_URL}/articles/reactionPoint`
+		const url = `${process.env.REACT_APP_DEPLOY_URL}/articles/reactionPoint`;
 		console.log(url);
 		const articles = axios.get(url);
 		articles
@@ -17,8 +17,8 @@ export const BlogProvider = ({ children }) => {
 			})
 			.then((data) => {
 				setArticles(data.data);
-				return data.data
-			})
+				return data.data;
+			});
 	}, [setArticles]);
 
 	const getArticleById = async (id) => {
@@ -30,12 +30,25 @@ export const BlogProvider = ({ children }) => {
 	};
 	const getUserbyUsername = async (username) => {
 		const response = await axios(`${process.env.REACT_APP_DEPLOY_URL}/users/${username}`);
-		return response.data
-	}
+		return response.data;
+	};
 	const getArticlesByUserId = async (user_id) => {
-		const response = await axios(`${process.env.REACT_APP_DEPLOY_URL}/articles/byUser/${user_id}`)
-		return response.data
-	}
+		const response = await axios(`${process.env.REACT_APP_DEPLOY_URL}/articles/byUser/${user_id}`);
+		return response.data;
+	};
+
+	const getArticleFollows = async (user_id) => {
+ 		const url = `http://localhost:4000/articles/followsArticle`;
+		const response = await axios.post(url,{user_id});
+		console.log(response);
+		return response.data;
+	};
+	const getArticleLikes = async (user_id) => {
+		const url = `${process.env.REACT_APP_DEPLOY_URL}/likes/user/${user_id}`;
+		const response = await axios(url);
+		return response.data;
+	};
+
 	const values = {
 		articles,
 		setArticles,
@@ -47,7 +60,9 @@ export const BlogProvider = ({ children }) => {
 		setUserId,
 		userId,
 		getUserbyUsername,
-		getArticlesByUserId
+		getArticlesByUserId,
+		getArticleFollows,
+		getArticleLikes,
 	};
 
 	return <BlogContext.Provider value={values}>{children}</BlogContext.Provider>;
