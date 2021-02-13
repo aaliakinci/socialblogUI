@@ -9,7 +9,6 @@ export const BlogProvider = ({ children }) => {
 	const [user, setUser] = useState({});
 	useEffect(() => {
 		const url = `${process.env.REACT_APP_DEPLOY_URL}/articles/reactionPoint`;
-
 		const articles = axios.get(url);
 		articles
 			.then((res) => {
@@ -34,7 +33,6 @@ export const BlogProvider = ({ children }) => {
 	};
 	const getArticlesByUserId = async (user_id) => {
 		const response = await axios(`${process.env.REACT_APP_DEPLOY_URL}/articles/byUser/${user_id}`);
-		console.log(response);
 		return response.data;
 	};
 

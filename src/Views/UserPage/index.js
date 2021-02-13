@@ -9,7 +9,7 @@ function UserPage() {
 	const [user, setUser] = useState();
 	const [articles, setArticles] = useState([]);
 	const [isLikeArticles, setIsLikeArticles] = useState(false)
-	const [isFollowsArticles, setIsFollowsArticles] = useState(true)
+	const [isFollowsArticles, setIsFollowsArticles] = useState(true);
 	const { username } = useParams();
   
 	useEffect(() => {
@@ -30,7 +30,7 @@ function UserPage() {
 					<div className="col-md-9">
 						<div className="row">
 							<div className="col-12">
-				<UserProfileBanner setArticles={setArticles} articles={articles} user={user} setIsLikeArticles={setIsLikeArticles} setIsFollowsArticles={setIsFollowsArticles}/>
+						<UserProfileBanner setArticles={setArticles} articles={articles} user={user} setIsLikeArticles={setIsLikeArticles} setIsFollowsArticles={setIsFollowsArticles}/>
 							</div>
 							{
 								isLikeArticles===false && isFollowsArticles===true?<div className="col-12">
