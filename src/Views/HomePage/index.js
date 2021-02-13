@@ -8,7 +8,7 @@ import BlogContext from '../../Contexts/BlogContext/BlogContext';
 
 export default function HomePage() {
     const { articles, setArticles } = useContext(BlogContext);
-	 	 
+
     return (
         <>
             <Banner />
@@ -18,7 +18,7 @@ export default function HomePage() {
                         <div className="col-lg-8 col-12">
                             <div className="all-blog-posts">
                                 {articles.length && articles.map(article => {
-                                    return <Card key={article._id} id={article._id} hashtags={article.hashtag} title={article.title} description={article.description} content={article.content} createAt={article.createAt} user={article.user} />
+                                    return <Card key={article._id} image={article.contentImage} id={article._id} hashtags={article.hashtag} title={article.title} description={article.description} content={article.content} createAt={article.createAt} user={article.user} />
                                 })}
                             </div>
                         </div >
