@@ -11,7 +11,7 @@ import LikeContext from '../../Contexts/LikeContext/likeContext';
 import Like from '../../Components/Like';
 const BlogPage = () => {
 	const { getArticleById } = useContext(BlogContext);
-	const { userFromCookie } = useContext(CookieContext);
+	const { userFromCookie,isCookie } = useContext(CookieContext);
 	const { getLikesByArticleId } = useContext(LikeContext)
 	const [article, setArticle] = useState();
 	const [user, setUser] = useState();
@@ -25,8 +25,12 @@ const BlogPage = () => {
 	useEffect(() => {
 		const response = fetchArticle(id);
 		response.then((data) => setArticle((oldData)=>data[0]));
-		const user = userFromCookie('user');
-		setUser(user);
+		 const result = isCookie('user');
+		 if(result===1){
+			const user = userFromCookie('user');
+			setUser(user);
+		 }
+		
 	}, [id, getArticleById]);
 
 
@@ -46,7 +50,7 @@ const BlogPage = () => {
 										user={article.user}
 										createAt={article.createAt}
 									/>
-									{
+									{ user &&
 										article && <Like article_id={article._id} user_id={user._id} />
 									}
 									<Comments article_id={article._id} />
