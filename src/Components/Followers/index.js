@@ -22,7 +22,7 @@ function Followers({ user }) {
 		<div>
 			<button
 				type="button"
-				class="btn btn-primary"
+				className="btn btn-primary"
 				data-toggle="modal"
 				data-target="#followers"
 			>
@@ -30,26 +30,26 @@ function Followers({ user }) {
 			</button>
 
 			<div
-				class="modal fade"
+				className="modal fade"
 				id="followers"
-				tabindex="-1"
+				tabIndex="-1"
 				role="dialog"
 				aria-labelledby="exampleModalLongTitle"
 				aria-hidden="true"
 			>
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLongTitle">
+				<div className="modal-dialog" role="document">
+					<div className="modal-content">
+						<div className="modal-header">
+							<h5 className="modal-title" id="exampleModalLongTitle">
 								Takipçiler
 							</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
-						<div class="modal-body">
+						<div className="modal-body">
 							{followers.map((followers) => (
-								
+
 								<div className="user-info-card mx-0">
 									<div className="user-info">
 										<div className="user-image profileUserpic">
@@ -69,8 +69,8 @@ function Followers({ user }) {
 								</div>
 							))}
 						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">
+						<div className="modal-footer">
+							<button type="button" className="btn btn-secondary" data-dismiss="modal">
 								Close
 							</button>
 						</div>
