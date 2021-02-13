@@ -22,7 +22,7 @@ function UserPage() {
 		}
 		fetchUserAndArticles();
 	}, [username, getUserbyUsername, getArticlesByUserId]);
-	console.log(articles);
+ 
 	return (
 		<section className="blog-posts">
 			<div className="container">

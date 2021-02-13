@@ -7,12 +7,16 @@ import FollowersFollows from '../FollowersFollows'
 
 function UserProfileBanner({ user, setArticles, articles,setIsLikeArticles,setIsFollowsArticles }) {
 	const [cookieUser, setCookieUser] = useState({});
-	const { userFromCookie } = useContext(CookieContext);
+	const { userFromCookie,isCookie } = useContext(CookieContext);
 	const { getArticleFollows, getArticleLikes } = useContext(BlogContext);
 	const [likeArticles, setLikeArticles] = useState([])
 	useEffect(() => {
-		const userCookie = userFromCookie('user');
+		const result = isCookie('user')
+		if(result===1){
+			const userCookie = userFromCookie('user');
 		setCookieUser(userCookie);
+		}
+		
 	}, [userFromCookie]);
 	console.log(user);
 	const handleClick = async (type) => {
@@ -36,7 +40,7 @@ function UserProfileBanner({ user, setArticles, articles,setIsLikeArticles,setIs
 		}
 
 	};
-	console.log(user);
+	console.log(cookieUser);
 	return (
 		<>
 			{user && (
@@ -52,11 +56,11 @@ function UserProfileBanner({ user, setArticles, articles,setIsLikeArticles,setIs
 										{user.name} {user.surname}
 									</span>
 								</div>
-								{user._id !== cookieUser._id ? <Follow user={user} cookieUser={cookieUser} /> : <FollowersFollows user = {user}/>}
+								{ cookieUser && user._id !== cookieUser._id ? <Follow user={user} cookieUser={cookieUser} /> : <FollowersFollows user = {user}/>}
 							</div>
 						</div>
 					</div>
-					{user._id === cookieUser._id ? (
+					{cookieUser && user._id === cookieUser._id ? (
 						<div className="d-flex align-items-end">
 							<i className="fa fa-users fa-2x friends" onClick={() => handleClick('follows')}></i>
 							<i className="fa fa-heart fa-2x likes" onClick={() => handleClick('likes')}></i>

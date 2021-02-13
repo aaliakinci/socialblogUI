@@ -6,6 +6,7 @@ function HeaderProfil({ user }) {
 	const { removeCookie } = useContext(CookieContext);
 	const logOut = () => {
 		removeCookie('user');
+		window.location.href="/"
 	};
 
 	return (
