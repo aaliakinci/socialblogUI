@@ -3,15 +3,11 @@ import Moment from 'react-moment';
 import BannerItem6 from '../../assets/images/banner-item-06.jpg'
 import { Link } from 'react-router-dom'
 
-function BannerItem({ title, description, content, user, createAt, id, hashtags,image }) {
+function BannerItem({ title, description, content, user, createAt, id, hashtags, image }) {
 
     return (
         <div className="item" >
-<<<<<<< HEAD
-            <img className="img" alt="" src={BannerItem6} style={{ objectFit: 'cover' }} />
-=======
-            <img className="img" alt="" src={image} />
->>>>>>> origin/main
+            <img className="img" alt="" src={image} style={{ objectFit: 'cover' }} />
             <div className="item-content">
                 <div className="main-content">
                     <div className="meta-category">
