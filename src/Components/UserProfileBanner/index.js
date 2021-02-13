@@ -3,8 +3,9 @@ import BlogContext from '../../Contexts/BlogContext/BlogContext';
 import CookieContext from '../../Contexts/CookieContext/cookieContext';
 import Follow from '../Follow';
 import './userProfile.css';
+import FollowersFollows from '../FollowersFollows'
 
-function UserProfileBanner({ user, setArticles, articles }) {
+function UserProfileBanner({ user, setArticles, articles,setIsLikeArticles,setIsFollowsArticles }) {
 	const [cookieUser, setCookieUser] = useState({});
 	const { userFromCookie } = useContext(CookieContext);
 	const { getArticleFollows, getArticleLikes } = useContext(BlogContext);
@@ -13,22 +14,22 @@ function UserProfileBanner({ user, setArticles, articles }) {
 		const userCookie = userFromCookie('user');
 		setCookieUser(userCookie);
 	}, [userFromCookie]);
-
+	console.log(user);
 	const handleClick = async (type) => {
 		switch (type) {
 			case 'follows':
 				const followsArticles = await getArticleFollows(cookieUser._id);
-				console.log(followsArticles);
-				// followsArticles.map(followsArticle=>{
-				// 	setArticles(...followsArticle.articles);
-				// })
+				setIsLikeArticles(false);
+				setIsFollowsArticles(true)
+				setArticles(followsArticles);
 				break;
 			case 'likes':
 				setArticles([])
 				const likesArticles = await getArticleLikes(cookieUser._id);
-				likesArticles.map(likesArticles => {
-					console.log(likesArticles);
-				})
+				if(likesArticles.length>0)
+				setIsLikeArticles(true);
+				setIsFollowsArticles(false)
+				setArticles(likesArticles);
 				break;
 			default:
 				break;

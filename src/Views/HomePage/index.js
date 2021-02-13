@@ -9,6 +9,7 @@ import BlogContext from '../../Contexts/BlogContext/BlogContext';
 
 export default function HomePage() {
     const { articles, setArticles } = useContext(BlogContext);
+	 
     return (
         <>
             <Banner />

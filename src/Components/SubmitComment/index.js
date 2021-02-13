@@ -37,7 +37,7 @@ function SubmitComment({ article }) {
 		setError('Lütfen bir yorum giriniz !')
 
 	}
-	console.log(error);
+ 
 	return (
 		<div className="sidebar-item submit-comment">
 			<div className="sidebar-heading">

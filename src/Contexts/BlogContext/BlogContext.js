@@ -9,7 +9,6 @@ export const BlogProvider = ({ children }) => {
 	const [user, setUser] = useState({});
 	useEffect(() => {
 		const url = `${process.env.REACT_APP_DEPLOY_URL}/articles/reactionPoint`;
-		console.log(url);
 		const articles = axios.get(url);
 		articles
 			.then((res) => {
@@ -23,7 +22,7 @@ export const BlogProvider = ({ children }) => {
 
 	const getArticleById = async (id) => {
 		const url = `${process.env.REACT_APP_DEPLOY_URL}/articles/${id}`;
-		console.log(url);
+
 		const response = await axios(url);
 		const article = response.data;
 		return article;
@@ -38,9 +37,8 @@ export const BlogProvider = ({ children }) => {
 	};
 
 	const getArticleFollows = async (user_id) => {
- 		const url = `http://localhost:4000/articles/followsArticle`;
-		const response = await axios.post(url,{user_id});
-		console.log(response);
+		const url = `${process.env.REACT_APP_DEPLOY_URL}/articles/followsArticle`;
+		const response = await axios.post(url, { user_id });
 		return response.data;
 	};
 	const getArticleLikes = async (user_id) => {

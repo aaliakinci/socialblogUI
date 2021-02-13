@@ -10,7 +10,7 @@ function HeaderProfil({ user }) {
 
 	return (
 		<>
-			<li className="dropdown">
+			<li className="dropdown nav-item">
 				<Link to={`/articles/${user.username}`} className="nav-link dropdown-toggle cart-icon">
 					Hesabım
 				</Link>
@@ -20,8 +20,8 @@ function HeaderProfil({ user }) {
 							<i className="fa fa-user" aria-hidden="true"></i> Kullanıcı Bilgilerim
 					</Link>
 					</li>
-					<li className={`dropdown-item link-color`} onClick={() => logOut()}>
-						<Link to="/" className={`link-color`}>
+					<li className={`dropdown-item link-color`} >
+						<Link to="/" className={`link-color`} onClick={() => logOut()}>
 							<i className="fa fa-sign-out" aria-hidden="true"></i> Çıkış Yap
 					</Link>
 					</li>

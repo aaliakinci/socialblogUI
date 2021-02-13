@@ -13,7 +13,7 @@ function ItemSearch() {
 		};
 		fetchUsers();
 	}, []);
-	console.log(users);
+ 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const url = `/articles/${selectedUser}`;

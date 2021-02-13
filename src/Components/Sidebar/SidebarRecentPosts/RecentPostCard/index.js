@@ -1,5 +1,3 @@
-import React from 'react'
-//import '../../../Card/blogCard.css'
 import '../recentPosts.css'
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom'
