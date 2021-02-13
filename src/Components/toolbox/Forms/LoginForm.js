@@ -20,7 +20,6 @@ function LoginForm() {
 		e.preventDefault();
 		if (userDataLogin.username === "" || userDataLogin.password === "") setErrorMessage('* ile işaretli alanlar boş bırakılamaz !')
 		const response = await axios.post(`${process.env.REACT_APP_DEPLOY_URL}/users/login`, userDataLogin)
-		console.log(response);
 		if (response.data.message) {
 			setErrorMessage(response.data.message)
 			return false

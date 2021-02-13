@@ -14,8 +14,9 @@
 
 .owl-banner .item .item-content {
 	position: absolute;
-	bottom: 40px;
-	left: 40px;
+	right: 20px;
+	bottom: 20px;
+	left: 20px;
 }
 
 .owl-banner .item .item-content .meta-category span {
@@ -84,12 +85,12 @@
 }
 
 .owl-banner .owl-nav button span {
-	color: white;
-	font-size: 36px;
-	width: 60px;
-	height: 60px;
-	display: inline-block;
+	color: black;
+	font-size: 60px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	display: inline;
 	text-align: center;
-	line-height: 60px;
-	background-color: var(--dark-gray);
+	background-color: rgba(192, 192, 192, 0.3);
 }

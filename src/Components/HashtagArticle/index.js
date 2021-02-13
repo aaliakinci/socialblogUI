@@ -13,8 +13,7 @@ function HashtagArticle() {
             setArticles(articles[0].articles)
         }
         fetchArticleByHashtagId();
-    }, [])
-		console.log(articles);	
+    }, [getArticleByHashtagId, id])
     return (
         <section className="blog-posts">
             <div className="container">
