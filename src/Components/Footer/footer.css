@@ -1,6 +1,5 @@
 @import "../../index.css";
 footer {
-	margin-top: 100px;
 	text-align: center;
 	background-color: var(--dark-blue);
 	padding: 60px 0px;
