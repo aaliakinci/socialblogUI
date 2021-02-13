@@ -29,8 +29,7 @@ function EditorForm() {
 			setHashtags(hashtags);
 		};
 		fetchHashtags();
-	}, [userFromCookie]);
-	 console.log(selectedHashtag);
+	}, [getHashtags, userFromCookie]);
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const data = new FormData();
@@ -39,8 +38,7 @@ function EditorForm() {
 		data.append('content', content);
 		data.append('description', description);
 		data.append('user_id', user_id);
-		data.append('hashtags',selectedHashtag);
-		console.log(data);
+		data.append('hashtags', selectedHashtag);
 		const url = `${process.env.REACT_APP_DEPLOY_URL}/articles/create`;
 		const config = {
 			headers: { 'content-type': 'multipart/form-data' },

@@ -7,7 +7,6 @@ import BlogContext from '../../../Contexts/BlogContext/BlogContext';
 
 export default function SidebarRecentPosts() {
     const { articles } = useContext(BlogContext);
-    console.log(articles)
     return (
         <div className="sidebar-item recent-posts">
             <div className="sidebar-heading">

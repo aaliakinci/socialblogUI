@@ -18,7 +18,6 @@ function Follows({ user }) {
 		setCookieUser(userCookie);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [userFromCookie]);
-	console.log(follows);
 	return (
 		<div>
 			<button
