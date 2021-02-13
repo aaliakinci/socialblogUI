@@ -18,6 +18,7 @@ export const HashtagProvider = ({children}) => {
 	const getArticleByHashtagId =async(id)=>{
 		const url = `${process.env.REACT_APP_DEPLOY_URL}/hashtags/${id}`;
 		const response = await axios(url);
+		
 		return response.data
 	}
 

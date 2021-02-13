@@ -33,7 +33,7 @@ export default function Banner() {
                         {
                             articles && articles.map(article => {
                                 return (
-                                    < BannerItem key={article._id} title={article.title} description={article.description} createAt={article.createAt} user={article.user} id={article._id} />
+                                  < BannerItem image={article.contentImage} key={article._id} title={article.title} description={article.description} createAt={article.createAt} user={article.user} id={article._id} />
                                 )
                             }
                             )

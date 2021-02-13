@@ -11,7 +11,7 @@ function BlogCard({ title, description, content, user, createAt, id, hashtags, i
 			area.innerHTML = content
 		}
 	}, [content])
-
+	console.log(hashtags);
 	const handleHref = () => {
 		window.location.href = `/articles/${user[0].username}`
 	}
@@ -34,7 +34,7 @@ function BlogCard({ title, description, content, user, createAt, id, hashtags, i
 				<Link to={`/article/${id}`}>
 					<h4><span>{title}</span></h4>
 				</Link>
-				<h6>#{hashtags}</h6>
+				{hashtags && hashtags.map(hashtag=>(<h6>#{hashtag.body}</h6>))}
 				<ul className="post-info">
 					<li className="link">
 						<Moment format="YYYY/MM/DD">
