@@ -1,14 +1,26 @@
+@import "../../index.css";
 .blog-posts .blog-post {
 	margin-bottom: 30px;
 }
-
+h6 {
+	color: var(--light-gray);
+}
 .blog-posts .blog-thumb img {
 	overflow: hidden;
 	width: 100%;
 }
-
+.user-img {
+	padding: 15px;
+	margin-left: 10px;
+}
+.user-info {
+	color: var(--dark-gray);
+}
 .blog-posts .down-content {
-	padding: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 40px;
+	padding-top: 10px;
 	border-right: 1px solid #eee;
 	border-left: 1px solid #eee;
 	border-bottom: 1px solid #eee;
@@ -19,7 +31,7 @@
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 	font-weight: 900;
-	color: #f48840;
+	color: var(--orannnge);
 }
 
 .blog-posts .down-content h4 {
@@ -27,7 +39,7 @@
 	text-transform: capitalize;
 	letter-spacing: 0.5px;
 	font-weight: 900;
-	color: #20232e;
+	color: var(--dark-blue);
 	margin: 10px 0px 12px 0px;
 }
 
@@ -38,12 +50,12 @@
 
 .blog-posts .down-content ul.post-info li:after {
 	content: "|";
-	color: #aaa;
+	color: var(--light-gray);
 	margin-left: 8px;
 }
 .blog-posts .down-content ul.post-info .link:after {
 	content: "|";
-	color: #aaa;
+	color: var(--light-gray);
 	margin-left: 8px;
 }
 
@@ -74,22 +86,22 @@
 
 .blog-posts .down-content ul.post-info li a {
 	font-size: 14px;
-	color: #aaa;
+	color: var(--light-gray);
 	font-weight: 400;
 	transition: all 0.3s;
 }
 .blog-posts .down-content ul.post-info .link {
 	font-size: 14px;
-	color: #aaa;
+	color: var(--light-gray);
 	font-weight: 400;
 	transition: all 0.3s;
 }
 
 .blog-posts .down-content ul.post-info li a:hover {
-	color: #f48840;
+	color: var(--orannnge);
 }
 .blog-posts .down-content ul.post-info .link:hover {
-	color: #f48840;
+	color: var(--orannnge);
 }
 
 .blog-posts .down-content p {
@@ -110,26 +122,26 @@
 
 .blog-posts .down-content ul.post-tags li:first-child i,
 .blog-posts .down-content ul.post-share li:first-child i {
-	color: #f48840;
+	color: var(--orannnge);
 	margin-right: 5px;
 }
 
 .blog-posts .down-content ul.post-tags li,
 .blog-posts .down-content ul.post-share li {
-	color: #aaa;
+	color: var(--light-gray);
 }
 
 .blog-posts .down-content ul.post-tags li a,
 .blog-posts .down-content ul.post-share li a {
 	font-size: 14px;
-	color: #aaa;
+	color: var(--light-gray);
 	font-weight: 400;
 	transition: all 0.3s;
 }
 
 .blog-posts .down-content ul.post-tags li a:hover,
 .blog-posts .down-content ul.post-share li a:hover {
-	color: #f48840;
+	color: var(--orannnge);
 }
 
 ul.page-numbers {
@@ -148,20 +160,20 @@ ul.page-numbers li a {
 	text-align: center;
 	line-height: 50px;
 	font-size: 15px;
-	color: #7a7a7a;
+	color: var(--dark-gray);
 	border: 1px solid #eee;
 	font-weight: 500;
 	transition: all 0.3s;
 }
 
 ul.page-numbers li.active a {
-	background-color: #f48840;
-	border-color: #f48840;
-	color: #fff;
+	background-color: var(--orannnge);
+	border-color: var(--orannnge);
+	color: white;
 }
 
 ul.page-numbers li a:hover {
-	color: #f48840;
+	color: var(--orannnge);
 }
 
 .blog-posts .sidebar-heading h2 {
@@ -169,7 +181,7 @@ ul.page-numbers li a:hover {
 	text-transform: uppercase;
 	font-weight: 900;
 	letter-spacing: 0.5px;
-	color: #20232e;
+	color: var(--dark-blue);
 	border-bottom: 1px solid #eee;
 	padding-bottom: 15px;
 	margin-bottom: 25px;

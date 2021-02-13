@@ -12,11 +12,11 @@
 	border: 1px solid #eee;
 	font-size: 13px;
 	font-weight: 500;
-	color: #7a7a7a;
+	color: var(--dark-gray);
 	outline: none;
 	padding: 0px 15px;
 }
 
 .sidebar .search input::placeholder {
-	color: #aaa;
+	color: var(--light-gray);
 }

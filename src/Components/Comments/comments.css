@@ -36,7 +36,7 @@
 }
 
 .blog-posts .comments ul li .right-content h4 {
-	color: #20232e;
+	color: var(--dark-blue);
 	font-size: 19px;
 	font-weight: 900;
 	letter-spacing: 0.5px;
@@ -44,7 +44,7 @@
 
 .blog-posts .comments ul li .right-content h4 span {
 	font-size: 14px;
-	color: #aaa;
+	color: var(--light-gray);
 	font-weight: 400;
 	letter-spacing: 0.25px;
 	margin-left: 20px;

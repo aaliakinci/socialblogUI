@@ -1,3 +1,4 @@
+@import "../../../index.css";
 .sidebar .tags ul li {
 	margin-right: 6px;
 	display: inline-block;
@@ -10,7 +11,7 @@
 .sidebar .tags ul li a {
 	font-size: 15px;
 	font-weight: 500;
-	color: #aaa;
+	color: var(--light-gray);
 	display: inline-block;
 	border: 1px solid #eee;
 	padding: 10px 18px;
@@ -18,7 +19,7 @@
 }
 
 .sidebar .tags ul li a:hover {
-	background-color: #f48840;
-	border-color: #f48840;
-	color: #fff;
+	background-color: var(--orannnge);
+	border-color: var(--orannnge);
+	color: white;
 }

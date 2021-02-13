@@ -1,3 +1,4 @@
+@import "../../index.css";
 .user-info-card {
 	display: flex;
 	justify-content: space-between;
@@ -21,7 +22,7 @@
 	display: block;
 }
 .user-info-text div div .user-info-text {
-	color: rgba(41, 41, 41, 1);
+	color: var(--dark-blue);
 	line-height: 20px;
 	font-size: 20px;
 	font-weight: 400;
@@ -33,7 +34,7 @@ span.user-name {
 	max-height: 20px;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	color: rgba(41, 41, 41, 1);
+	color: var(--dark-blue);
 	line-height: 20px;
 	font-size: 14px;
 	font-weight: 400;
@@ -79,7 +80,7 @@ span.user-name {
 	max-height: 20px;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	color: rgba(117, 117, 117, 1);
+	color: var(--light-gray);
 	line-height: 20px;
 	font-size: 14px;
 	font-weight: 400;
@@ -97,36 +98,3 @@ span.user-name {
 .friends {
 	padding: 20px;
 }
-/* .profileUserpic img {
-	float: none;
-	margin: 0 auto;
-	width: 50%;
-	height: 50%;
-	-webkit-border-radius: 50% !important;
-	-moz-border-radius: 50% !important;
-	border-radius: 50% !important;
-} */
-/* .profileUsertitle {
-	text-align: center;
-	margin-top: 20px;
-}
-
-.profileUsertitleName {
-	color: #5a7391;
-	font-size: 16px;
-	font-weight: 600;
-	margin-bottom: 7px;
-}
-
-.profileUsertitleJob {
-	text-transform: uppercase;
-	color: #5b9bd1;
-	font-size: 12px;
-	font-weight: 600;
-	margin-bottom: 15px;
-}
-
-.profileUserbuttons {
-	text-align: center;
-	margin-top: 10px;
-} */

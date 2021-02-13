@@ -1,7 +1,8 @@
+@import "../../index.css";
 footer {
 	margin-top: 100px;
 	text-align: center;
-	background-color: #20232e;
+	background-color: var(--dark-blue);
 	padding: 60px 0px;
 }
 
@@ -18,7 +19,7 @@ footer ul.social-icons li {
 
 footer ul.social-icons li:after {
 	content: "|";
-	color: #fff;
+	color: white;
 	margin-left: 30px;
 }
 
@@ -33,26 +34,26 @@ footer ul.social-icons li:last-child::after {
 footer ul.social-icons li a {
 	font-size: 14px;
 	text-transform: uppercase;
-	color: #fff;
+	color: white;
 	font-weight: 500;
 	letter-spacing: 0.25px;
 	transition: all 0.3s;
 }
 
 footer ul.social-icons li a:hover {
-	color: #f48840;
+	color: var(--orannnge);
 }
 
 footer p {
 	font-size: 13px;
 	text-transform: uppercase;
-	color: #fff;
+	color: white;
 }
 
 footer p a {
-	color: #f48840;
+	color: var(--orannnge);
 }
 
 footer p a:hover {
-	color: #f48840;
+	color: var(--orannnge);
 }
