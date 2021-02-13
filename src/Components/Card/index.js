@@ -21,14 +21,14 @@ function BlogCard({ title, description, content, user, createAt, id, hashtags, i
 					<img src={image} alt="" />
 				</div>
 			}
-			{
-				user && <div className="border">
-					<img src={user[0].profilPicture} className="img-responsive user-img" alt="" onClick={handleHref} />
-					<div className="d-inline user-info" onClick={handleHref}>{user[0].name}  </div>
-					<div className="d-inline user-info" onClick={handleHref}>{user[0].surname}</div>
-				</div>
-			}
 			<div className="down-content">
+				{
+					user && <div>
+						<img src={user[0].profilPicture} className="img-responsive user-img" alt="" onClick={handleHref} />
+						<div className="d-inline user-info" onClick={handleHref}>{user[0].name}  </div>
+						<div className="d-inline user-info" onClick={handleHref}>{user[0].surname}</div>
+					</div>
+				}
 				<Link to={`/article/${id}`}>
 					<h4><span>{title}</span></h4>
 				</Link>

@@ -7,9 +7,9 @@ function BannerItem({ title, description, content, user, createAt, id, hashtags,
 
     return (
         <div className="item" >
-            <img className="img" alt="" src={image} style={{ objectFit: 'cover', height: '300px', width: '420px' }} />
-            <div className="item-content" style={{ backgroundColor: `rgba(192,192,192,0.3)` }}>
-                <div className="main-content">
+            <img className="img" alt="" src={image} style={{ objectFit: 'cover', height: '300px', width: '400px' }} />
+            <div className="item-content" style={{ backgroundColor: `rgba(192,192,192,0.5)` }}>
+                <div className="main-content m-3">
                     <div className="meta-category">
                         <Link to={`/article/${id}`}>
                             <span>{title}</span>
