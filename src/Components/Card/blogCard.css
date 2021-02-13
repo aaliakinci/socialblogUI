@@ -1,6 +1,6 @@
 @import "../../index.css";
 .blog-posts .blog-post {
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 h6 {
 	color: var(--light-gray);
@@ -15,15 +15,17 @@ h6 {
 }
 .user-info {
 	color: var(--dark-gray);
+	font-weight: 600;
+	font-size: 18px;
 }
 .blog-posts .down-content {
 	padding-left: 40px;
 	padding-right: 40px;
 	padding-bottom: 40px;
 	padding-top: 10px;
-	border-right: 1px solid #eee;
-	border-left: 1px solid #eee;
-	border-bottom: 1px solid #eee;
+	border-right: 1px solid var(--border-color);
+	border-left: 1px solid var(--border-color);
+	border-bottom: 1px solid var(--border-color);
 }
 
 .blog-posts .down-content span {
@@ -105,10 +107,7 @@ h6 {
 }
 
 .blog-posts .down-content p {
-	/* padding: 25px 0px; */
 	margin: 25px 0 0 0px;
-	/* border-top: 1px solid #eee;
-	border-bottom: 1px solid #eee; */
 }
 
 .blog-posts .down-content ul.post-share {
@@ -161,7 +160,7 @@ ul.page-numbers li a {
 	line-height: 50px;
 	font-size: 15px;
 	color: var(--dark-gray);
-	border: 1px solid #eee;
+	border: 1px solid var(--border-color);
 	font-weight: 500;
 	transition: all 0.3s;
 }
@@ -182,7 +181,7 @@ ul.page-numbers li a:hover {
 	font-weight: 900;
 	letter-spacing: 0.5px;
 	color: var(--dark-blue);
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid var(--border-color);
 	padding-bottom: 15px;
 	margin-bottom: 25px;
 }
