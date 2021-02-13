@@ -25,14 +25,14 @@ function Follows({ user }) {
 				type="button"
 				class="btn btn-primary"
 				data-toggle="modal"
-				data-target="#exampleModalLong"
+				data-target="#follows"
 			>
-				Launch demo modal
+				Takip Ettikleri
 			</button>
 
 			<div
 				class="modal fade"
-				id="exampleModalLong"
+				id="follows"
 				tabindex="-1"
 				role="dialog"
 				aria-labelledby="exampleModalLongTitle"

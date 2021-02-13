@@ -38,9 +38,6 @@ useEffect(() => {
 					userIsFollow===false?<button onClick={handleClick}>Follow({followsCount})</button>:<button onClick={handleClick}>Unfollow({followsCount})</button>
 				}
 			</div>
-			<div className="message-btn">
-				<button>Message</button>
-			</div>
 		</>
 	);
 }
