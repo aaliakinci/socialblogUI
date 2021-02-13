@@ -1,7 +1,7 @@
 import React from 'react';
 import './recentPosts.css'
 import { useContext, useState, useEffect } from 'react'
-import RecentPostCard from '../../Card/recentPostsCard'
+import RecentPostCard from './RecentPostCard'
 import { Link } from 'react-router-dom'
 
 import BlogContext from '../../../Contexts/BlogContext/BlogContext';
@@ -21,7 +21,7 @@ export default function SidebarRecentPosts() {
                     <li>
                         <Link to="javascript">
                             {articles.length && articles.map(article => {
-                                return <RecentPostCard key={article._id} id={article._id} title={article.title} createAt={article.createAt} user={article.user_id} />
+                                return <RecentPostCard key={article._id} id={article._id} description={article.description} title={article.title} createAt={article.createAt} user={article.user_id} />
                             })}
                         </Link>
                     </li>

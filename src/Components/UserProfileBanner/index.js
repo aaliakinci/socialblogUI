@@ -4,10 +4,10 @@ import CookieContext from '../../Contexts/CookieContext/cookieContext';
 import Follow from '../Follow';
 import './userProfile.css';
 
-function UserProfileBanner({ user, setArticles,articles }) {
+function UserProfileBanner({ user, setArticles, articles }) {
 	const [cookieUser, setCookieUser] = useState({});
 	const { userFromCookie } = useContext(CookieContext);
-	const { getArticleFollows, getArticleLikes} = useContext(BlogContext);
+	const { getArticleFollows, getArticleLikes } = useContext(BlogContext);
 	const [likeArticles, setLikeArticles] = useState([])
 	useEffect(() => {
 		const userCookie = userFromCookie('user');
@@ -26,7 +26,7 @@ function UserProfileBanner({ user, setArticles,articles }) {
 			case 'likes':
 				setArticles([])
 				const likesArticles = await getArticleLikes(cookieUser._id);
-				likesArticles.map(likesArticles=>{
+				likesArticles.map(likesArticles => {
 					console.log(likesArticles);
 				})
 				break;
@@ -57,8 +57,8 @@ function UserProfileBanner({ user, setArticles,articles }) {
 					</div>
 					{user._id === cookieUser._id ? (
 						<div className="d-flex align-items-end">
-							<i class="fa fa-users fa-2x friends" onClick={()=>handleClick('follows')}></i>
-							<i class="fa fa-heart fa-2x likes" onClick={()=>handleClick('likes')}></i>
+							<i class="fa fa-users fa-2x friends" onClick={() => handleClick('follows')}></i>
+							<i class="fa fa-heart fa-2x likes" onClick={() => handleClick('likes')}></i>
 						</div>
 					) : (
 						''

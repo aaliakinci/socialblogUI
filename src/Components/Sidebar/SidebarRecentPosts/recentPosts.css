@@ -1,3 +1,4 @@
+@import "../../../index.css";
 .sidebar .recent-posts ul li {
 	margin-bottom: 15px;
 	padding-bottom: 15px;
@@ -13,18 +14,18 @@
 .sidebar .recent-posts ul li h5 {
 	font-size: 19px;
 	font-weight: 900;
-	color: #20232e;
+	color: var(--dark-blue);
 	line-height: 30px;
 	transition: all 0.3s;
 }
 
 .sidebar .recent-posts ul li h5:hover {
-	color: #f48840;
+	color: var(--orannnge);
 }
 
 .sidebar .recent-posts ul li span {
 	display: block;
 	font-size: 14px;
-	color: #aaa;
+	color: var(--light-gray);
 	margin-top: 8px;
 }

@@ -46,7 +46,7 @@ function Header() {
 						<span className="navbar-toggler-icon"></span>
 					</button>
 					<div className="collapse navbar-collapse" id="navbarResponsive">
-						<ul className="navbar-nav ml-auto">
+						<ul className="navbar-nav ml-auto d-flex align-items-center">
 							{isUser === 0 && (
 								<>
 									<li className="nav-item">
@@ -68,20 +68,14 @@ function Header() {
 							)}
 							{isUser === 1 && (
 								<>
-									<li className="nav-item d-flex align-items-center">
-										<Link
-											to="/write-article"
-											className="nav-link d-flex align-items-center bg-info	px-4 rounded"
-										>
-											<i className="fa fa-edit fa-2x text-danger"></i>
+									<li className="nav-item">
+										<Link to={`/articles/${user.username}`}>
+											<HeaderProfil user={user} />
 										</Link>
 									</li>
 									<li className="nav-item">
-										<Link
-											to={`/articles/${user.username}`}
-											className="nav-link d-flex align-items-center"
-										>
-											<HeaderProfil user={user}/>
+										<Link to="/write-article" className="write-icon">
+											<i className="fa fa-edit fa-lg"></i>
 										</Link>
 									</li>
 								</>

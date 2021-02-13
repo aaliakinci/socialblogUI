@@ -1,3 +1,4 @@
+@import "../../index.css";
 .blog-posts .submit-comment {
 	margin-top: 60px;
 }
@@ -8,7 +9,7 @@
 	border: 1px solid #eee;
 	font-size: 13px;
 	font-weight: 500;
-	color: #7a7a7a;
+	color: var(--dark-gray);
 	outline: none;
 	padding: 0px 15px;
 	margin-bottom: 30px;
@@ -20,7 +21,7 @@
 	border: 1px solid #eee;
 	font-size: 13px;
 	font-weight: 500;
-	color: #7a7a7a;
+	color: var(--dark-gray);
 	outline: none;
 	padding: 10px 15px;
 	margin-bottom: 30px;
@@ -32,13 +33,13 @@
 
 .blog-posts .submit-comment input::placeholder,
 .blog-posts .submit-comment textarea::placeholder {
-	color: #aaa;
+	color: var(--light-gray);
 }
 
 .blog-posts .submit-comment button {
 	display: inline-block;
-	background-color: #f48840;
-	color: #fff;
+	background-color: var(--orannnge);
+	color: white;
 	font-size: 13px;
 	font-weight: 500;
 	padding: 12px 20px;
@@ -48,7 +49,7 @@
 }
 
 .blog-posts .submit-comment button:hover {
-	background-color: #fb9857;
+	background-color: var(--orannnge);
 }
 .textArea {
 	resize: none;

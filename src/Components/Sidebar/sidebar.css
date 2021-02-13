@@ -3,7 +3,7 @@
 	text-transform: uppercase;
 	font-weight: 900;
 	letter-spacing: 0.5px;
-	color: #20232e;
+	color: var(--dark-blue);
 	border-bottom: 1px solid #eee;
 	padding-bottom: 15px;
 	margin-bottom: 25px;

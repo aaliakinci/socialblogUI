@@ -1,3 +1,4 @@
+@import "../../index.css";
 .main-banner .container-fluid {
 	padding: 0px 10px;
 	margin-bottom: -24px;
@@ -17,7 +18,7 @@
 }
 
 .owl-banner .item .item-content .meta-category span {
-	color: #f48840;
+	color: var(--orannnge);
 	font-size: 18px;
 	text-transform: uppercase;
 	font-weight: 900;
@@ -27,7 +28,7 @@
 .owl-banner .item .item-content h4 {
 	font-size: 22px;
 	font-weight: 900;
-	color: #fff;
+	color: white;
 	letter-spacing: 0.5px;
 	text-transform: capitalize;
 	margin: 10px 0px 12px 0px;
@@ -40,7 +41,7 @@
 
 .owl-banner .item .item-content ul li:after {
 	content: "|";
-	color: #fff;
+	color: white;
 	margin-left: 8px;
 }
 
@@ -50,13 +51,13 @@
 
 .owl-banner .item .item-content ul li a {
 	font-size: 14px;
-	color: #fff;
+	color: white;
 	font-weight: 500;
 	transition: all 0.3s;
 }
 
 .owl-banner .item .item-content ul li a:hover {
-	color: #f48840;
+	color: var(--orannnge);
 }
 
 .owl-banner .owl-nav {
@@ -82,12 +83,12 @@
 }
 
 .owl-banner .owl-nav button span {
-	color: #fff;
+	color: white;
 	font-size: 36px;
 	width: 60px;
 	height: 60px;
 	display: inline-block;
 	text-align: center;
 	line-height: 60px;
-	background-color: rgba(250, 250, 250, 0.3);
+	background-color: var(--dark-gray);
 }
